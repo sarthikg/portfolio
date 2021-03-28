@@ -1,0 +1,11 @@
+.App-Section2 {
+    &-Kanban {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 100%;
+        width: 100%;
+        padding: 12rem 5rem 5rem 5rem;
+    }
+}

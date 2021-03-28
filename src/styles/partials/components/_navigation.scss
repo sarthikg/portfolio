@@ -1,0 +1,52 @@
+$primary: #2b9348;
+$default: #87888a;
+$defaultBg: #2f363d;
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 $pink;
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 0.5rem rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}
+
+.Component-Navigation {
+    position: fixed;
+	display: flex;
+	flex-direction: column;
+	width: 5rem;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 2;
+	&-Dot {
+        line-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        width: 0.35rem;
+        height: 0.35rem;
+        border-radius: 50%;
+        border: 0.15rem solid gray;
+        color: transparent;
+        transform: translateY(-50%);
+        color: transparent;
+        font-size: 0.625rem;
+        opacity: 0.5;    
+        &.Active {
+            border-color: $pink;
+			background-color: $pink;
+            animation: pulse 1.5s infinite;
+        }
+	}
+}

@@ -1,0 +1,16 @@
+.Component-SubHeading {
+	color: rgb(228, 228, 228);
+	font-family: 'Roboto Slab', serif;
+	font-size: 32px;
+	// text-transform: uppercase;  
+	font-weight: 400;
+	letter-spacing: 0.1rem;
+    background: linear-gradient(180deg,rgba(255,255,255,0) 50%, rgba(255,11,86,0.6) 50%);
+    background-size: 100% 2.2rem;
+    background-position: 50% 70%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    padding: 0 0.6rem;
+    line-height: 45px;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+$dark-background: rgba(29,29,29,1);
+$dark-backtext: rgba(255,255,255,.05);
+$dark-sectext: rgba(97, 97, 97, 1);
+$pink: #ff0b56;
+$green: #08fdd8;
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-snap-type: y mandatory;
+}
+
+.App {
+    height: 500vh;
+    width: 100vw;
+}
+
+
+@import "partials/layout/section1";
+@import "partials/layout/section2";
+@import "partials/layout/section4";
+@import "partials/layout/section5";
+
+@import "partials/components/navigation";
+@import "partials/components/filler";
+@import "partials/components/section";
+@import "partials/components/heading";
+@import "partials/components/kanban";
+@import "partials/components/subheading";
+@import "partials/components/card";
+@import "partials/components/arrow";
+@import "partials/components/social";
