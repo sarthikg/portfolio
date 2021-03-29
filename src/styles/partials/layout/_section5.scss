@@ -26,23 +26,23 @@
 		position: absolute;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: space-evenly;
 		align-items: flex-start;
-		height: 100%;
-		width: 100%;
-		padding: 6rem 6.7rem;
+		height: 100vh;
+		width: 100vw;
+		padding: 6rem 7rem ;
 		&-Description {
 			width: 100%;
-			margin-top: 8rem;
+			// margin-top: 8rem;
 			color: rgb(204, 204, 204);
 			font-family: 'Baloo 2', cursive;
 			font-size: 1.2rem;
-			margin: 8rem 0 1rem;
+			// margin: 8rem 0 1rem;
 		}
 		&-Container {
 			width: 100%;
-			flex-grow: 10;
-			margin-top: 1rem;
+			// flex-grow: 10;
+			// margin-top: 1rem;
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -61,15 +61,24 @@
                 height: 100%;
                 padding: 0 5rem;
                 margin-top: -1.5rem;
+                font-family: 'Baloo 2', cursive;
+                color: $dark-sectext;
                 &-Remarks {
-                    font-family: 'Baloo 2', cursive;
-                    color: $dark-sectext;
                     text-align: center;
                     text-transform: none;
                     font-size: 0.9rem;
                     & a {
                         color: $dark-sectext;
                     }
+                }
+                &-Details {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 2rem 0;
+                    text-align: center;
+                    font-size: 1rem;
                 }
             }
 		}
@@ -83,6 +92,7 @@
     font-family: 'Baloo 2', cursive;
     font-size: 1.2rem;
     grid-column: 2/ span 1;
+    grid-row: 4/ span 1;
     transition: color 0s ease-in-out, background-color 0s ease-in-out;
     &.Active {
         animation-name: click;
@@ -108,16 +118,19 @@
     transition: border-bottom 0.75s ease;
 	&.Name {
 		grid-column: 1/ span 1;
+        grid-row: 1/ span 1;
 	}
     &.Email {
         grid-column: 2/ span 1;
+        grid-row: 1/ span 1;
 	}
     &.Subject {
         grid-column: 1/ span 2;
+        grid-row: 2/ span 1;
     }
     &.Message {
         grid-column: 1/ span 2;
-        grid-row: 3/ span 2;
+        grid-row: 3/ span 1;
         resize: none;
     }
     &:focus {
