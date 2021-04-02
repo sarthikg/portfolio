@@ -34,15 +34,15 @@ $defaultBg: #2f363d;
         align-items: center;
         justify-content: center;
         font-weight: bold;
-        width: 0.35rem;
-        height: 0.35rem;
+        width: 0.5rem;
+        height: 0.5rem;
         border-radius: 50%;
         border: 0.15rem solid gray;
         color: transparent;
         transform: translateY(-50%);
         color: transparent;
         font-size: 0.625rem;
-        opacity: 0.5;    
+        opacity: 0.8;    
         &.Active {
             border-color: $pink;
 			background-color: $pink;

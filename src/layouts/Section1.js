@@ -16,7 +16,7 @@ class Section1 extends Component {
             </div>
             <div className="App-Section1-Content-Right">
               <div className="App-Section1-Content-Right-Container">
-                <img src={dp} width="300px"/>
+                <img src={dp} width="300px" alt="Profile"/>
               </div>
             </div>
           </div>

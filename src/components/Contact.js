@@ -6,7 +6,7 @@ class Contact extends Component {
             <div className="Component-Contact">
                 {this.props.contacts.map((contact) => {
 					return (
-                        <div className="Component-Contact-Object">
+                        <div className="Component-Contact-Object" key={contact.alt}>
                             <a href={contact.url ? contact.url : undefined} target="_blank" rel="noreferrer">
 							    <img src={contact.icon} alt={contact.alt} height="20px"/>
 						    </a>

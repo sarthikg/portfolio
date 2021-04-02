@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Filler from '../components/Filler';
 import Section from '../components/Section';
 import SubHeading from '../components/SubHeading';
 import Card from '../components/Card';
