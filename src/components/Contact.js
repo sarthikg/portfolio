@@ -8,7 +8,7 @@ class Contact extends Component {
 					return (
                         <div className="Component-Contact-Object" key={contact.alt}>
                             <a href={contact.url ? contact.url : undefined} target="_blank" rel="noreferrer">
-							    <img src={contact.icon} alt={contact.alt} height="20px"/>
+							    <img className="Component-Contact-Object-Logo" src={contact.icon} alt={contact.alt} height="20px"/>
 						    </a>
                             <div className="Component-Contact-Object-Separator"/>
                                 {contact.content}   

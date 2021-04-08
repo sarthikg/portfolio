@@ -6,7 +6,7 @@
     align-items: center;
     &-Object {
         margin: 0.5rem 0;
-        width: 12rem;
+        width: 15rem;
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -17,8 +17,20 @@
         &-Separator {
             border-left: 2px solid $dark-sectext;
             height: 1.1rem;
-            margin: 0 1rem;
+            margin: 0 1.5rem;
+        }
+        &-Logo {
+            height: 1.6rem;
         }
     }
+}
 
+@media only screen and (min-width: 300px) and (max-width: 1000px) {
+    .Component-Contact {
+        display: none;
+        &-Object {
+            width: 20rem;
+            font-size: 1.6rem;
+        }
+    }
 }

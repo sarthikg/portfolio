@@ -1,25 +1,70 @@
-$dark-background: rgba(29,29,29,1);
-$dark-backtext: rgba(255,255,255,.05);
+$dark-background: rgba(29, 29, 29, 1);
+$dark-backtext: rgba(255, 255, 255, .05);
 $dark-sectext: rgba(97, 97, 97, 1);
 $pink: #ff0b56;
 
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600&family=Roboto+Slab&display=swap');
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 html {
-    scroll-snap-type: y mandatory;
+	scroll-snap-type: y mandatory;
 }
 
 body {
-    scroll-snap-type: y mandatory;
-    overscroll-behavior-y: none;
+	background-color: $dark-background;
+	overscroll-behavior-y: none;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 .grecaptcha-badge {
-    visibility: hidden
+	visibility: hidden;
+}
+
+// .App {
+// 	display: flex;
+// 	flex-direction: column;
+// 	position: absolute;
+// 	overflow: auto;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	height: 100%;
+// }
+
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+	:root {
+		font-size: 8px;
+	}
+
+	html {
+		height: 100%;
+		overflow-x: hidden;
+	}
+
+	body {
+		height: 100%;
+		scroll-snap-type: y mandatory;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+}
+
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+	:root {
+		font-size: 10px;
+	}
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+	:root {
+		font-size: 12px;
+	}
 }
 
 @import "partials/layout/section1";

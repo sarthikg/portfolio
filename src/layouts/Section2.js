@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Section from '../components/Section';
 import Heading from '../components/Heading';
-import Carousel from '../components/Carousel';
+// import Carousel from '../components/Carousel';
 
 let Skills = [
 	{ name: 'ReactJS', level: 'bright' },
@@ -54,7 +54,7 @@ class Section2 extends Component {
 								adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
 							</div>
 						</div>
-						<Carousel skills={Skills} />
+						{/* <Carousel skills={Skills} /> */}
 					</div>
 				</div>
 			</Section>

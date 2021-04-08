@@ -8,13 +8,13 @@ import SubHeading from '../components/SubHeading';
 import Social from '../components/Social';
 import Contact from '../components/Contact';
 
-import linkedin from '../linkedin.svg';
-import github from '../github.svg';
-import twitter from '../twitter.svg';
-import medium from '../medium.svg';
+import linkedin from '../assets/linkedin.svg';
+import github from '../assets/github.svg';
+import twitter from '../assets/twitter.svg';
+import medium from '../assets/medium.svg';
 
-import email from '../email.svg';
-import phone from '../phone.svg';
+import email from '../assets/email.svg';
+import phone from '../assets/phone.svg';
 
 const recaptchaRef = React.createRef();
 
@@ -98,28 +98,29 @@ class Section5 extends Component {
 				<div className="App-Section5-Content">
 					<Heading title="Contact" />
 					<div className="App-Section5-Content-Description">
-						I'm interested in full-time opportunities in the field of Full-Stack Development, Business
-						Analysis and Product Management. Feel free to hit me up by filling the form below. You can also
+						I'm interested in full-time opportunities in the field of Full-Stack Web Development & Product Management. Feel free to hit me up by filling the form below. You can also
 						ask any question you might have through this form.
 					</div>
-					<div className="App-Section5-Content-Container">
-						<form className="App-Section5-Content-Container-Form" onSubmit={this.handleSubmit}>
-							<input
-								type="text"
-								name="Name"
-								placeholder="Name"
-								className="Form-Input Name"
-								onChange={this.handleChange}
-								required
-							/>
-							<input
-								type="email"
-								name="Email"
-								placeholder="Email"
-								className="Form-Input Email"
-								onChange={this.handleChange}
-								required
-							/>
+					<div className="App-Section5-Content-Bottom">
+						<form className="App-Section5-Content-Form" onSubmit={this.handleSubmit}>
+							<div className="App-Section5-Content-Form-Basic">
+								<input
+									type="text"
+									name="Name"
+									placeholder="Name"
+									className="Form-Input Name"
+									onChange={this.handleChange}
+									required
+								/>
+								<input
+									type="email"
+									name="Email"
+									placeholder="Email"
+									className="Form-Input Email"
+									onChange={this.handleChange}
+									required
+								/>
+							</div>
 							<input
 								type="text"
 								name="Subject"
@@ -143,18 +144,18 @@ class Section5 extends Component {
 								Send Message
 							</button>
 						</form>
-						<div className="App-Section5-Content-Container-Social">
-							<SubHeading title="Find me at" />
-							<div className="App-Section5-Content-Container-Social-Details">
-								<Contact contacts={contacts} />
-								<Social socials={socials} />
-								<div className="App-Section5-Content-Container-Social-Remarks">
-									Design is highly inspired from{' '}
-									<a href="https://jacekjeznach.com/">Jack's Website</a>.
-									<br />
-									Copyright © 2021 All Rights Reserved.
-								</div>
+						<div className="App-Section5-Content-Social">
+							<div className="App-Section5-Content-Social-Heading">
+								<SubHeading title="Find me at" />
 							</div>
+						<Contact contacts={contacts} />
+						<Social socials={socials} />
+						<div className="App-Section5-Content-Social-Remarks">
+							Design is highly inspired from{' '}
+							<a href="https://jacekjeznach.com/">Jack's Website</a>.
+							<br />
+							Copyright © 2021 All Rights Reserved.
+						</div>
 						</div>
 					</div>
 				</div>

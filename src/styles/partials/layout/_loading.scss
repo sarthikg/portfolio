@@ -1,18 +1,61 @@
+@keyframes move-in {
+    from {
+        transform: translateY(5rem);
+    }
+    to {
+        transform: translateY(0rem);
+    }
+  }
+
+@keyframes move-out {
+    from {
+        transform: translateY(0rem);
+    }
+    to {
+        transform: translateY(-5rem);
+    }
+  }
+
 .App-Loading {
     background-color: rgba(29,29,29,1);
     height: 100vh;
     width: 100vw;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    &-Logo {
+    padding: 5rem 8rem;
+    &-Container {
+        height: 3rem;
         width: 100%;
-        height: 100%;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfont-size:200px;fill:%23292929;stroke:%23ff0b56;stroke-miterlimit:10;font-family:BalooChettan2-SemiBold, 'Baloo Chettan 2';font-weight:600;%7D.cls-2%7Bletter-spacing:0em;%7D%3C/style%3E%3C/defs%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Ctext class='cls-1' transform='translate(17.8 265.8)'%3E&lt;%3Ctspan class='cls-2' x='96.4' y='0'%3ES%3C/tspan%3E%3Ctspan x='204.2' y='0'%3E/&gt;%3C/tspan%3E%3C/text%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        background-repeat: no-repeat;
+        overflow-y: hidden;
+        text-align: end;
     }
     &-Text {
         font-family: sans-serif;
-        color: white;
+        font-family: sans-serif;
+        color: $dark-sectext;
+        font-size: 2.5rem;
+        font-weight: 500;
+        &.Enter{
+            animation: move-in;
+            animation-duration: 400ms;
+        }
+        &.Exit {
+            animation: move-out;
+            animation-duration: 1000ms;
+        }
+        &.Hidden {
+            display: none;
+        }
     }
 }
+
+@media only screen and (min-width: 300px) and (max-width: 1000px) {
+    .App-Loading {
+        &-Text {
+            font-size: 3.5rem;
+            font-weight: 600;
+        }
+    }
+}
+

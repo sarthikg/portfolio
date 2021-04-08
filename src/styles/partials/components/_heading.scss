@@ -6,4 +6,11 @@
     letter-spacing: -0.5rem;
     font-weight: 800;
     z-index: 1;
+    margin: 1.5rem 0;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 1000px) {
+    .Component-Heading {
+        font-size: 12rem;
+    }
 }

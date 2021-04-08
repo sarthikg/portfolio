@@ -38,18 +38,6 @@ class Carousel extends Component {
 		this.generateLists();
 	};
 
-	handleAppend = () => {
-		for (let i = 0; i < this.state.count; i++) {
-			setInterval(
-				this.setState((oldState) => ({
-					[`list${i}`]: oldState[`list${i}`].concat(oldState[`list${i}`])
-				})),
-				1000
-			);
-			console.log(`It ran for ${i}`);
-		}
-	};
-
 	render() {
 		return (
 			<div className="Component-Carousel">

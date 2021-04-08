@@ -1,16 +1,24 @@
 .Component-SubHeading {
 	color: rgb(228, 228, 228);
 	font-family: 'Roboto Slab', serif;
-	font-size: 32px;
-	// text-transform: uppercase;  
+	font-size: 2rem;
 	font-weight: 400;
 	letter-spacing: 0.1rem;
     background: linear-gradient(180deg,rgba(255,255,255,0) 50%, rgba(255,11,86,0.6) 50%);
-    background-size: 100% 2.2rem;
-    background-position: 50% 70%;
+    background-size: 100% 2rem;
+    background-position: 100% 50%;    
     background-repeat: no-repeat;
+    width: fit-content;
     display: inline-block;
     padding: 0 0.6rem;
-    line-height: 45px;
-    margin-bottom: 1rem;
+    line-height: 2rem;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 1000px) {
+    .Component-SubHeading {
+        font-size: 3.2rem;
+        background-position: 0% 100%;  
+        background-size: 100% 2.5rem;
+        line-height: 3.2rem;
+    }
 }

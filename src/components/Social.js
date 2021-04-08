@@ -7,7 +7,7 @@ class Social extends Component {
 				{this.props.socials.map((social) => {
 					return (
 						<a href={social.url} target="_blank" rel="noreferrer" key={social.alt}>
-							<img src={social.icon} alt={social.alt} height="32px"/>
+							<img src={social.icon} alt={social.alt} className="Component-Social-Logo"/>
 						</a>
 					);
 				})}
