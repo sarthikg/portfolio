@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Heading extends Component {
     render() {
         return (
-            <div className="Component-Heading">
+            <div className="Component-Heading" data-aos="fade-up" data-aos-duration={800}>
                 {this.props.title}
             </div>
         )

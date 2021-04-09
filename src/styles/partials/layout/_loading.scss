@@ -30,12 +30,16 @@
         overflow-y: hidden;
         text-align: end;
     }
+    &-Image {
+        display: none;
+    }
     &-Text {
         font-family: sans-serif;
         font-family: sans-serif;
         color: $dark-sectext;
         font-size: 2.5rem;
-        font-weight: 500;
+        font-weight: 600;
+        line-height: 2.5rem;
         &.Enter{
             animation: move-in;
             animation-duration: 400ms;
@@ -44,9 +48,6 @@
             animation: move-out;
             animation-duration: 1000ms;
         }
-        &.Hidden {
-            display: none;
-        }
     }
 }
 
@@ -54,7 +55,11 @@
     .App-Loading {
         &-Text {
             font-size: 3.5rem;
+            line-height: 3.5rem;
             font-weight: 600;
+        }
+        &-Container {
+            height: 3.5rem;
         }
     }
 }

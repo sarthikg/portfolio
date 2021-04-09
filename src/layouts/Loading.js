@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import dp from '../assets/Photo.png';
 
 class Loading extends Component {
 	state = {
@@ -6,6 +7,10 @@ class Loading extends Component {
 		current: 2021,
         completed: 'Enter'
 	};
+
+    handleLoad = () => {
+        this.props.handleProfileLoad()
+    }
 
 	changeContent = (timeout) => {
 		if (this.state.year < this.state.current) {
@@ -18,7 +23,6 @@ class Loading extends Component {
 			}, timeout);
 		} else {
             setTimeout(() => this.setState({completed: 'Exit'}), 600)
-            setTimeout(() => this.setState({completed: 'Hidden'}), 1600)
         }
 	};
 
@@ -31,6 +35,7 @@ class Loading extends Component {
 			<div className="App-Loading">
                 <div className="App-Loading-Container">
                     <div className={`App-Loading-Text ${this.state.completed}`}>{`© ${this.state.year}`}</div>
+                    <img className="App-Loading-Image" src={dp} onLoad={this.handleLoad}/>
                 </div>
 			</div>
 		);

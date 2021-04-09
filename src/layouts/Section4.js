@@ -13,8 +13,8 @@ class Section4 extends Component {
 						<Heading title="Ed & Ex" />
 					</div>
 					<div className="App-Section4-Content-Experience">
-						<SubHeading title="Experience" />
-						<div className="App-Section4-Content-Experience-List">
+						<SubHeading title="Experience"/>
+						<div className="App-Section4-Content-Experience-List" data-aos="fade-up" data-aos-duration={600}>
 							<Card
 								position="Business Analyst Intern"
 								institute="Collegedunia Web Pvt Ltd, Gurugram"
@@ -25,8 +25,8 @@ class Section4 extends Component {
 						</div>
 					</div>
 					<div className="App-Section4-Content-Education">
-						<SubHeading title="Education" />
-						<div className="App-Section4-Content-Education-List">
+						<SubHeading title="Education"/>
+						<div className="App-Section4-Content-Education-List" data-aos="fade-up" data-aos-duration={600}>
 							<Card
 								position="Bachelor of Technology - Civil Engineering"
 								institute="Punjab Engineering College, Chandigarh"

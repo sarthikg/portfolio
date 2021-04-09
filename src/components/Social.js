@@ -6,7 +6,7 @@ class Social extends Component {
 			<div className="Component-Social">
 				{this.props.socials.map((social) => {
 					return (
-						<a href={social.url} target="_blank" rel="noreferrer" key={social.alt}>
+						<a href={social.url} target="_blank" rel="noreferrer" key={social.alt} data-aos="zoom-in" data-aos-duration={600} data-aos-easing="ease-in-out">
 							<img src={social.icon} alt={social.alt} className="Component-Social-Logo"/>
 						</a>
 					);
