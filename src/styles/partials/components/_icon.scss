@@ -1,0 +1,16 @@
+.Component-Icon {
+	&.Contact {
+		height: 1.6rem;
+		width: 1.6rem;
+        fill: rgba(97, 97, 97, 1)
+	}
+	&.Social {
+		height: 2rem;
+		width: 2rem;
+		fill: white;
+		transition: 0.3s;
+		&:hover {
+			fill: $pink;
+		}
+	}
+}

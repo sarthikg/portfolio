@@ -14,20 +14,20 @@ class Loading extends Component {
 
 	changeContent = (timeout) => {
 		if (this.state.year < this.state.current) {
-			setTimeout(() => {
-				this.setState(
-					(oldState) => ({
-						year: oldState.year + 1
-					}));
-                this.changeContent(timeout+5)
-			}, timeout);
+				setTimeout(() => {
+					this.setState(
+						(oldState) => ({
+							year: oldState.year + 1
+						}));
+					this.changeContent(timeout+5)
+				}, timeout);
 		} else {
-            setTimeout(() => this.setState({completed: 'Exit'}), 600)
+            setTimeout(() => this.setState({completed: 'Exit'}), 400)
         }
 	};
 
 	componentDidMount = () => {
-		setTimeout(() => this.changeContent(50), 800)
+		setTimeout(() => this.changeContent(10), 800)
 	};
 
 	render() {
@@ -35,7 +35,7 @@ class Loading extends Component {
 			<div className="App-Loading">
                 <div className="App-Loading-Container">
                     <div className={`App-Loading-Text ${this.state.completed}`}>{`© ${this.state.year}`}</div>
-                    <img className="App-Loading-Image" src={dp} onLoad={this.handleLoad}/>
+                    <img className="App-Loading-Image" src={dp} onLoad={this.handleLoad} alt="Loading"/>
                 </div>
 			</div>
 		);

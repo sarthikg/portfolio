@@ -43,7 +43,7 @@ class App extends Component {
 	}
 
 	checkFonts = async () => {
-		await Promise.all([ baloo_2_500.load(), baloo_2_600.load(), roboto_slab_400.load()]);
+		await Promise.all([ baloo_2_500.load(null, 10000), baloo_2_600.load(null, 10000), roboto_slab_400.load(null, 10000)]);
 		this.setState({fontsLoaded: true})
 	}
 
@@ -65,10 +65,10 @@ class App extends Component {
 		if(this.state.fontsLoaded && this.state.profileLoaded && !this.state.greenSignal) {
 			endTime = new Date();
 			let timeDiff = endTime.getTime() - startTime.getTime();
-			if (timeDiff < 4055) {
+			if (timeDiff < 2975) {
 				setTimeout(() => this.setState({
 					greenSignal: true,
-				}), 4055-timeDiff)
+				}), 2975-timeDiff)
 			} else {
 				this.setState({
 					greenSignal: true,
@@ -83,8 +83,9 @@ class App extends Component {
 				{this.state.greenSignal ? (
 					<React.Fragment>
 						<Section1 />
-						<Section2 />
 						<Section4 />
+						<Section2 />
+						<Section3 />
 						<Section5 />
 					</React.Fragment>
 				) : (

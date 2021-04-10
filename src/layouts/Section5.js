@@ -8,53 +8,7 @@ import SubHeading from '../components/SubHeading';
 import Social from '../components/Social';
 import Contact from '../components/Contact';
 
-import linkedin from '../assets/linkedin.svg';
-import github from '../assets/github.svg';
-import twitter from '../assets/twitter.svg';
-import medium from '../assets/medium.svg';
-
-import email from '../assets/email.svg';
-import phone from '../assets/phone.svg';
-
 const recaptchaRef = React.createRef();
-
-let contacts = [
-	{
-		alt: 'email',
-		icon: email,
-		url: 'href="mailto:sarthikg@gmail.com"',
-		content: 'sarthikg@gmail.com'
-	},
-	{
-		alt: 'phone',
-		icon: phone,
-		url: null,
-		content: '+91-8872425152'
-	}
-];
-
-let socials = [
-	{
-		alt: 'github',
-		icon: github,
-		url: 'https://www.github.com/sarthikg'
-	},
-	{
-		alt: 'twitter',
-		icon: twitter,
-		url: 'https://www.twitter.com/sarthikg'
-	},
-	{
-		alt: 'linkedin',
-		icon: linkedin,
-		url: 'https://www.linkedin.com/in/sarthikg'
-	},
-	{
-		alt: 'medium',
-		icon: medium,
-		url: 'https://www.medium.com/sarthikg'
-	}
-];
 
 class Section5 extends Component {
 	state = {
@@ -172,8 +126,8 @@ class Section5 extends Component {
 							<div className="App-Section5-Content-Social-Heading">
 								<SubHeading title="Find me at" />
 							</div>
-							<Contact contacts={contacts} />
-							<Social socials={socials} />
+							<Contact />
+							<Social />
 							<div className="App-Section5-Content-Social-Remarks">
 								Design is highly inspired from <a href="https://jacekjeznach.com/">Jack's Website</a>.
 								<br />

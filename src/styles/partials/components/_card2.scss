@@ -1,7 +1,7 @@
 .Component-Card2 {
     box-sizing: border-box;
     width: 30%;
-    height: 200px;
+    height: 10rem;
     background-color: $dark-backtext;
     border-radius: 0.5rem;
     margin-bottom: 1.5rem;
@@ -13,6 +13,7 @@
     justify-content: space-evenly;
     align-items: flex-start;
     font-family: 'Baloo 2', cursive;
+    text-decoration: none;
     &:hover {
         background-color: rgba(255, 255, 255, 0.05);
         // border-left-width: 10px;
@@ -26,8 +27,11 @@
     }
     &-Description {
         color: $dark-sectext;
-        font-size: 1rem;
-        line-height: 1rem;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        // text-align: justify;
+        // text-justify: inter-word;
     }
     &-Link {
         color: $dark-sectext;
