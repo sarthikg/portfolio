@@ -97,7 +97,7 @@ class Section5 extends Component {
 							<ReCAPTCHA
 								ref={recaptchaRef}
 								size="invisible"
-								sitekey="6Lf0vJcaAAAAAIgykfM22T24bS8IH0M1--ZKvC83"
+								sitekey={process.env.REACT_APP_SECRET}
 							/>
 							<button type="submit" className={this.state.buttonClass}>
 								Send Message
