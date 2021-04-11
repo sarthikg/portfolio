@@ -6,7 +6,6 @@ import AOS from 'aos';
 import './styles/style.scss';
 import 'aos/dist/aos.css';
 
-// import Navigation from './components/Navigation';
 import Section1 from './layouts/Section1';
 import Section2 from './layouts/Section2';
 import Section3 from './layouts/Section3';
@@ -34,7 +33,7 @@ class App extends Component {
 
 	state = {
 		fontsLoaded: false,
-		profileLoaded: false,
+		profileLoaded: true,
 		greenSignal: false
 	};
 

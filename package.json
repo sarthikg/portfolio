@@ -2,7 +2,6 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:4000",
   "dependencies": {
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
@@ -16,6 +15,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-google-recaptcha": "^2.1.0",
+    "react-lazy-load-image-component": "^1.5.1",
     "react-marquee-slider": "^1.1.2",
     "react-scripts": "^4.0.3",
     "sass-loader": "^10.0.5",

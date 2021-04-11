@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import dp from '../assets/Photo.png';
 
 class Loading extends Component {
 	state = {
@@ -9,7 +8,7 @@ class Loading extends Component {
 	};
 
     handleLoad = () => {
-        this.props.handleProfileLoad()
+        this.props.handleProfileLoad()	
     }
 
 	changeContent = (timeout) => {
@@ -35,8 +34,13 @@ class Loading extends Component {
 			<div className="App-Loading">
                 <div className="App-Loading-Container">
                     <div className={`App-Loading-Text ${this.state.completed}`}>{`© ${this.state.year}`}</div>
-                    <img className="App-Loading-Image" src={dp} onLoad={this.handleLoad} alt="Loading"/>
-                </div>
+					{/* <img
+						src={process.env.PUBLIC_URL + '/Photo.png'}
+						alt="Loading"
+						className="App-Loading-Image"
+						onLoad={this.handleLoad}
+					/> */}
+                </div>	
 			</div>
 		);
 	}

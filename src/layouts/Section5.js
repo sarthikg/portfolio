@@ -33,7 +33,7 @@ class Section5 extends Component {
 			}
 		});
 		if (response.status === 200) {
-			setTimeout(() => this.setState({ buttonClass: 'Form-Button' }), 2000);
+			setTimeout(() => this.setState({ buttonClass: 'Form-Button' }), 5000);
 			this.setState({ buttonClass: 'Form-Button Success' });
 		}
 	};
@@ -129,8 +129,6 @@ class Section5 extends Component {
 							<Contact />
 							<Social />
 							<div className="App-Section5-Content-Social-Remarks">
-								Design is highly inspired from <a href="https://jacekjeznach.com/">Jack's Website</a>.
-								<br />
 								Copyright © 2021 All Rights Reserved.
 							</div>
 						</div>
