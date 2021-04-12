@@ -131,6 +131,9 @@ class Section5 extends Component {
 							<div className="App-Section5-Content-Social-Remarks">
 								Copyright © 2021 All Rights Reserved.
 							</div>
+							<div className="App-Section5-Content-Social-Credits">
+								Credits - Ritvik Kansal for Profile Picture, Charan Kanwal for Summary, Aman Arora for initial push, Colt Steele for all the skills
+							</div>
 						</div>
 					</div>
 				</div>

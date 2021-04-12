@@ -14,24 +14,23 @@
     align-items: flex-start;
     font-family: 'Baloo 2', cursive;
     text-decoration: none;
-    &:hover {
-        background-color: rgba(255, 255, 255, 0.05);
-        // border-left-width: 10px;
-    }
-    &-Name {
-        color: rgb(204, 204, 204);
-        font-size: 1.4rem;
-        line-height: 1.5rem;
-        margin-bottom: 0.4rem;
-        
+    &-Header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        &-Name {
+            display: inline-block;
+            color: rgb(204, 204, 204);
+            font-size: 1.4rem;
+            line-height: 1.5rem;
+            margin-bottom: 0.4rem;
+        }
     }
     &-Description {
         color: $dark-sectext;
         font-weight: 400;
         font-size: 1.2rem;
         line-height: 1.2rem;
-        // text-align: justify;
-        // text-justify: inter-word;
     }
     &-Link {
         color: $dark-sectext;

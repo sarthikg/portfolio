@@ -1,66 +1,63 @@
 import React, { Component } from 'react';
 import Marquee from 'react-marquee-slider';
+// import MediaQuery from 'react-responsive'
 
 class Carousel extends Component {
 	state = {
 		count: 9,
-		list0: [ 0 ],
-		list1: [ 1 ],
-		list2: [ 2 ],
-		list3: [ 3 ],
-		list4: [ 3 ],
-		list5: [ 3 ],
-		list6: [ 3 ],
-		list7: [ 3 ],
-		list8: [ 3 ],
+		carousel_list: [],
+		updated: false,
+		width : null,
+		height: null,
+		lower: null,
+		upper: null
 	};
 
 	randomList = (temp_list) => {
-		for (let i = temp_list.length - 1; i > 0; i--) {
+		for (let i = temp_list.length - 1; i >= 0; i--) {
 			const j = Math.floor(Math.random() * (i + 1));
 			[ temp_list[i], temp_list[j] ] = [ temp_list[j], temp_list[i] ];
 		}
 		return temp_list;
 	};
 
-	generateLists = () => {
-		let cloned_list;
-		for (let i = 0; i < this.state.count; i++) {
-			cloned_list = this.props.skills;
-			cloned_list = this.randomList(cloned_list);
-			this.setState({
-				[`list${i}`]: [ ...cloned_list ]
-			});
+	generateLists = (height) => {
+		let random_numbered_lists = []
+		let numbered_list = [...Array(this.props.skills.length).keys()]
+		let rows = Math.ceil(height/30)
+		let times = Math.ceil(rows/(6))
+		console.log(times)
+		for (let i = 0; i < 6; i++) {
+			let temp_list = [...this.randomList(numbered_list)]
+			random_numbered_lists = random_numbered_lists.concat(Array(times).fill(temp_list))
 		}
+		random_numbered_lists = [...this.randomList(random_numbered_lists)].splice(0, rows)
+		this.setState({carousel_list: random_numbered_lists})
 	};
 
+	updateDimensions = () => {
+		this.setState({lower: (Math.floor(window.innerWidth/28.8) - 5), upper: (Math.floor(window.innerWidth/28.8) + 5)})
+	}
+
 	componentDidMount = () => {
-		this.generateLists();
+		this.updateDimensions()
+		this.generateLists((window.innerHeight - 64))
+		window.addEventListener('resize', this.updateDimensions)
 	};
+
+	componentWillUnmount = () => {
+		window.removeEventListener('resize', this.updateDimensions)
+	}
 
 	render() {
 		return (
 			<div className="Component-Carousel">
 				<div className="Component-Carousel-Overlay" />
 				<div className="Component-Carousel-Text">
-					{[ ...Array(this.state.count) ].map((i, j) => (
-						<Marquee velocity={Math.floor((Math.random()*(50-40+1)+40))} resetAfterTries={200}>
-							{this.state[`list${j}`].map((skill) => (
-								<div className={`Component-Carousel-Item ${skill.level}`}>{skill.name}</div>
-							))}
-						</Marquee>
-					))}
-					{[ ...Array(this.state.count) ].map((i, j) => (
-						<Marquee velocity={Math.floor((Math.random()*(50-40+1)+40))} resetAfterTries={200}>
-							{this.state[`list${j}`].map((skill) => (
-								<div className={`Component-Carousel-Item ${skill.level}`}>{skill.name}</div>
-							))}
-						</Marquee>
-					))}
-					{[ ...Array(this.state.count) ].map((i, j) => (
-						<Marquee velocity={Math.floor((Math.random()*(50-40+1)+40))} resetAfterTries={200}>
-							{this.state[`list${j}`].map((skill) => (
-								<div className={`Component-Carousel-Item ${skill.level}`}>{skill.name}</div>
+					{this.state.carousel_list.map((sublist, i) => (
+						<Marquee key={i}  velocity={Math.floor((Math.random()*(this.state.upper-this.state.lower+1)+this.state.lower))} resetAfterTries={200}>
+							{sublist.map((j) => (
+								<div key={`${i}-${j}`} className={`Component-Carousel-Item ${this.props.skills[j].level}`}>{this.props.skills[j].name}</div>
 							))}
 						</Marquee>
 					))}

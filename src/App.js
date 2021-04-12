@@ -50,8 +50,6 @@ class App extends Component {
 		startTime = new Date();
 		await this.checkFonts();
 		AOS.init()
-		// this.checkProfile();
-		// this.setState({ fontsLoaded: true });
 		// let vh = window.innerHeight * 0.01;
 		// document.documentElement.style.setProperty('--vh', `${vh}px`);
 		// window.addEventListener('resize', () => {

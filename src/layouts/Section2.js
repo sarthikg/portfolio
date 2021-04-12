@@ -27,30 +27,32 @@ let Skills = [
 
 class Section2 extends Component {
 	render() {
-		return (	
+		return (
 			<Section>
 				<div className="App-Section2-Content">
 					<div className="App-Section2-Content-Container">
 						<div className="App-Section2-Content-Container-Description">
 							<Heading title="Skills" />
-							<div className="App-Section2-Content-Container-Description-Content" data-aos="fade-up" data-aos-duration={600}>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-								exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-								dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-								Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-								mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-								do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-								aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-								pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-								labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-								aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-								pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-								aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-								pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+							<div
+								className="App-Section2-Content-Container-Description-Content"
+								data-aos="fade-up"
+								data-aos-duration={600}
+							>
+								My journey to this portfolio began in May of 2019 when I first started programming in
+								Flutter. Thanks to Android Studio, I could finally experience the peak temperatures of
+								my laptop. Anyways, back to the story, by the next month, I had started Python, going
+								through an online bootcamp, and boy it was easy and fun. It took me about a month to
+								complete the Bootcamp after which I began SQL because after all, everything cannot be
+								like Snapchat.
+								<br />
+								<br />
+								Fast-forward to January of 2020, I began my first internship at a startup where I first
+								got exposed to Web-Scraping, ahem, Web-Automation using Selenium. Within a couple of
+								months, I pivoted to Web-Development and got my feet wet in this never-ending field.
+								<br />
+								<br />
+								Halfway down the Internship, Covid happened. Most of the time post then was invested in
+								learning React & Trading. Well, losses were made, but at least there's this website :)
 							</div>
 						</div>
 						<Carousel skills={Skills} />

@@ -21,11 +21,14 @@
         z-index: 5;
     }
 	&-Text {
+        box-sizing: border-box;
 		display: flex;
+        height: 100vh;
 		flex-direction: column;
 		justify-content: space-around;
-        height: fit-content;
-		overflow: hidden;
+		overflow-x: hidden;
+        overflow-y: hidden;
+        padding: 2rem 0;
         z-index: 4;
 	}
     &-Item {
@@ -42,6 +45,14 @@
         &.dim {
             color: $dark-sectext;
             font-size: 1rem;;
+        }
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 1000px) {
+    .Component-Carousel {
+        &-Text {
+            padding: 2rem 0;
         }
     }
 }
