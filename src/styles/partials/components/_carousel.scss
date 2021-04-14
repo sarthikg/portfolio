@@ -51,8 +51,23 @@
 
 @media only screen and (min-width: 300px) and (max-width: 1000px) {
     .Component-Carousel {
-        &-Text {
-            padding: 2rem 0;
+        position: absolute;
+        width: 100%;
+        height: 85%;
+        bottom: 0;
+        &-Overlay {
+            display: none;
+        }
+        &-Item {
+            &.bright {
+                font-size: 1.4rem;
+            }
+            &.muted {
+                font-size: 1.3rem;
+            }
+            &.dim {
+                font-size: 1.2rem;;
+            }
         }
     }
 }

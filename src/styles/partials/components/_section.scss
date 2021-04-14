@@ -3,18 +3,20 @@
     width: 100%;
 	transform: translate3d(0, 0, 0);
 	overflow-y: hidden;
-	min-height: 100vh;
-    height: 100%;
+	height: 100vh;
 	scroll-snap-align: start;
-	display: grid;  
+	display: grid;
 }
 
 @media only screen and (min-width: 300px) and (max-width: 1000px) {
 	.Component-Section {
-		scroll-snap-align: start;
-		scroll-snap-stop: always;
-		display: grid;
-		height: calc(var(--vh, 1vh) * 100);  
+		&.Hero {
+			height: 80%;
+		}
+		height: auto;
+		// scroll-snap-align: start;
+		// scroll-snap-stop: always;
+		display: block;
 		min-height: auto;
 	}
 }

@@ -18,17 +18,6 @@
                 width: 100%;
             }
         }
-        &-Articles {
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-            &-List {
-                margin-top: 1.5rem;
-                display: flex;
-                align-items: center;
-                justify-content: space-evenly;
-                width: 100%;
-            }
-        }
         &-Achievements {
             margin-top: 1rem;
             &-List {
@@ -45,7 +34,23 @@
 @media only screen and (min-width: 300px) and (max-width: 1000px) {
     .App-Section3 {
         &-Content {
-            padding: 4rem 2rem;
+            padding: 0 2rem;
+            &-Projects {
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                &-List {
+                    margin-top: 2.5rem;
+                    flex-direction: column;
+                }
+            }
+            &-Achievements {
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                &-List {
+                    margin-top: 2.5rem;
+                    flex-direction: column;
+                }
+            }
         }
     }
 }

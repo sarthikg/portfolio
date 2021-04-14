@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Marquee from 'react-marquee-slider';
-// import MediaQuery from 'react-responsive'
 
 class Carousel extends Component {
 	state = {
@@ -22,12 +21,17 @@ class Carousel extends Component {
 	};
 
 	generateLists = (height) => {
+		let rows, times
 		let random_numbered_lists = []
 		let numbered_list = [...Array(this.props.skills.length).keys()]
-		let rows = Math.ceil(height/30)
-		let times = Math.ceil(rows/(6))
-		console.log(times)
-		for (let i = 0; i < 6; i++) {
+		if (this.props.device === 'mobile') {
+			rows = 15
+			times = 3
+		} else if (this.props.device === 'desktop') {
+			rows = Math.ceil(height/30)
+			times = Math.ceil(rows/(5))
+		}
+		for (let i = 0; i < 5; i++) {
 			let temp_list = [...this.randomList(numbered_list)]
 			random_numbered_lists = random_numbered_lists.concat(Array(times).fill(temp_list))
 		}
@@ -51,7 +55,7 @@ class Carousel extends Component {
 
 	render() {
 		return (
-			<div className="Component-Carousel">
+			<div className="Component-Carousel" data-aos="fade-up" data-aos-duration={600}>
 				<div className="Component-Carousel-Overlay" />
 				<div className="Component-Carousel-Text">
 					{this.state.carousel_list.map((sublist, i) => (

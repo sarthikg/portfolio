@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import FontFaceObserver from 'fontfaceobserver';
 import AOS from 'aos';
-// import vhCheck from 'vh-check';
 
 import './styles/style.scss';
 import 'aos/dist/aos.css';
@@ -34,7 +33,8 @@ class App extends Component {
 	state = {
 		fontsLoaded: false,
 		profileLoaded: true,
-		greenSignal: false
+		greenSignal: false,
+		device: null
 	};
 
 	handleProfileLoad = () => {
@@ -46,17 +46,35 @@ class App extends Component {
 		this.setState({fontsLoaded: true})
 	}
 
+	checkDevice = () => {
+		const width = window.innerWidth
+		if (width >= 300 && width < 1000) {
+			this.setState({device: 'mobile'})
+		} else if (width >= 1000) {
+			this.setState({device: 'desktop'})
+		}
+	}
+
+	updateDevice = () => {
+		const width = window.innerWidth
+		if (this.state.device === 'mobile' && width >= 1000) {
+			this.setState({device: 'desktop' })
+		} else if (this.state.device === 'desktop' && width < 1000) {
+			this.setState({device: 'mobile'})
+		}
+	}
+
 	componentDidMount = async () => {
 		startTime = new Date();
 		await this.checkFonts();
 		AOS.init()
-		// let vh = window.innerHeight * 0.01;
-		// document.documentElement.style.setProperty('--vh', `${vh}px`);
-		// window.addEventListener('resize', () => {
-		// 	let vh = window.innerHeight * 0.01;
-		// 	document.documentElement.style.setProperty('--vh', `${vh}px`);
-		// });
+		this.checkDevice()
+		window.addEventListener('resize', this.updateDevice);
 	};
+
+	componentWillUnmount = () => {
+		window.removeEventListener('resize', this.updateDevice);
+	}
 
 	componentDidUpdate = () => {
 		if(this.state.fontsLoaded && this.state.profileLoaded && !this.state.greenSignal) {
@@ -79,11 +97,11 @@ class App extends Component {
 			<div className="App" id="container" ref={this.container}>
 				{this.state.greenSignal ? (
 					<React.Fragment>
-						<Section1 />
-						<Section4 />
-						<Section2 />
-						<Section3 />
-						<Section5 />
+						<Section1 device={this.state.device}/>
+						<Section4 device={this.state.device}/>
+						<Section2 device={this.state.device}/>
+						<Section3 device={this.state.device}/>
+						<Section5 device={this.state.device}/>
 					</React.Fragment>
 				) : (
 					<Loading handleProfileLoad={this.handleProfileLoad}/>

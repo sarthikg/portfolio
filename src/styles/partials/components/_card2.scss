@@ -39,3 +39,25 @@
         letter-spacing: -0.05rem;
     }
 }
+
+@media only screen and (min-width: 300px) and (max-width: 1000px) {
+    .Component-Card2 {
+        width: calc(100% - 2rem);
+        height: 10rem;
+        margin-left : 1rem;
+        margin-right: 1rem;
+        margin-bottom: 2rem;
+        border-left: 5px solid rgba(255,11,86,1);
+        border-radius: 1rem;
+        &-Header {
+            &-Name {
+                font-size: 2rem;
+                line-height: 2.2rem;
+            }
+        }
+        &-Description {
+            font-size: 1.8rem;
+            line-height: 2rem;
+        }
+    }
+}

@@ -4,7 +4,7 @@ class Section extends Component {
 
     render() {
         return (
-            <div className="Component-Section" id="Section">
+            <div className={this.props.hero ? "Component-Section Hero" : "Component-Section"} id="Section">
                 {this.props.children}
             </div>
         )

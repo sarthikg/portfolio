@@ -28,11 +28,13 @@ let Skills = [
 class Section2 extends Component {
 	render() {
 		return (
-			<Section>
+			<Section device={this.props.device}>
 				<div className="App-Section2-Content">
 					<div className="App-Section2-Content-Container">
 						<div className="App-Section2-Content-Container-Description">
-							<Heading title="Skills" />
+							<div className="App-Section2-Content-Container-Description-Heading">
+								<Heading title="Skills" device={this.props.device}/>
+							</div>
 							<div
 								className="App-Section2-Content-Container-Description-Content"
 								data-aos="fade-up"
@@ -55,7 +57,7 @@ class Section2 extends Component {
 								learning React & Trading. Well, losses were made, but at least there's this website :)
 							</div>
 						</div>
-						<Carousel skills={Skills} />
+						<Carousel skills={Skills} device={this.props.device}/>
 					</div>
 				</div>
 			</Section>

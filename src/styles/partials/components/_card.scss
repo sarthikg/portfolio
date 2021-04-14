@@ -45,14 +45,15 @@
 
 @media only screen and (min-width: 300px) and (max-width: 1000px) {
     .Component-Card {
-        height: 12rem;
-        width: 100%;
-        margin: 1rem 0 1rem 0rem;
+        height: 10rem;
+        width: calc(100% - 2rem);
+        margin: 1.25rem 0 1.25rem 1rem;
+        border-radius: 1rem;
         &-Details {
             height: 100%;
             justify-content: center;
             &-Position {
-                font-size: 2.25rem;
+                font-size: 2rem;
                 line-height: 2.25rem;
             }
             &-Institute {

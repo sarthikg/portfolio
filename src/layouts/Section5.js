@@ -44,17 +44,19 @@ class Section5 extends Component {
 
 	render() {
 		return (
-			<Section>
+			<Section device={this.props.device}>
 				<div className="App-Section5-Content">
-					<Heading title="Contact" />
-					<div className="App-Section5-Content-Description" data-aos="fade-up" data-aos-duration={800}>
+					<div className="App-Section5-Content-Heading" data-aos="fade-up" data-aos-duration={600}>
+						<Heading title="Contact" device={this.props.device}/>
+					</div>
+					<div className="App-Section5-Content-Description" data-aos="fade-up" data-aos-duration={600}>
 						I'm interested in full-time opportunities in the field of Full-Stack Web Development & Product
 						Management. Feel free to hit me up by filling the form below. You can also ask any question you
 						might have through this form.
 					</div>
 					<div className="App-Section5-Content-Bottom">
 						<form className="App-Section5-Content-Form" onSubmit={this.handleSubmit}>
-							<div className="App-Section5-Content-Form-Basic" data-aos="fade-up" data-aos-duration={800}>
+							<div className="App-Section5-Content-Form-Basic" data-aos="fade-up" data-aos-duration={600}>
 								<input
 									type="text"
 									name="Name"
@@ -75,7 +77,7 @@ class Section5 extends Component {
 							<div
 								className="App-Section5-Content-Form-Subject"
 								data-aos="fade-up"
-								data-aos-duration={800}
+								data-aos-duration={600}
 							>
 								<input
 									type="text"
@@ -92,7 +94,7 @@ class Section5 extends Component {
 								className="Form-Input Message"
 								onChange={this.handleChange}
 								data-aos="fade-up"
-								data-aos-duration={800}
+								data-aos-duration={600}
 							/>
 							<ReCAPTCHA
 								ref={recaptchaRef}
@@ -124,10 +126,10 @@ class Section5 extends Component {
 						</form>
 						<div className="App-Section5-Content-Social">
 							<div className="App-Section5-Content-Social-Heading">
-								<SubHeading title="Find me at" />
+								<SubHeading title="Find me at" device={this.props.device}/>
 							</div>
-							<Contact />
-							<Social />
+							<Contact device={this.props.device}/>
+							<Social device={this.props.device}/>
 							<div className="App-Section5-Content-Social-Remarks">
 								Copyright © 2021 All Rights Reserved.
 							</div>
