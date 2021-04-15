@@ -24,7 +24,7 @@ class Section4 extends Component {
 						>
 							<Card
 								position="Business Analyst Intern"
-								institute="Collegedunia Web Pvt Ltd, Gurugram"
+								institute="Collegedunia Web Pvt Ltd, Gurugram, India"
 								start="Jan 2020"
 								end="Jul 2020"
 								duration="Jan 2020 - Jul 2020"
@@ -41,19 +41,19 @@ class Section4 extends Component {
 						<div className="App-Section4-Content-Education-List" data-aos="fade-up" data-aos-duration={600}>
 							<Card
 								position="Bachelor of Technology - Civil Engineering"
-								institute="Punjab Engineering College, Chandigarh"
+								institute="Punjab Engineering College, Chandigarh, India"
 								duration="Aug 2017 - Jun 2021"
 								device={this.props.device}
 							/>
 							<Card
 								position="Secondary High School - Science"
-								institute="Bhavan Vidyalaya, Panchkula"
+								institute="Bhavan Vidyalaya, Panchkula, India"
 								duration="Apr 2016 - Mar 2017"
 								device={this.props.device}
 							/>
 							<Card
 								position="High School"
-								institute="Bhavan Vidyalaya, Panchkula"
+								institute="Bhavan Vidyalaya, Panchkula, India"
 								duration="Apr 2014 - Mar 2015"
 								device={this.props.device}
 							/>

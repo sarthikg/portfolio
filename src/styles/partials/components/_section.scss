@@ -1,10 +1,11 @@
 .Component-Section {
     position: relative;
-    width: 100%;
+    width: 100vw;
 	transform: translate3d(0, 0, 0);
 	overflow-y: hidden;
+	overflow-x: hidden;
 	height: 100vh;
-	scroll-snap-align: start;
+	scroll-snap-align: center;
 	display: grid;
 }
 
@@ -14,8 +15,6 @@
 			height: 80%;
 		}
 		height: auto;
-		// scroll-snap-align: start;
-		// scroll-snap-stop: always;
 		display: block;
 		min-height: auto;
 	}

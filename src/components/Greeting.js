@@ -10,7 +10,9 @@ class Greeting extends Component {
             'Namaste',
             'Ni hao',
             'Bonjour',
-            'Olá',
+            'Privet',
+            'Ciao',
+            'Anyoung'
         ]
     }
 

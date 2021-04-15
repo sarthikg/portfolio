@@ -55,7 +55,7 @@ class Section5 extends Component {
 						might have through this form.
 					</div>
 					<div className="App-Section5-Content-Bottom">
-						<form className="App-Section5-Content-Form" onSubmit={this.handleSubmit}>
+						<form className="App-Section5-Content-Form" onSubmit={this.handleSubmit} autocomplete="off">
 							<div className="App-Section5-Content-Form-Basic" data-aos="fade-up" data-aos-duration={600}>
 								<input
 									type="text"
@@ -134,7 +134,7 @@ class Section5 extends Component {
 								Copyright © 2021 All Rights Reserved.
 							</div>
 							<div className="App-Section5-Content-Social-Credits">
-								Credits - Ritvik Kansal for Profile Picture, Charan Kanwal for Summary, Aman Arora for initial push, Colt Steele for all the skills
+								Credits - Ritvik Kansal for Profile Picture, Charan Kanwal for Summary, Sachin Garg for Testing, Aman Arora for Initial Push, Colt Steele for all the Skills
 							</div>
 						</div>
 					</div>

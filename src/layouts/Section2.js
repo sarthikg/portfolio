@@ -8,21 +8,20 @@ let Skills = [
 	{ name: 'ReactJS', level: 'bright' },
 	{ name: 'NodeJS', level: 'bright' },
 	{ name: 'Python', level: 'bright' },
-	{ name: 'ReactJS', level: 'bright' },
 	{ name: 'MySQL', level: 'bright' },
-	{ name: 'JavaScript', level: 'dim' },
 	{ name: 'Selenium', level: 'bright' },
 	{ name: 'Sass', level: 'muted' },
 	{ name: 'Git', level: 'muted' },
 	{ name: 'REST', level: 'muted' },
 	{ name: 'Flutter', level: 'muted' },
-	{ name: 'Microsoft Excel', level: 'dim' },
 	{ name: 'Cloud Computing', level: 'muted' },
+	{ name: 'JavaScript', level: 'dim' },
+	{ name: 'Microsoft Excel', level: 'dim' },
 	{ name: 'Google Analytics', level: 'dim' },
 	{ name: 'Microsoft PowerPoint', level: 'dim' },
 	{ name: 'Adobe Photoshop', level: 'dim' },
-	{ name: 'Tableau', level: 'dim' },
-	{ name: 'MongoDB', level: 'dim' }
+	{ name: 'MongoDB', level: 'dim' },
+	{ name: 'Tableau', level: 'dim' }
 ];
 
 class Section2 extends Component {
@@ -49,7 +48,7 @@ class Section2 extends Component {
 								<br />
 								<br />
 								Fast-forward to January of 2020, I began my first internship at a startup where I first
-								got exposed to Web-Scraping, ahem, Web-Automation using Selenium. Within a couple of
+								got exposed to Web-Scraping (ahem!) Web-Automation using Selenium. Within a couple of
 								months, I pivoted to Web-Development and got my feet wet in this never-ending field.
 								<br />
 								<br />

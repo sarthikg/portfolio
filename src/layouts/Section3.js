@@ -28,9 +28,9 @@ class Section3 extends Component {
 							<Heading title="Achievements" device={this.props.device} />
 						)}
 						<div className="App-Section3-Content-Projects-List" data-aos="fade-up" data-aos-duration={600}>
-							<AchievementCard name="ISB BAC Scholarship" description="Selected for a fully sponsored course in Finance, Marketing and Leadership." device={this.props.device}/>
+							<AchievementCard name="ISB BAC Scholarship" description="Selected by Indian School of Business, Mohali for Business Advantage Certification." device={this.props.device}/>
 							<AchievementCard name="Cloud Computing Scholarship" description="Selected by Nutanix for a fully sponsored course on Hybrid Cloud Computing." device={this.props.device}/>
-							<AchievementCard name="Institute COA" description="Honoured with Certificate of Appreciation for outstanding performance." device={this.props.device}/>
+							<AchievementCard name="Certificate of Appreciation" description="Honoured with COA for outstanding performance in co-curricular activities during the College." device={this.props.device}/>
 						</div>
 					</div>
 				</div>

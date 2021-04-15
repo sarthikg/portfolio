@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {IconGithub, IconLinkedIn, IconMedium, IconTwitter, IconBitClout} from '../components/Icon'
+import {IconGithub, IconLinkedIn, IconTwitter, IconBitClout} from '../components/Icon'
 
 class Social extends Component {
 	render() {
@@ -10,20 +10,15 @@ class Social extends Component {
 				url: 'https://www.github.com/sarthikg'
 			},
 			{
-				alt: 'twitter',
-				icon: <IconTwitter/>,
-				url: 'https://www.twitter.com/sarthikg'
-			},
-			{
 				alt: 'linkedin',
 				icon: <IconLinkedIn/>,
 				url: 'https://www.linkedin.com/in/sarthikg'
 			},
-			// {
-			// 	alt: 'medium',
-			// 	icon: <IconMedium/>,
-			// 	url: 'https://www.medium.com/sarthikg'
-			// },
+			{
+				alt: 'twitter',
+				icon: <IconTwitter/>,
+				url: 'https://www.twitter.com/sarthikg'
+			},
 			{
 				alt: 'bitclout',
 				icon: <IconBitClout/>,
