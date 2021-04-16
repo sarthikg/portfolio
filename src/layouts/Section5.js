@@ -134,7 +134,7 @@ class Section5 extends Component {
 								Copyright © 2021 All Rights Reserved.
 							</div>
 							<div className="App-Section5-Content-Social-Credits">
-								Credits - Ritvik Kansal for Profile Picture, Charan Kanwal for Summary, Sachin Garg for Testing, Aman Arora for Initial Push, Colt Steele for all the Skills
+								Credits - Ritvik Kansal for Profile Picture, Charan Kanwal for Summary, Sachin Garg for Testing, Aman Arora for Motivating, Colt Steele for all the Skills
 							</div>
 						</div>
 					</div>
