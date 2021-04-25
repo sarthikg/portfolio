@@ -35,7 +35,7 @@ class Loading extends Component {
                 <div className="App-Loading-Container">
                     <div className={`App-Loading-Text ${this.state.completed}`}>{`© ${this.state.year}`}</div>
 					<img
-						src={process.env.PUBLIC_URL + '/Photo.png'}
+						src={process.env.PUBLIC_URL + '/Photo.webp'}
 						alt="Loading"
 						className="App-Loading-Image"
 						onLoad={this.handleLoad}

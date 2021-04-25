@@ -15,7 +15,7 @@ class Section1 extends Component {
 					<div className="App-Section1-Content-Right" data-aos="fade-up" data-aos-duration={600}>
 						<div className="App-Section1-Content-Right-Container">
 							<img
-								src={process.env.PUBLIC_URL + '/Photo.png'}
+								src={process.env.PUBLIC_URL + '/Photo.webp'}
 								alt="Profile"
 								className="App-Section1-Content-Right-Container-Image"
 							/>
