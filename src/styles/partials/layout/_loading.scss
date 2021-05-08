@@ -1,6 +1,6 @@
 @keyframes move-in {
     from {
-        transform: translateY(5rem);
+        transform: translateY(2.5rem);
     }
     to {
         transform: translateY(0rem);
@@ -12,7 +12,7 @@
         transform: translateY(0rem);
     }
     to {
-        transform: translateY(-5rem);
+        transform: translateY(-2.5rem);
     }
   }
 
@@ -42,11 +42,11 @@
         line-height: 2.5rem;
         &.Enter{
             animation: move-in;
-            animation-duration: 400ms;
+            animation-duration: 200ms;
         }
         &.Exit {
             animation: move-out;
-            animation-duration: 800ms;
+            animation-duration: 350ms;
         }
     }
 }

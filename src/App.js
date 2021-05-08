@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 import FontFaceObserver from 'fontfaceobserver';
 import AOS from 'aos';
 
 import './styles/style.scss';
 import 'aos/dist/aos.css';
 
-import Section1 from './layouts/Section1';
-import Section2 from './layouts/Section2';
-import Section3 from './layouts/Section3';
-import Section4 from './layouts/Section4';
-import Section5 from './layouts/Section5';
 import Loading from './layouts/Loading';
 
+const MainPage = React.lazy(() => {
+	return Promise.all([import('./layouts/MainPage'), new Promise(resolve => setTimeout(resolve, 1850))])
+	.then(([moduleExports]) => moduleExports);
+})
 
 const baloo_2_500 = new FontFaceObserver('Baloo 2', {
 	weight: 500
@@ -25,15 +24,11 @@ const roboto_slab_400 = new FontFaceObserver('Roboto Slab', {
 	weight: 400
 });
 
-let startTime = null
-let endTime = null
-
 class App extends Component {
 
 	state = {
 		fontsLoaded: false,
 		profileLoaded: true,
-		greenSignal: false,
 		device: null
 	};
 
@@ -65,7 +60,6 @@ class App extends Component {
 	}
 
 	componentDidMount = async () => {
-		startTime = new Date();
 		await this.checkFonts();
 		AOS.init()
 		this.checkDevice()
@@ -76,36 +70,12 @@ class App extends Component {
 		window.removeEventListener('resize', this.updateDevice);
 	}
 
-	componentDidUpdate = () => {
-		if(this.state.fontsLoaded && this.state.profileLoaded && !this.state.greenSignal) {
-			endTime = new Date();
-			let timeDiff = endTime.getTime() - startTime.getTime();
-			if (timeDiff < 2975) {
-				setTimeout(() => this.setState({
-					greenSignal: true,
-				}), 2975-timeDiff)
-			} else {
-				this.setState({
-					greenSignal: true,
-				})
-			}
-		}
-	}
-
 	render() {
 		return (
 			<div className="App" id="container" ref={this.container}>
-				{this.state.greenSignal ? (
-					<React.Fragment>
-						<Section1 device={this.state.device}/>
-						<Section4 device={this.state.device}/>
-						<Section2 device={this.state.device}/>
-						<Section3 device={this.state.device}/>
-						<Section5 device={this.state.device}/>
-					</React.Fragment>
-				) : (
-					<Loading handleProfileLoad={this.handleProfileLoad}/>
-				)}
+				<Suspense fallback={<Loading handleProfileLoad={this.handleProfileLoad}/>}>
+					<MainPage device={this.state.device}/>
+				</Suspense>
 			</div>
 		);
 	}

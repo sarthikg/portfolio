@@ -18,15 +18,15 @@ class Loading extends Component {
 						(oldState) => ({
 							year: oldState.year + 1
 						}));
-					this.changeContent(timeout+5)
+					this.changeContent(timeout+4)
 				}, timeout);
 		} else {
-            setTimeout(() => this.setState({completed: 'Exit'}), 400)
+            setTimeout(() => this.setState({completed: 'Exit'}), 200)
         }
 	};
 
 	componentDidMount = () => {
-		setTimeout(() => this.changeContent(10), 800)
+		setTimeout(() => this.changeContent(10), 300)
 	};
 
 	render() {
