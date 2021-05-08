@@ -55,7 +55,7 @@ class Section5 extends Component {
 						might have through this form.
 					</div>
 					<div className="App-Section5-Content-Bottom">
-						<form className="App-Section5-Content-Form" onSubmit={this.handleSubmit} autocomplete="off">
+						<form className="App-Section5-Content-Form" onSubmit={this.handleSubmit} autoComplete="off">
 							<div className="App-Section5-Content-Form-Basic" data-aos="fade-up" data-aos-duration={600}>
 								<input
 									type="text"
