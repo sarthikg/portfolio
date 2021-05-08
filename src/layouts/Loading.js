@@ -33,7 +33,7 @@ class Loading extends Component {
 		return (
 			<div className="App-Loading">
                 <div className="App-Loading-Container">
-                    <div className={`App-Loading-Text ${this.state.completed}`}>{`© ${this.state.year}`}</div>
+                    <div className={`App-Loading-Text ${this.state.completed} ${this.props.device}`}>{`© ${this.state.year}`}</div>
 					<img
 						src={process.env.PUBLIC_URL + '/Photo.webp'}
 						alt="Loading"

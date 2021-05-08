@@ -73,7 +73,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App" id="container" ref={this.container}>
-				<Suspense fallback={<Loading handleProfileLoad={this.handleProfileLoad}/>}>
+				<Suspense fallback={<Loading handleProfileLoad={this.handleProfileLoad} device={this.state.device}/>}>
 					<MainPage device={this.state.device}/>
 				</Suspense>
 			</div>
