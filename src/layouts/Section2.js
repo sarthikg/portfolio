@@ -9,19 +9,20 @@ let Skills = [
 	{ name: 'NodeJS', level: 'bright' },
 	{ name: 'Python', level: 'bright' },
 	{ name: 'MySQL', level: 'bright' },
-	{ name: 'Selenium', level: 'bright' },
-	{ name: 'Sass', level: 'muted' },
+	{ name: 'JavaScript', level: 'bright' },
+	{ name: 'Microsoft Excel', level: 'bright' },
+	{ name: 'Selenium', level: 'muted' },
 	{ name: 'Git', level: 'muted' },
 	{ name: 'REST', level: 'muted' },
 	{ name: 'Flutter', level: 'muted' },
+	{ name: 'Tableau', level: 'muted' },
 	{ name: 'Cloud Computing', level: 'muted' },
-	{ name: 'JavaScript', level: 'dim' },
-	{ name: 'Microsoft Excel', level: 'dim' },
 	{ name: 'Google Analytics', level: 'dim' },
 	{ name: 'Microsoft PowerPoint', level: 'dim' },
 	{ name: 'Adobe Photoshop', level: 'dim' },
 	{ name: 'MongoDB', level: 'dim' },
-	{ name: 'Tableau', level: 'dim' }
+	{ name: 'Sass', level: 'dim' },
+	{ name: 'Statistics', level: 'dim' },
 ];
 
 class Section2 extends Component {
