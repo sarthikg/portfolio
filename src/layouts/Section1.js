@@ -9,7 +9,7 @@ class Section1 extends Component {
 				<div className="App-Section1-Content">
 					<div className="App-Section1-Content-Left" data-aos="fade-up" data-aos-duration={600}>
 						<Greeting device={this.props.device}/>
-						<div className="App-Section1-Content-Left-Name">I'm Sarthik Gupta!</div>
+						<h1 className="App-Section1-Content-Left-Name">I'm Sarthik Gupta!</h1>
 						<div className="App-Section1-Content-Left-Title">Full-Stack Web Developer</div>
 					</div>
 					<div className="App-Section1-Content-Right" data-aos="fade-up" data-aos-duration={600}>
