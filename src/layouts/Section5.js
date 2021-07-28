@@ -47,12 +47,12 @@ class Section5 extends Component {
 			<Section device={this.props.device}>
 				<div className="App-Section5-Content">
 					<div className="App-Section5-Content-Heading" data-aos="fade-up" data-aos-duration={600}>
-						<Heading title="Contact" device={this.props.device}/>
+						<Heading title="Contact" device={this.props.device} />
 					</div>
 					<div className="App-Section5-Content-Description" data-aos="fade-up" data-aos-duration={600}>
-						I'm interested in full-time opportunities in the field of Full-Stack Web Development & Product
-						Management. Feel free to hit me up by filling the form below. You can also ask any question you
-						might have through this form.
+						I'm interested in full-time opportunities in the field of Frontend & Full-Stack
+						Web Development. Feel free to hit me up by filling the form below. You can also ask any question
+						you might have through this form.
 					</div>
 					<div className="App-Section5-Content-Bottom">
 						<form className="App-Section5-Content-Form" onSubmit={this.handleSubmit} autoComplete="off">
@@ -96,11 +96,7 @@ class Section5 extends Component {
 								data-aos="fade-up"
 								data-aos-duration={600}
 							/>
-							<ReCAPTCHA
-								ref={recaptchaRef}
-								size="invisible"
-								sitekey={process.env.REACT_APP_SECRET}
-							/>
+							<ReCAPTCHA ref={recaptchaRef} size="invisible" sitekey={process.env.REACT_APP_SECRET} />
 							<button type="submit" className={this.state.buttonClass}>
 								Send Message
 								{this.state.buttonClass === 'Form-Button Loading' ? (
@@ -116,8 +112,12 @@ class Section5 extends Component {
 									</svg>
 								) : this.state.buttonClass === 'Form-Button Success' ? (
 									<svg className="SVG-Success" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-										<circle className="SVG-Success-Circle" cx="26" cy="26" r="25" fill="none"/>
-										<path className="SVG-Sucess-Path" d="M14.1 27.2l7.1 7.2 16.7-16.8" fill="none"/>
+										<circle className="SVG-Success-Circle" cx="26" cy="26" r="25" fill="none" />
+										<path
+											className="SVG-Sucess-Path"
+											d="M14.1 27.2l7.1 7.2 16.7-16.8"
+											fill="none"
+										/>
 									</svg>
 								) : (
 									undefined
@@ -126,15 +126,16 @@ class Section5 extends Component {
 						</form>
 						<div className="App-Section5-Content-Social">
 							<div className="App-Section5-Content-Social-Heading">
-								<SubHeading title="Find me at" device={this.props.device}/>
+								<SubHeading title="Find me at" device={this.props.device} />
 							</div>
-							<Contact device={this.props.device}/>
-							<Social device={this.props.device}/>
+							<Contact device={this.props.device} />
+							<Social device={this.props.device} />
 							<div className="App-Section5-Content-Social-Remarks">
 								Copyright © 2021 All Rights Reserved.
 							</div>
 							<div className="App-Section5-Content-Social-Credits">
-								Credits - Ritvik Kansal for Profile Picture, Charan Kanwal for Summary, Sachin Garg for Testing, Aman Arora for Motivating, Colt Steele for all the Skills
+								Credits - Ritvik Kansal for Profile Picture, Charan Kanwal for Summary, Sachin Garg for
+								Testing, Aman Arora for Motivating, Colt Steele for all the Skills
 							</div>
 						</div>
 					</div>
