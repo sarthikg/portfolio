@@ -21,7 +21,7 @@ class Section5 extends Component {
 		let recaptchaValue = await recaptchaRef.current.executeAsync();
 		let response = await axios.request({
 			method: 'POST',
-			url: '/api/contact',
+			url: 'https://us-central1-portfolio-309312.cloudfunctions.net/backend-portfolio',
 			data: {
 				captcha: recaptchaValue,
 				data: {
