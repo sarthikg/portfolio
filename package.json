@@ -12,6 +12,7 @@
     "react-marquee-slider": "^1.1.2",
     "react-scripts": "^4.0.3",
     "sass": "^1.42.1",
+    "styled-components": "^5.3.3",
     "typewriter-effect": "^2.17.0"
   },
   "scripts": {
