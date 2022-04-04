@@ -7,82 +7,78 @@
 	}
 }
 
-.App-Section1 {
-	&-Content {
-		width: 100%;
-		height: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-		&-Left {
-			display: inline-flex;
-			flex-direction: column;
-			align-items: flex-start;
-			justify-content: center;
-			font-family: 'Baloo 2', cursive;
-			font-display: swap;
-			cursor: default;
-			font-weight: 600;
-			&-Name {
-				color: white;
-				font-size: 6.5rem;
-				line-height: 6.5rem;
-				letter-spacing: -0.5rem;
-			}
-			&-Title {
-				color: $dark-sectext;
-				font-size: 2.5rem;
-				text-transform: uppercase;
-				line-height: 4.5rem;
-				animation-name: slide;
-				animation-duration: 0.5s;
-				animation-timing-function: ease;
-			}
+.App__Section1 {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	&__Content {
+		display: inline-flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		font-family: 'Baloo 2', cursive;
+		font-display: swap;
+		cursor: default;
+		font-weight: 600;
+		&__Name {
+			color: white;
+			font-size: 6.5rem;
+			line-height: 6.5rem;
+			letter-spacing: -0.5rem;
 		}
-		&-Right {
-			display: inline-flex;
-			justify-content: center;
-			align-items: center;
-			&-Container {
-				height: 18.75rem;
+		&__Title {
+			color: $dark-sectext;
+			font-size: 2.5rem;
+			text-transform: uppercase;
+			line-height: 4.5rem;
+			animation-name: slide;
+			animation-duration: 0.5s;
+			animation-timing-function: ease;
+		}
+	}
+	&__Picture {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		&__Container {
+			height: 18.75rem;
+			width: 18.75rem;
+			border-radius: 9.375rem;
+			overflow: hidden;
+			background-color: $dark-sectext;
+			border: 0.45rem solid $dark-sectext;
+			&__Image {
 				width: 18.75rem;
-				border-radius: 9.375rem;
-				overflow: hidden;
-				background-color: $dark-sectext;
-				border: 0.45rem solid $dark-sectext;
-				&-Image {
-					width: 18.75rem;
-					height: 18.75rem;
-				} 
+				height: 18.75rem;
 			}
 		}
 	}
 }
 
 @media only screen and (min-width: 300px) and (max-width: 1000px) {
-	.App-Section1 {
-		&-Content {
-			width: 100%;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-evenly;
-			&-Left {
-				order: 1;
-				align-items: center;
-				&-Name {
-					text-align: center;
-				}
-				&-Title {
-					line-height: 5rem;
-				}
+	.App__Section1 {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		&__Content {
+			order: 1;
+			align-items: center;
+			&__Name {
+				text-align: center;
 			}
-			&-Right {
-				height: 100%;
-				&-Container {
-					height: 18.75rem;
-					width: 18.75rem;
-					border-radius: 9.375rem;
-				}
+			&__Title {
+				line-height: 5rem;
+			}
+		}
+		&__Picture {
+			height: 100%;
+			&__Container {
+				height: 18.75rem;
+				width: 18.75rem;
+				border-radius: 9.375rem;
 			}
 		}
 	}

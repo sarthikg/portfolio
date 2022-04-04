@@ -1,33 +1,11 @@
 import React, { Component } from 'react';
-import { IconGithub, IconLinkedIn, IconTwitter, IconMedium } from '../components/Icon';
+import { socialAccounts } from '../constants/constants';
 
 class Social extends Component {
 	render() {
-		let socials = [
-			{
-				alt: 'github',
-				icon: <IconGithub />,
-				url: 'https://www.github.com/sarthikg'
-			},
-			{
-				alt: 'linkedin',
-				icon: <IconLinkedIn />,
-				url: 'https://www.linkedin.com/in/sarthikg'
-			},
-			{
-				alt: 'twitter',
-				icon: <IconTwitter />,
-				url: 'https://www.twitter.com/sarthikg'
-			},
-			{
-				alt: 'medium',
-				icon: <IconMedium />,
-				url: 'https://sarthikg.medium.com'
-			}
-		];
 		return (
 			<div className="Component-Social">
-				{socials.map((social) => {
+				{socialAccounts.map((social) => {
 					return (
 						<a
 							href={social.url}

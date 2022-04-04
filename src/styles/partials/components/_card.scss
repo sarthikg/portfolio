@@ -1,68 +1,79 @@
-.Component-Card {
-    box-sizing: border-box;
-    width: calc(100% - 2rem);
-    height: 6.8rem;
-    opacity: 1;
-    background-color: $dark-backtext;
-    border-radius: 0.5rem;
-    margin: 0.5rem 0 0.5rem 2rem;
-    border-left: 5px solid rgba(255,11,86,1);
-    transition: border-left-width 0.25s ease-in-out;
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    &:hover {
-        border-left-width: 10px;
-    }
-    &-Details {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        font-family: 'Baloo 2', cursive;
-        &-Position {
-            color: rgb(204, 204, 204);
-            font-size: 1.4rem;
-            line-height: 1.5rem;
-            margin-bottom: 0.4rem;
-            
-        }
-        &-Institute {
-            color: $dark-sectext;
-            font-size: 1.2rem;
-            line-height: 1.2rem;
-        }
-    }
-    &-Duration {
-        font-family: 'Baloo 2', cursive;
-        color: $dark-sectext;
-        font-size: 1.2rem;
-        line-height: 1.2rem;
-        letter-spacing: -0.05rem;
-    }
+.Component__Card {
+	box-sizing: border-box;
+	width: calc(100% - 2rem);
+	opacity: 1;
+	background-color: $dark-backtext;
+	border-radius: 0.5rem;
+	min-height: 6.8rem;
+	margin: 1rem 0 1rem 2rem;
+	border-left: 4px solid rgba(255, 11, 86, 1);
+	transition: border-left-width 0.25s ease-in-out;
+	padding: 1rem 2rem;
+	&:hover {
+		border-left-width: 8px;
+		.Component__Card__Summary {
+			padding-right: 0;
+		}
+	}
+	&__Header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__Details {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		font-family: 'Baloo 2', cursive;
+		&__Position {
+			color: rgb(204, 204, 204);
+			font-size: 1.4rem;
+			line-height: 1.5rem;
+			margin-bottom: 0.4rem;
+		}
+		&__Institute {
+			color: $dark-sectext;
+			font-size: 1.2rem;
+			line-height: 1.2rem;
+		}
+	}
+	&__Duration {
+		font-family: 'Baloo 2', cursive;
+		color: $dark-sectext;
+		font-size: 1.2rem;
+		line-height: 1.2rem;
+		letter-spacing: -0.05rem;
+	}
+	&__Summary {
+		margin-top: 1rem;
+		font-family: 'Baloo 2', cursive;
+		color: rgb(106, 106, 106);
+		font-size: 1.05rem;
+		padding-right: 5px;
+	}
 }
 
 @media only screen and (min-width: 300px) and (max-width: 1000px) {
-    .Component-Card {
-        height: 10rem;
-        width: calc(100% - 2rem);
-        margin: 1.25rem 0 1.25rem 1rem;
-        border-radius: 1rem;
-        &-Details {
-            height: 100%;
-            justify-content: center;
-            &-Position {
-                font-size: 2rem;
-                line-height: 2.25rem;
-            }
-            &-Institute {
-                font-size: 1.8rem;
-                line-height: 1.8rem;
-            }
-        }
-        &-Duration {
-            display: none;
-        }
-    }
+	.Component__Card {
+		height: 10rem;
+		width: calc(100% - 2rem);
+		margin: 1.25rem 0 1.25rem 1rem;
+		border-radius: 1rem;
+		&__Details {
+			height: 100%;
+			justify-content: center;
+			&__Position {
+				font-size: 2rem;
+				line-height: 2.25rem;
+			}
+			&__Institute {
+				font-size: 1.8rem;
+				line-height: 1.8rem;
+			}
+		}
+		&__Duration {
+			display: none;
+		}
+	}
 }

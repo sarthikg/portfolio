@@ -11,9 +11,9 @@ $pink: #ff0b56;
 	box-sizing: border-box;
 }
 
-html {
-	scroll-snap-type: y mandatory;
-}
+// html {
+// 	scroll-snap-type: y mandatory;
+// }
 
 body {
 	background-color: $dark-background;
@@ -68,6 +68,7 @@ body {
 @import "partials/layout/section3";
 @import "partials/layout/section4";
 @import "partials/layout/section5";
+@import "partials/layout/section6";
 @import "partials/layout/loading";
 
 @import "partials/components/navigation";

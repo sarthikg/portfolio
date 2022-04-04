@@ -1,72 +1,47 @@
-.App-Section4 {
-    &-Content {
-        box-sizing: border-box;
-        display: flex;
-        width: 100%;
-        height: 100%;
-        padding: 4rem 10rem;
-        justify-content: space-evenly;
-        flex-direction: column; 
-        &-Heading {
-            display: none;
-        }
-        &-Experience {
-            margin-bottom: 1rem;
-            &-List {
-                margin-top: 1.5rem;
-                display: flex;
-                width: 100%;
-                flex-direction: column;
-                justify-content: space-between;
-            }
-        }
-        &-Education {
-            margin-top: 1rem;
-            &-List {
-                margin-top: 1.5rem;
-                display: flex;
-                width: 100%;
-                flex-direction: column;
-                justify-content: space-between;
-            }
-        }
-    }
-}
-
-
-@media only screen and (min-width: 300px) and (max-width: 1000px) {
-    .App-Section4 {
-        &-Content {
-            padding: 6rem 2rem;
-            padding-bottom: 0;
-            margin-top: 4rem;
-            height: 100%;
+.App__Section4 {
+	box-sizing: border-box;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	padding: 4rem 10rem;
+	justify-content: space-evenly;
+	flex-direction: column;
+	&__Heading {
+		display: none;
+	}
+	&__Education {
+		margin-top: 1rem;
+		&__List {
+			margin-top: 1.5rem;
+			display: flex;
+			width: 100%;
 			flex-direction: column;
 			justify-content: space-between;
-            &-Heading {
-                display: block;
-            }
-            &-Experience {
-                margin-bottom: 2rem;
-                &-List {
-                margin-top: 1.5rem;
-                display: flex;
-                width: 100%;
-                flex-direction: column;
-                justify-content: space-between;
-                }
-            }
-            &-Education {
-                margin-top: 2rem;
-                margin-bottom: 2rem;
-                &-List {
-                    margin-top: 1.5rem;
-                    display: flex;
-                    width: 100%;
-                    flex-direction: column;
-                    justify-content: space-between;
-                }
-            }
-        }
-    }
+		}
+	}
+}
+
+@media only screen and (min-width: 300px) and (max-width: 1000px) {
+	.App__Section4 {
+		padding: 6rem 2rem;
+		padding-bottom: 0;
+		margin-top: 4rem;
+		height: 100%;
+		flex-direction: column;
+		justify-content: space-between;
+		&__Heading {
+			display: block;
+		}
+		&__Education {
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+			&__List {
+				margin-top: 1.5rem;
+				display: flex;
+				width: 100%;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+		}
+	}
 }
