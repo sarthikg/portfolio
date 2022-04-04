@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 
-import Section from '../components/Section';
 import Heading from '../components/Heading';
 import SubHeading from '../components/SubHeading';
 import Social from '../components/Social';
@@ -44,7 +43,6 @@ class Section6 extends Component {
 
 	render() {
 		return (
-			<Section device={this.props.device}>
 				<div className="App__Section6">
 					<div
 						className="App__Section6__Heading"
@@ -166,7 +164,6 @@ class Section6 extends Component {
 						</div>
 					</div>
 				</div>
-			</Section>
 		);
 	}
 }

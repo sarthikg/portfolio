@@ -32,17 +32,17 @@
 @media only screen and (min-width: 300px) and (max-width: 1000px) {
 	.App__Section5 {
 		padding: 0 2rem;
+		margin-top: 6rem;
+		height: auto;
+		display: block;
 		&__Projects {
-			margin-top: 2rem;
-			margin-bottom: 2rem;
 			&__List {
 				margin-top: 2.5rem;
 				flex-direction: column;
 			}
 		}
 		&__Achievements {
-			margin-top: 2rem;
-			margin-bottom: 2rem;
+			margin-top: 6rem;
 			&__List {
 				margin-top: 2.5rem;
 				flex-direction: column;

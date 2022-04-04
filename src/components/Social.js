@@ -14,6 +14,7 @@ class Social extends Component {
 							key={social.alt}
 							data-aos="zoom-in"
 							data-aos-duration={600}
+							data-aos-anchor-placement="bottom-bottom"
 							data-aos-easing="ease-in-out"
 							aria-label={social.alt}
 						>

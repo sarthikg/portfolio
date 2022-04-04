@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-import Section from '../components/Section';
 import Heading from '../components/Heading';
 import Carousel from '../components/Carousel';
 import { journeyContent, skillsList } from '../constants/constants';
@@ -8,29 +6,27 @@ import { journeyContent, skillsList } from '../constants/constants';
 class Section2 extends Component {
 	render() {
 		return (
-			<Section device={this.props.device}>
-				<div className="App__Section2">
-					<div className="App__Section2__Description">
-						<div className="App__Section2__Description__Heading">
-							<Heading title="Skills" device={this.props.device} />
-						</div>
-						<div
-							className="App__Section2__Description__Content"
-							data-aos="fade-up"
-							data-aos-duration={600}
-						>
-							{journeyContent[0]}
-							<br />
-							<br />
-							{journeyContent[1]}
-							<br />
-							<br />
-							{journeyContent[2]}
-						</div>
+			<div className="App__Section2">
+				<div className="App__Section2__Description">
+					<div className="App__Section2__Description__Heading">
+						<Heading title="Skills" device={this.props.device} />
 					</div>
-					<Carousel skills={skillsList} device={this.props.device} />
+					<div
+						className="App__Section2__Description__Content"
+						data-aos="fade-up"
+						data-aos-duration={600}
+					>
+						{journeyContent[0]}
+						<br />
+						<br />
+						{journeyContent[1]}
+						<br />
+						<br />
+						{journeyContent[2]}
+					</div>
 				</div>
-			</Section>
+				<Carousel skills={skillsList} device={this.props.device} />
+			</div>
 		);
 	}
 }

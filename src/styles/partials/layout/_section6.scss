@@ -72,10 +72,11 @@
 		color: rgb(204, 204, 204);
 		font-family: 'Baloo 2', cursive;
 		font-size: 1.2rem;
-		margin: 1.5rem 0;
+		margin: 1rem 0;
 	}
 	&__Bottom {
 		flex-grow: 1;
+		height: 25rem;
 		margin: 1.5rem 0;
 		width: 100%;
 	}
@@ -224,27 +225,26 @@
 @media only screen and (min-width: 300px) and (max-width: 1000px) {
 	.App__Section6 {
 		padding: 0 2rem;
+		margin-top: 6rem;
+		display: block;
 		margin-bottom: 0rem;
-		flex-direction: column;
-		justify-content: space-around;
+		height: auto;
 		&__Heading {
-			flex-grow: 1;
+			display: block;
 		}
 		&__Description {
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+			display: block;
 			padding: 0 1rem;
 			font-size: 1.8rem;
 			text-align: justify;
 			text-justify: inter-word;
-			flex-grow: 1;
 		}
 		&__Bottom {
-			height: 100%;
+			height: 50rem;
 			padding: 0 1rem;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: space-around;
-			flex-grow: 15;
+			display: block;
 		}
 		&__Form {
 			width: 100%;

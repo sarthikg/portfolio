@@ -8,7 +8,6 @@ import { projectsList, achievementsList } from '../constants/constants';
 class Section5 extends Component {
 	render() {
 		return (
-			<Section device={this.props.device}>
 				<div className="App__Section5">
 					<div className="App__Section5__Projects">
 						{this.props.device === 'desktop' ? (
@@ -22,7 +21,11 @@ class Section5 extends Component {
 							data-aos-duration={600}
 						>
 							{projectsList.map((project) => (
-								<ProjectCard details={project} device={this.props.device} />
+								<ProjectCard
+									key={project.name}
+									details={project}
+									device={this.props.device}
+								/>
 							))}
 						</div>
 					</div>
@@ -37,13 +40,16 @@ class Section5 extends Component {
 							data-aos="fade-up"
 							data-aos-duration={600}
 						>
-							{achievementsList.map((project) => (
-								<AchievementCard details={project} device={this.props.device} />
+							{achievementsList.map((achievement) => (
+								<AchievementCard
+									key={achievement.name}
+									details={achievement}
+									device={this.props.device}
+								/>
 							))}
 						</div>
 					</div>
 				</div>
-			</Section>
 		);
 	}
 }

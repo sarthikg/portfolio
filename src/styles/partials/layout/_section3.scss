@@ -6,9 +6,6 @@
 	padding: 4rem 10rem;
 	justify-content: space-evenly;
 	flex-direction: column;
-	&__Heading {
-		display: none;
-	}
 	&__Experience {
 		margin-bottom: 1rem;
 		&__List {
@@ -23,15 +20,12 @@
 
 @media only screen and (min-width: 300px) and (max-width: 1000px) {
 	.App__Section3 {
-		padding: 6rem 2rem;
-		padding-bottom: 0;
-		margin-top: 4rem;
-		height: 100%;
+		padding: 0 2rem;
+		margin-top: 6rem;
+		height: auto;
+		display: block;
 		flex-direction: column;
 		justify-content: space-between;
-		&__Heading {
-			display: block;
-		}
 		&__Experience {
 			margin-bottom: 2rem;
 			&__List {
