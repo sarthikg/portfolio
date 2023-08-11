@@ -11,7 +11,7 @@
 # permissions:
 #   contents: write
 # jobs:
-#   build-and-deploy:
+#   deploy:
 #     concurrency: ci-${{ github.ref }}
 #     runs-on: ubuntu-latest
 #     steps:
