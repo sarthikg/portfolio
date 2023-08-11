@@ -1,40 +1,40 @@
-name: Deployment
+# name: Deployment
 
-# Run this pipeline whenever a PR is merged to master
-on:
-  push:
-    branches: ["master"]
-  pull_request:
-    branches: [ "master" ]
+# # Run this pipeline whenever a PR is merged to master
+# on:
+#   push:
+#     branches: ["master"]
+#   pull_request:
+#     branches: [ "master" ]
 
 
-permissions:
-  contents: write
-jobs:
-  build-and-deploy:
-    concurrency: ci-${{ github.ref }}
-    runs-on: ubuntu-latest
-    steps:
-      # Checkout the codebase
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
+# permissions:
+#   contents: write
+# jobs:
+#   build-and-deploy:
+#     concurrency: ci-${{ github.ref }}
+#     runs-on: ubuntu-latest
+#     steps:
+#       # Checkout the codebase
+#       - name: Checkout 🛎️
+#         uses: actions/checkout@v3
 
-      # Install Node Version
-      - name: Install NodeJS ⬇️
-        uses: actions/setup-node@v3
-        with:
-          node-version: 14.x
-          cache: 'npm'
+#       # Install Node Version
+#       - name: Install NodeJS ⬇️
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 14.x
+#           cache: 'npm'
 
-      # Install dependencies
-      - name: Install Dependencies 🚚
-        run: npm ci
+#       # Install dependencies
+#       - name: Install Dependencies 🚚
+#         run: npm ci
 
-      # Create a build
-      - name: Build 🔧
-        run: npm run build
+#       # Create a build
+#       - name: Build 🔧
+#         run: npm run build
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: build
+#       - name: Deploy 🚀
+#         uses: JamesIves/github-pages-deploy-action@v4
+#         with:
+#           folder: build
