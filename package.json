@@ -2,41 +2,30 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "aos": "^2.3.4",
-    "axios": "^0.21.1",
-    "fontfaceobserver": "^2.1.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-google-recaptcha": "^2.1.0",
-    "react-marquee-slider": "^1.1.2",
-    "react-scripts": "^4.0.3",
-    "sass": "^1.42.1",
-    "styled-components": "^5.3.3",
-    "typewriter-effect": "^2.17.0"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky install",
+    "format": ""
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "@types/node": "20.5.1",
+    "@types/react": "18.2.20",
+    "@types/react-dom": "18.2.7",
+    "autoprefixer": "10.4.15",
+    "eslint": "8.47.0",
+    "eslint-config-next": "13.4.19",
+    "next": "13.4.19",
+    "postcss": "8.4.28",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "3.3.3",
+    "typescript": "5.1.6"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "prettier": "^3.0.2"
   }
 }
