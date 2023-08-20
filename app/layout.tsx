@@ -1,5 +1,12 @@
 import "./globals.css";
-import { Header } from "../src/components/header";
+import { NavBar } from "@component/nav-bar";
+import { homeData } from "@data/layout/home";
+import localFont from "@next/font/local";
+
+const biotifFont = localFont({
+  src: "../public/fonts/Biotif-Regular.ttf",
+  variable: "--font-family",
+});
 
 export default function RootLayout({
   children,
@@ -8,8 +15,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Header></Header>
+      <body className={`${biotifFont.variable} font-sans`}>
+        <NavBar data={homeData.header}></NavBar>
         {children}
       </body>
     </html>
