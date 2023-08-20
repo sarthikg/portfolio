@@ -1,0 +1,12 @@
+.nav-link {
+  @apply h-16;
+  @apply bg-black;
+  @apply w-full;
+  &:hover {
+    background-color: #212024;
+  }
+  &--active {
+  }
+  &__button {
+  }
+}
