@@ -1,0 +1,16 @@
+---
+import type { PageInfo } from "@data/page";
+import "./style.css";
+
+interface Props {
+  page: PageInfo;
+}
+
+const { page } = Astro.props;
+---
+
+<li class="navbar-option" >
+  <a class="navbar-option__link" href={page.url}>
+    {page.label}
+  </a>
+</li>

@@ -1,0 +1,25 @@
+/* Neuzeit Grotesk */
+@font-face {
+  font-family: "Neuzeit Grotesk";
+  src: url("/fonts/neuzeit-black.woff2") format("woff2");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Neuzeit Grotesk";
+  src: url("/fonts/neuzeit-bold.woff2") format("woff2");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Neuzeit Grotesk";
+  src: url("/fonts/neuzeit-regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Neuzeit Grotesk";
+  src: url("/fonts/neuzeit-light.woff2") format("woff2");
+  font-weight: 300;
+}
+
+:root {
+  --serif: "Neuzeit Grotesk", serif;
+}

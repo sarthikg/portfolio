@@ -1,0 +1,34 @@
+{
+  "name": "portfolio",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier . --ignore-unknown --log-level=warn",
+    "format:check": "npm run format -- --check",
+    "format:fix": "npm run format -- --write",
+    "lint": "eslint .",
+    "lint:check": "npm run lint -- --max-warnings 0",
+    "lint:fix": "npm run lint -- --fix ."
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.3.1",
+    "astro": "^4.0.3",
+    "postcss": "^8.4.32",
+    "postcss-preset-env": "^9.3.0",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^6.14.0",
+    "eslint": "^8.55.0",
+    "eslint-plugin-astro": "^0.31.0",
+    "postcss-nested": "^6.0.1",
+    "prettier": "^3.1.1",
+    "prettier-plugin-astro": "^0.12.2",
+    "prettier-plugin-astro-organize-imports": "^0.3.3"
+  }
+}

@@ -1,0 +1,75 @@
+:root {
+  /* dynamic spacing adapted from utopia.fyi */
+  --space-2xs: clamp(0.31rem, calc(0.18rem + 0.65vw), 0.69rem);
+  --space-xs: clamp(0.56rem, calc(0.39rem + 0.87vw), 1.06rem);
+  --space-sm: clamp(0.88rem, calc(0.7rem + 0.87vw), 1.38rem);
+  --space-md: clamp(1.13rem, calc(0.8rem + 1.63vw), 2.06rem);
+  --space-lg: clamp(1.69rem, calc(1.32rem + 1.85vw), 2.75rem);
+  --space-xl: clamp(2.25rem, calc(1.6rem + 3.26vw), 4.13rem);
+  --space-2xl: clamp(3.38rem, calc(2.64rem + 3.7vw), 5.5rem);
+  --space-3xl: clamp(4.5rem, calc(3.2rem + 6.52vw), 8.25rem);
+
+  /* content sizes */
+  --content-xs: 20ch;
+  --content-sm: 30ch;
+  --content-md: 45ch;
+  --content-lg: 65ch;
+
+  /* dynamic font sizes adapted from utopia.fyi */
+  --fs-sm: clamp(0.78rem, calc(0.75rem + 0.17vw), 0.88rem);
+  --fs-md: clamp(1.13rem, calc(1.04rem + 0.43vw), 1.38rem);
+  --fs-lg: clamp(1.35rem, calc(1.22rem + 0.64vw), 1.72rem);
+  --fs-xl: clamp(1.94rem, calc(1.69rem + 1.29vw), 2.69rem);
+  --fs-2xl: clamp(2.8rem, calc(2.31rem + 2.43vw), 4.2rem);
+
+  /* line heights */
+  --lh-1: 1;
+  --lh-1-1: 1.1;
+  --lh-1-4: 1.4;
+
+  /* shadows adapted from https: //www.joshwcomeau.com/shadow-palette/ */
+  --_shadow-strength: 0.25;
+  --_shadow-saturation: 30%;
+  --_shadow-lightness: 62%;
+  --_shadow: var(--_hue) var(--_shadow-saturation) var(--_shadow-lightness);
+  --shadow-sm: 0.2px 0.5px 0.6px hsl(var(--_shadow) / var(--_shadow-strength)),
+    0.3px 0.8px 1px -1.2px hsl(var(--_shadow) / var(--_shadow-strength)),
+    0.8px 1.9px 2.3px -2.5px hsl(var(--_shadow) / var(--_shadow-strength));
+  --shadow-md: 0.2px 0.5px 0.6px
+      hsl(var(--_shadow) / calc(var(--_shadow-strength) + 0.04)),
+    0.6px 1.5px 1.8px -0.8px hsl(var(--_shadow) /
+          calc(var(--_shadow-strength) + 0.04)),
+    1.6px 3.8px 4.6px -1.7px hsl(var(--_shadow) /
+          calc(var(--_shadow-strength) + 0.04)),
+    3.9px 9.3px 11.3px -2.5px hsl(var(--_shadow) /
+          calc(var(--_shadow-strength) + 0.04));
+  --shadow-lg: 0.2px 0.5px 0.6px hsl(var(--_shadow) / var(--_shadow-strength)),
+    1.1px 2.7px 3.3px -0.4px hsl(var(--_shadow) / var(--_shadow-strength)),
+    2.1px 5px 6.1px -0.7px hsl(var(--_shadow) / var(--_shadow-strength)),
+    3.5px 8.3px 10.1px -1.1px hsl(var(--_shadow) / var(--_shadow-strength)),
+    5.6px 13.2px 16.1px -1.4px hsl(var(--_shadow) / var(--_shadow-strength)),
+    8.7px 20.7px 25.3px -1.8px hsl(var(--_shadow) / var(--_shadow-strength)),
+    13.3px 31.4px 38.4px -2.1px hsl(var(--_shadow) / var(--_shadow-strength)),
+    19.6px 46.3px 56.6px -2.5px hsl(var(--_shadow) / var(--_shadow-strength));
+
+  /* border */
+  --border-sm: 1px;
+  --border-md: 3px;
+  --border-lg: 5px;
+
+  /* radius */
+  --radius-sm: 0.2em;
+  --radius-md: 0.4em;
+  --radius-lg: 0.8em;
+  --radius-full: 100vmax;
+
+  /* transitions */
+  --_tspeed_fast: 150ms;
+  --_tspeed_slow: 400ms;
+  --_ttiming_ease: cubic-bezier(0.3, 0, 0.7, 1);
+  --_ttiming_squish: cubic-bezier(0.5, -0.3, 0.1, 1.5);
+  --transition-ease-slow: var(--_tspeed_slow) var(--_ttiming_ease);
+  --transition-ease-fast: var(--_tspeed_fast) var(--_ttiming_ease);
+  --transition-squish-slow: var(--_tspeed_slow) var(--_ttiming_squish);
+  --transition-squish-fast: var(--_tspeed_fast) var(--_ttiming_squish);
+}

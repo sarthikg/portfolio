@@ -1,0 +1,11 @@
+---
+import NavBarOption from "@component/navbar/navbar-option/NavBarOption.astro";
+import { PageMap } from "@data/page";
+import "./style.css";
+---
+
+<nav class="navbar">
+  <ul class="navbar__list">
+    {Object.values(PageMap).map((page) => <NavBarOption {page} />)}
+  </ul>
+</nav>

@@ -1,0 +1,22 @@
+.navbar-option {
+  padding: 10px;
+  list-style: none;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-ease-slow);
+  &:hover {
+    background-color: var(--grey-800);
+    & .navbar-option__link {
+      color: var(--grey-200);
+    }
+  }
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--grey-400);
+    font-size: var(--fs-sm);
+    background-color: transparent;
+    transition: color var(--transition-ease-slow);
+  }
+}
