@@ -2,13 +2,34 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  align-items: center;
   min-height: 59px;
   width: 100%;
   position: absolute;
   z-index: 3;
   top: 0px;
   &__logo {
-    color: blue;
-    font-size: var(--fs-xl);
+    margin-left: 12px;
+    height: var(--fs-xl);
+    width: var(--fs-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: background-color var(--transition-ease-slow);
+    &:hover {
+      background-color: var(--grey-900);
+      & .header__logo__text {
+        color: var(--grey-400);
+      }
+    }
+    &__text {
+      font-weight: 700;
+      color: var(--grey-200);
+      font-size: var(--fs-lg);
+      height: var(--fs-lg);
+      transition: color var(--transition-ease-slow);
+    }
   }
 }

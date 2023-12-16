@@ -20,6 +20,86 @@
   font-weight: 300;
 }
 
+/* Biotif */
+@font-face {
+  font-family: "Biotif";
+  src: url("/fonts/biotif-black.woff2") format("woff2");
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Biotif";
+  src: url("/fonts/biotif-black-italic.woff2") format("woff2");
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Biotif";
+  src: url("/fonts/biotif-extra-bold.woff2") format("woff2");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Biotif";
+  src: url("/fonts/biotif-extra-bold-italic.woff2") format("woff2");
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Biotif";
+  src: url("/fonts/biotif-bold.woff2") format("woff2");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Biotif";
+  src: url("/fonts/biotif-bold-italic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Biotif";
+  src: url("/fonts/biotif-semi-bold.woff2") format("woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Biotif";
+  src: url("/fonts/biotif-semi-bold-italic.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Biotif";
+  src: url("/fonts/biotif-medium.woff2") format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Biotif";
+  src: url("/fonts/biotif-medium-italic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Biotif";
+  src: url("/fonts/biotif-regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Biotif";
+  src: url("/fonts/biotif-regular-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Biotif";
+  src: url("/fonts/biotif-light.woff2") format("woff2");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Biotif";
+  src: url("/fonts/biotif-light-italic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+}
+
 :root {
-  --serif: "Neuzeit Grotesk", serif;
+  --fonts-heading: "Neuzeit Grotesk", sans-serif;
+  --fonts-body: "Biotif", sans-serif;
 }

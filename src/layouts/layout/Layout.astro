@@ -8,6 +8,8 @@ import "@style/colors.css"
 import "@style/variables.css";
 import "@style/global.css"
 
+import "./style.css"
+
 interface Props {
   title: string;
 }
@@ -19,8 +21,6 @@ const { title } = Astro.props;
   <Head title={title} />
   <Body>
     <Header></Header>
-    <main>
-    </main>
-    <slot />
+      <slot />
   </Body>
 </html>

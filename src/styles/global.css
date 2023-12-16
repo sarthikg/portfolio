@@ -1,4 +1,15 @@
 body {
   background-color: var(--background);
-  font-family: var(--serif);
+  font-family: var(--fonts-heading);
+}
+
+@media (min-width: 760px) {
+  .main {
+    width: 800px;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 110px 0;
+  }
 }

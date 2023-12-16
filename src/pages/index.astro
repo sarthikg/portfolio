@@ -1,8 +1,16 @@
 ---
 import Layout from "@layout/layout/Layout.astro";
+import "@style/pages/index.css"
 ---
 
 <Layout title="Sarthik Gupta">
-  <h1>Sarthik Gupta</h1>
-  <h2>Full Stack Developer</h2>
+  <main class="main main--index">
+    <div class="index__content">
+      <h1 class="index__content__name">Sarthik Gupta</h1>
+      <h2 class="index__content__title">Full Stack Developer</h2>
+    </div>
+    <div class="index__image">
+      <img src="/images/profile-pic.webp">
+    </div>
+  </main>
 </Layout>

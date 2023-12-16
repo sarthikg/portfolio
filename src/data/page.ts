@@ -30,6 +30,6 @@ export const PageMap: Record<Page, PageInfo> = {
   },
   [Page.Contact]: {
     label: "Contact",
-    url: "/",
+    url: "/contact",
   },
 };

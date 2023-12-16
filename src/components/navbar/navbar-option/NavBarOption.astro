@@ -7,10 +7,11 @@ interface Props {
 }
 
 const { page } = Astro.props;
+const {pathname} = Astro.url
 ---
 
-<li class="navbar-option" >
-  <a class="navbar-option__link" href={page.url}>
+<li class="navbar-option" class:list={[{"navbar-option--active": pathname === page.url}]}>
+  <a class="navbar-option__link" href={page.url} >
     {page.label}
   </a>
 </li>
