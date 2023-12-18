@@ -1,27 +1,4 @@
 :root {
-  /* dynamic spacing adapted from utopia.fyi */
-  --space-2xs: clamp(0.31rem, calc(0.18rem + 0.65vw), 0.69rem);
-  --space-xs: clamp(0.56rem, calc(0.39rem + 0.87vw), 1.06rem);
-  --space-sm: clamp(0.88rem, calc(0.7rem + 0.87vw), 1.38rem);
-  --space-md: clamp(1.13rem, calc(0.8rem + 1.63vw), 2.06rem);
-  --space-lg: clamp(1.69rem, calc(1.32rem + 1.85vw), 2.75rem);
-  --space-xl: clamp(2.25rem, calc(1.6rem + 3.26vw), 4.13rem);
-  --space-2xl: clamp(3.38rem, calc(2.64rem + 3.7vw), 5.5rem);
-  --space-3xl: clamp(4.5rem, calc(3.2rem + 6.52vw), 8.25rem);
-
-  /* content sizes */
-  --content-xs: 20ch;
-  --content-sm: 35ch;
-  --content-md: 45ch;
-  --content-lg: 65ch;
-
-  /* dynamic font sizes adapted from utopia.fyi */
-  --fs-sm: clamp(0.78rem, calc(0.75rem + 0.17vw), 0.88rem);
-  --fs-md: clamp(1.13rem, calc(1.04rem + 0.43vw), 1.38rem);
-  --fs-lg: clamp(1.35rem, calc(1.22rem + 0.64vw), 1.72rem);
-  --fs-xl: clamp(1.94rem, calc(1.69rem + 1.29vw), 2.69rem);
-  --fs-2xl: clamp(2.8rem, calc(2.31rem + 2.43vw), 4.2rem);
-
   /* line heights */
   --lh-1: 1;
   --lh-1-1: 1.1;
@@ -56,6 +33,7 @@
   --border-sm: 1px;
   --border-md: 3px;
   --border-lg: 5px;
+  --border-xl: 8px;
 
   /* radius */
   --radius-sm: 0.2em;
@@ -72,4 +50,78 @@
   --transition-ease-fast: var(--_tspeed_fast) var(--_ttiming_ease);
   --transition-squish-slow: var(--_tspeed_slow) var(--_ttiming_squish);
   --transition-squish-fast: var(--_tspeed_fast) var(--_ttiming_squish);
+}
+
+/* Font Sizes */
+:root {
+  /* Step -2: 12.50px → 12.80px */
+  --fs-xs: clamp(0.7813rem, 0.7747rem + 0.0326vw, 0.8rem);
+  /* Step -1: 15.00px → 16.00px */
+  --fs-sm: clamp(0.9375rem, 0.9158rem + 0.1087vw, 1rem);
+  /* Step 0: 18.00px → 20.00px */
+  --fs-base: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  /* Step 1: 21.60px → 25.00px */
+  --fs-lg: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+  /* Step 2: 25.92px → 31.25px */
+  --fs-xl: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+  /* Step 3: 31.10px → 39.06px */
+  --fs-2xl: clamp(1.9438rem, 1.7707rem + 0.8652vw, 2.4413rem);
+  /* Step 4: 37.32px → 48.83px */
+  --fs-3xl: clamp(2.3325rem, 2.0823rem + 1.2511vw, 3.0519rem);
+  /* Step 5: 44.79px → 61.04px */
+  --fs-4xl: clamp(2.7994rem, 2.4461rem + 1.7663vw, 3.815rem);
+}
+
+:root {
+  /* Space 3xs: 5px → 5px */
+  --space-3xs: clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem);
+  /* Space 2xs: 9px → 10px */
+  --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vw, 0.625rem);
+  /* Space xs: 14px → 15px */
+  --space-xs: clamp(0.875rem, 0.8533rem + 0.1087vw, 0.9375rem);
+  /* Space s: 18px → 20px */
+  --space-s: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+  /* Space m: 27px → 30px */
+  --space-m: clamp(1.6875rem, 1.6223rem + 0.3261vw, 1.875rem);
+  /* Space l: 36px → 40px */
+  --space-l: clamp(2.25rem, 2.163rem + 0.4348vw, 2.5rem);
+  /* Space xl: 54px → 60px */
+  --space-xl: clamp(3.375rem, 3.2446rem + 0.6522vw, 3.75rem);
+  /* Space 2xl: 72px → 80px */
+  --space-2xl: clamp(4.5rem, 4.3261rem + 0.8696vw, 5rem);
+  /* Space 3xl: 108px → 120px */
+  --space-3xl: clamp(6.75rem, 6.4891rem + 1.3043vw, 7.5rem);
+
+  /* One-up pairs */
+  /* Space 3xs-2xs: 5px → 10px */
+  --space-3xs-2xs: clamp(0.3125rem, 0.2038rem + 0.5435vw, 0.625rem);
+  /* Space 2xs-xs: 9px → 15px */
+  --space-2xs-xs: clamp(0.5625rem, 0.4321rem + 0.6522vw, 0.9375rem);
+  /* Space xs-s: 14px → 20px */
+  --space-xs-s: clamp(0.875rem, 0.7446rem + 0.6522vw, 1.25rem);
+  /* Space s-m: 18px → 30px */
+  --space-s-m: clamp(1.125rem, 0.8641rem + 1.3043vw, 1.875rem);
+  /* Space m-l: 27px → 40px */
+  --space-m-l: clamp(1.6875rem, 1.4049rem + 1.413vw, 2.5rem);
+  /* Space l-xl: 36px → 60px */
+  --space-l-xl: clamp(2.25rem, 1.7283rem + 2.6087vw, 3.75rem);
+  /* Space xl-2xl: 54px → 80px */
+  --space-xl-2xl: clamp(3.375rem, 2.8098rem + 2.8261vw, 5rem);
+  /* Space 2xl-3xl: 72px → 120px */
+  --space-2xl-3xl: clamp(4.5rem, 3.4565rem + 5.2174vw, 7.5rem);
+
+  /* Custom pairs */
+  /* Space s-l: 18px → 40px */
+  --space-s-l: clamp(1.125rem, 0.6467rem + 2.3913vw, 2.5rem);
+}
+
+:root {
+  --content-xs: clamp(1rem, 0.3043rem + 3.4783vw, 3rem);
+  --content-sm: clamp(2rem, 1.3043rem + 3.4783vw, 4rem);
+  --content-md: clamp(4rem, 3.3043rem + 3.4783vw, 6rem);
+  --content-lg: clamp(6rem, 5.3043rem + 3.4783vw, 8rem);
+  --content-xl: clamp(8rem, 7.3043rem + 3.4783vw, 10rem);
+  --content-2xl: clamp(10rem, 9.2174rem + 3.913vw, 12.25rem);
+  --content-3xl: clamp(12.25rem, 10.9457rem + 6.5217vw, 16rem);
+  --content-4xl: clamp(16rem, 13.2174rem + 13.913vw, 24rem);
 }

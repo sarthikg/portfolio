@@ -1,6 +1,6 @@
 body {
   background-color: var(--background);
-  font-family: var(--fonts-heading);
+  font-family: var(--fonts-body);
 }
 
 @media (min-width: 760px) {

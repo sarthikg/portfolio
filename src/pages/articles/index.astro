@@ -1,7 +1,46 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Card from "@component/card/Card.astro";
+import HorizontalCard from "@component/horizontal-card/HorizontalCard.astro";
+import Section from "@component/section/Section.astro";
+import Layout from "@layout/layout/Layout.astro";
+import "@style/pages/articles/index.css";
 ---
 
 <Layout title="Articles // Sarthik Gupta">
-  <h1>This is the articles page</h1>
+  <main class="main main--articles">
+    <h1 class="articles__heading">Stories. Thoughts. Guides.</h1>
+    <p class="articles__heading__description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aperiam
+      corrupti facere illo labore dolorem minima voluptas, expedita sit dolore
+      dolor nostrum tempora doloribus!
+    </p>
+    <Section title="Featured Articles">
+      <div class="articles__featured">
+        <Card
+          title="This is the title"
+          description="This is the description of the article which can span to 2 lines..."
+        />
+        <Card
+          title="This is the title"
+          description="This is the description of the article which can span to 2 lines..."
+        />
+      </div>
+    </Section>
+    <Section title="All Articles">
+      <div class="articles__list">
+        <HorizontalCard
+          title="This is the title"
+          description="This is the description of the article which can span to 2 lines..."
+        />
+        <HorizontalCard
+          title="This is the title"
+          description="This is the description of the article which can span to 2 lines..."
+        />
+        <HorizontalCard
+          title="This is the title"
+          description="This is the description of the article which can span to 2 lines..."
+        />
+      </div>
+    </Section>
+  </main>
 </Layout>

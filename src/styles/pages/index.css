@@ -14,29 +14,32 @@
     justify-content: center;
     align-items: flex-start;
     &__name {
-      color: var(--grey-200);
-      font-size: var(--fs-xl);
+      color: var(--grey-300);
+      font-family: var(--fonts-heading);
+      font-size: var(--fs-3xl);
       font-weight: 700;
       letter-spacing: 1.2px;
     }
     &__title {
-      color: var(--grey-200);
+      color: var(--grey-400);
       font-size: var(--fs-md);
       font-weight: 400;
-      margin: 20px 0;
+      margin: var(--space-s) 0;
       font-family: var(--fonts-body);
+      text-transform: uppercase;
     }
   }
   &__image {
-    width: var(--content-sm);
-    height: var(--content-sm);
+    width: var(--content-3xl);
+    height: var(--content-3xl);
     overflow: hidden;
     border-radius: var(--radius-full);
     transform: translateX(10%);
-    border: 0.45rem solid var(--grey-800);
+    border: var(--border-xl) solid var(--grey-800);
     & > img {
-      width: var(--content-sm);
-      height: var(--content-sm);
+      object-fit: cover;
+      width: var(--content-3xl);
+      height: var(--content-3xl);
     }
   }
 }

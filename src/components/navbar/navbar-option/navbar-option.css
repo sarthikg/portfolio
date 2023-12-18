@@ -1,7 +1,6 @@
 .navbar-option {
-  padding: 10px;
   list-style: none;
-  padding: 10px 20px;
+  padding: var(--space-2xs) var(--space-s);
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: background-color var(--transition-ease-slow);
@@ -33,7 +32,8 @@
     text-decoration: none;
     text-transform: uppercase;
     color: var(--grey-500);
-    font-size: var(--fs-sm);
+    font-size: var(--fs-xs);
+    font-family: var(--fonts-heading);
     background-color: transparent;
     letter-spacing: 1.2px;
     transition: color var(--transition-ease-slow);

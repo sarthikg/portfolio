@@ -1,0 +1,42 @@
+---
+import { DEFAULT_ARTICLE_COVER } from "@data/defaults";
+import { Image } from "astro:assets";
+import "./horizontal-card.css";
+
+interface Props {
+  title: string;
+  description: string;
+  coverImgPath?: string;
+}
+
+const {
+  title,
+  description,
+  coverImgPath = DEFAULT_ARTICLE_COVER,
+} = Astro.props;
+
+/* Dynamically importing images */
+const images = import.meta.glob("/src/assets/images/*.{jpg,jpeg,png,svg}");
+---
+
+<div class="horizontal-card">
+  <Image
+    class="horizontal-card__image"
+    src={images[coverImgPath]()}
+    alt={title}
+    width={128}
+    height={128}
+  />
+  <h2 class="horizontal-card__title">The two types of quality</h2>
+  <p class="horizontal-card__description">{description}</p>
+  <ul class="horizontal-card__tags">
+    <li class="horizontal-card__tag">TypeScript</li>
+    <li class="horizontal-card__tag">JavaScript</li>
+    <li class="horizontal-card__tag">React</li>
+    <li class="horizontal-card__tag">Astro</li>
+  </ul>
+  <p class="horizontal-card__duration">
+    <span class="horizontal-card__duration__read-time">5 min read</span>
+    <span class="horizontal-card__duration__published">11 July 2023</span>
+  </p>
+</div>
