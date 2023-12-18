@@ -1,0 +1,26 @@
+---
+import "./career-card.css";
+
+interface Props {
+  designation: string;
+  location: string;
+  company: string;
+  startDate: Date | string; // TODO: Remove string
+  endDate?: Date | string; // TODO: Remove string
+}
+
+const { designation, location, company, startDate, endDate } = Astro.props;
+
+const isActive = !endDate;
+---
+
+<div class="career-card" class:list={[{ "career-card--active": isActive }]}>
+  <h2 class="career-card__title">{designation}</h2>
+  <h3 class="career-card__subtitle">
+    <span class="career-card__subtitle__company">{company}</span>
+    <span class="career-card__subtitle__location">{location}</span>
+  </h3>
+  <h3 class="career-card__description">
+    {startDate} - {isActive ? "Present" : endDate} • 2 yr 4 mos
+  </h3>
+</div>

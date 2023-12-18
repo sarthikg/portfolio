@@ -16,7 +16,6 @@
     border-radius: var(--radius-md);
     object-fit: cover;
     filter: grayscale(1);
-    filter: gray;
     width: 128px;
     height: 128px;
   }
