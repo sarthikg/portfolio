@@ -3,7 +3,15 @@ import Card from "@component/card/Card.astro";
 import HorizontalCard from "@component/horizontal-card/HorizontalCard.astro";
 import Section from "@component/section/Section.astro";
 import Layout from "@layout/layout/Layout.astro";
-import "@style/pages/articles/index.css";
+import "@style/pages/articles.css";
+
+import {
+  getAllFeaturedArticles,
+  getAllPublishedArticles,
+} from "@facade/article";
+
+const allArticles = await getAllPublishedArticles();
+const allFeaturedArticles = await getAllFeaturedArticles();
 ---
 
 <Layout title="Articles // Sarthik Gupta">
@@ -16,30 +24,30 @@ import "@style/pages/articles/index.css";
     </p>
     <Section title="Featured Articles">
       <div class="articles__featured">
-        <Card
-          title="This is the title"
-          description="This is the description of the article which can span to 2 lines..."
-        />
-        <Card
-          title="This is the title"
-          description="This is the description of the article which can span to 2 lines..."
-        />
+        {
+          allFeaturedArticles.map((article) => (
+            <Card
+              title={article.data.title}
+              description={article.data.description}
+              image={article.data.image}
+            />
+          ))
+        }
       </div>
     </Section>
     <Section title="All Articles">
       <div class="articles__list">
-        <HorizontalCard
-          title="This is the title"
-          description="This is the description of the article which can span to 2 lines..."
-        />
-        <HorizontalCard
-          title="This is the title"
-          description="This is the description of the article which can span to 2 lines..."
-        />
-        <HorizontalCard
-          title="This is the title"
-          description="This is the description of the article which can span to 2 lines..."
-        />
+        {
+          allArticles.map((article) => (
+            <HorizontalCard
+              title={article.data.title}
+              description={article.data.description}
+              image={article.data.image}
+              tags={article.data.tags}
+              date={article.data.date}
+            />
+          ))
+        }
       </div>
     </Section>
   </main>

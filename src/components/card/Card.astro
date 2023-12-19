@@ -1,20 +1,17 @@
 ---
-import { DEFAULT_ARTICLE_COVER } from "@data/defaults";
 import { Image } from "astro:assets";
 import "./card.css";
 
 interface Props {
   title: string;
   description: string;
-  coverImgPath?: string;
+  image: {
+    src: string;
+    alt: string;
+  };
 }
 
-const {
-  title,
-  description,
-  coverImgPath = DEFAULT_ARTICLE_COVER,
-} = Astro.props;
-
+const { title, description, image } = Astro.props;
 /* Dynamically importing images */
 const images = import.meta.glob("/src/assets/images/*.{jpg,jpeg,png,svg}");
 ---
@@ -22,8 +19,8 @@ const images = import.meta.glob("/src/assets/images/*.{jpg,jpeg,png,svg}");
 <div class="card">
   <Image
     class="card__image"
-    src={images[coverImgPath]()}
-    alt={title}
+    src={images[image.src]()}
+    alt={image.alt}
     width={384}
     height={196}
   />

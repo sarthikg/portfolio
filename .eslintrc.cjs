@@ -1,10 +1,13 @@
 module.exports = {
-  // ...
+  root: true,
+  parser: "@typescript-eslint/parser",
+  plugins: ["@typescript-eslint"],
   extends: [
-    // ...
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:astro/recommended",
   ],
-  // ...
   overrides: [
     {
       // Define the configuration for `.astro` file.
@@ -22,6 +25,9 @@ module.exports = {
         // "astro/no-set-html-directive": "error"
       },
     },
-    // ...
   ],
+  parserOptions: {
+    sourceType: "module",
+    ecmaVersion: 2020,
+  },
 };

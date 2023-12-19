@@ -1,0 +1,24 @@
+---
+import { getAllPublishedArticles } from "@facade/article";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  article: CollectionEntry<"article">;
+}
+
+export async function getStaticPaths() {
+  const articles = await getAllPublishedArticles();
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await article.render();
+---
+
+<article>
+  <h1>{article.data.title}</h1>
+  <Content />
+</article>

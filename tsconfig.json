@@ -8,7 +8,10 @@
       "@layout/*": ["src/layouts/*"],
       "@page/*": ["src/page/*"],
       "@style/*": ["src/styles/*"],
-      "@asset/*": ["src/assets/*"]
+      "@asset/*": ["src/assets/*"],
+      "@schema/*": ["src/schemas/*"],
+      "@content/*": ["src/content/*"],
+      "@facade/*": ["src/facades/*"]
     }
   }
 }
