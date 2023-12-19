@@ -11,7 +11,8 @@
       "@asset/*": ["src/assets/*"],
       "@schema/*": ["src/schemas/*"],
       "@content/*": ["src/content/*"],
-      "@facade/*": ["src/facades/*"]
+      "@facade/*": ["src/facades/*"],
+      "@util/*": ["src/utils/*"]
     }
   }
 }

@@ -1,12 +1,14 @@
 ---
 import "./career-card.css";
 
+import { formatDate, getDuration } from "@util/date-string";
+
 interface Props {
   designation: string;
   location: string;
   company: string;
-  startDate: Date | string; // TODO: Remove string
-  endDate?: Date | string; // TODO: Remove string
+  startDate: Date;
+  endDate?: Date;
 }
 
 const { designation, location, company, startDate, endDate } = Astro.props;
@@ -20,7 +22,25 @@ const isActive = !endDate;
     <span class="career-card__subtitle__company">{company}</span>
     <span class="career-card__subtitle__location">{location}</span>
   </h3>
-  <h3 class="career-card__description">
-    {startDate} - {isActive ? "Present" : endDate} • 2 yr 4 mos
+  <h3
+    class="career-card__description"
+    data-startDate={startDate}
+    data-endDate={endDate}
+  >
+    {formatDate(startDate)} - {isActive ? "Present" : formatDate(endDate)} •
   </h3>
 </div>
+
+<script>
+  import { getDuration } from "@util/date-string";
+  const descriptionEls = document.querySelectorAll(".career-card__description");
+  descriptionEls.forEach((description) => {
+    const startDate = new Date(description.getAttribute("data-startDate"));
+    const endDate = description.getAttribute("data-endDate");
+    const duration = getDuration(
+      startDate,
+      endDate ? new Date(endDate) : new Date(),
+    );
+    description.textContent = `${description.textContent} ${duration}`;
+  });
+</script>

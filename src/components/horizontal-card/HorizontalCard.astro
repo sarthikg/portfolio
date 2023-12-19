@@ -1,4 +1,5 @@
 ---
+import { formatDateWithDay } from "@util/date-string";
 import { Image } from "astro:assets";
 import "./horizontal-card.css";
 
@@ -33,6 +34,8 @@ const images = import.meta.glob("/src/assets/images/*.{jpg,jpeg,png,svg}");
   </ul>
   <p class="horizontal-card__duration">
     <span class="horizontal-card__duration__read-time">5 min read</span>
-    <span class="horizontal-card__duration__published">{date}</span>
+    <span class="horizontal-card__duration__published"
+      >{formatDateWithDay(date)}</span
+    >
   </p>
 </div>
