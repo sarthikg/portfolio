@@ -3,6 +3,7 @@ import { getAllPublishedArticles } from "@facade/article";
 import Layout from "@layout/layout/Layout.astro";
 import "@style/pages/article.css";
 import { formatDateWithDay } from "@util/date-string";
+import { getReadingTime } from "@util/reading-time";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
@@ -22,12 +23,14 @@ const { article } = Astro.props;
 const { title, image, date } = article.data;
 
 const { Content } = await article.render();
+const rawContent = await article.body;
+const readingTime = getReadingTime(rawContent);
 
 /* Dynamically importing images */
 const images = import.meta.glob("/src/assets/images/*.{jpg,jpeg,png,svg}");
 ---
 
-<Layout title="Articles // Sarthik Gupta">
+<Layout title={`${title} // Sarthik Gupta`}>
   <article class="article">
     <div class="article__cover">
       <Image
@@ -39,11 +42,11 @@ const images = import.meta.glob("/src/assets/images/*.{jpg,jpeg,png,svg}");
         {title}
       </h1>
       <h4 class="article__cover__date">
-        {formatDateWithDay(date)}
+        {formatDateWithDay(date)} • {readingTime} min read
       </h4>
     </div>
-    <div class="article__content">
+    <main class="main main__article">
       <Content />
-    </div>
+    </main>
   </article>
 </Layout>

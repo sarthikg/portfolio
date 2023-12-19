@@ -1,3 +1,88 @@
+@media (min-width: 760px) {
+  .main__article {
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    color: var(--grey-500);
+    line-height: 2;
+    padding-top: 30px;
+    text-rendering: optimizeLegibility;
+    & p {
+      margin-top: 8px;
+      color: var(--grey-500);
+    }
+    & a {
+      border-bottom: 0.5px solid var(--grey-500);
+      color: var(--grey-300);
+      text-decoration: none;
+      transition: opacity var(--transition-ease-slow);
+      &:hover {
+        opacity: 0.8;
+      }
+      &:focus {
+        opacity: 0.8;
+      }
+    }
+    & h1 {
+      margin: 0 0 20px;
+      font-size: 48px;
+      line-height: 50px;
+      color: var(--grey-300);
+    }
+    & h2 {
+      margin: 60px 0 0;
+      font-size: 24px;
+      color: var(--grey-300);
+    }
+    & h3 {
+      margin: 20px 0 0;
+      font-size: 20px;
+      color: var(--grey-300);
+    }
+    & h4 {
+      margin: 16px 0 0;
+      font-size: 18px;
+      color: var(--grey-300);
+    }
+    & ul {
+      margin: 0;
+    }
+    & img {
+      border-radius: var(--radius-md);
+      min-width: 100%;
+      min-height: 100%;
+    }
+    & strong {
+      color: var(--grey-300);
+      font-weight: 500;
+    }
+    & em {
+      font-style: italic;
+    }
+    & ol,
+    ul {
+      padding: 0 0 0 40px;
+    }
+    & li {
+      margin-top: 8px;
+    }
+    & code {
+      color: var(--grey-400);
+      background-color: var(--grey-900);
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+    }
+    & blockquote {
+      border-left: 4px solid var(--grey-800);
+      font-style: italic;
+      padding-bottom: 8px;
+      padding-left: 20px;
+      margin-top: 20px;
+    }
+  }
+}
+
 .article {
   &__cover {
     min-height: 500px;
@@ -30,12 +115,10 @@
       font-family: var(--fonts-body);
       text-transform: uppercase;
       font-size: var(--fs-sm);
-      font-weight: 600;
+      font-weight: 400;
       color: var(--grey-300);
       bottom: 20px;
       z-index: 3;
     }
-  }
-  &__content {
   }
 }
