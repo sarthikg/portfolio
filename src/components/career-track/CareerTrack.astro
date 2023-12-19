@@ -1,10 +1,30 @@
 ---
 import CareerCard from "@component/career-card/CareerCard.astro";
+import type { CollectionEntry } from "astro:content";
 import "./career-track.css";
+
+interface Props {
+  experiences: CollectionEntry<"experience">[];
+}
+
+const { experiences } = Astro.props;
 ---
 
 <ol class="career-track">
-  <li class="career-track__item">
+  {
+    experiences.map((experience) => (
+      <li class="career-track__item">
+        <CareerCard
+          designation={experience.data.designation}
+          location={experience.data.location}
+          company={experience.data.company}
+          startDate={experience.data.startData}
+          endDate={experience.data.endData}
+        />
+      </li>
+    ))
+  }
+  <!-- <li class="career-track__item">
     <CareerCard
       designation="Software Engineer"
       location="Bengaluru, India"
@@ -28,5 +48,5 @@ import "./career-track.css";
       startDate="Jan 2020"
       endDate="July 2020"
     />
-  </li>
+  </li> -->
 </ol>

@@ -4,6 +4,12 @@ import CareerTrack from "@component/career-track/CareerTrack.astro";
 import Section from "@component/section/Section.astro";
 import Layout from "@layout/layout/Layout.astro";
 import "@style/pages/career.css";
+
+import { getExperiences } from "@facade/experience";
+import { getSideQuests } from "@facade/side-quest";
+
+const experiences = await getExperiences();
+const sideQuests = await getSideQuests();
 ---
 
 <Layout title="Career // Sarthik Gupta">
@@ -16,19 +22,20 @@ import "@style/pages/career.css";
     </p>
     <Section title="Work Experience">
       <div class="career__experience">
-        <CareerTrack />
+        <CareerTrack experiences={experiences} />
       </div>
     </Section>
     <Section title="Side Quests">
       <div class="career__side-quests">
-        <Card
-          title="Google Summer of Code 2022"
-          description="This is the description of the article which can span to 2 lines..."
-        />
-        <Card
-          title="Microsoft Azure Bug Bounty"
-          description="This is the description of the article which can span to 2 lines..."
-        />
+        {
+          sideQuests.map((quest) => (
+            <Card
+              title={quest.data.title}
+              description={quest.data.description}
+              image={quest.data.image}
+            />
+          ))
+        }
       </div>
     </Section>
   </main>
