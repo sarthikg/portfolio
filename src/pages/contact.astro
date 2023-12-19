@@ -11,5 +11,37 @@ import "@style/pages/contact.css";
       corrupti facere illo labore dolorem minima voluptas, expedita sit dolore
       dolor nostrum tempora doloribus!
     </p>
+    <section class="contact__form__section">
+      <form class="contact__form" method="post" action="/api/contact">
+        <input
+          class="contact__input"
+          name="name"
+          placeholder="Name"
+          type="text"
+          required
+        />
+        <input
+          class="contact__input"
+          name="email"
+          placeholder="Email"
+          type="email"
+          required
+        />
+        <input
+          class="contact__input"
+          name="subject"
+          placeholder="Subject"
+          type="text"
+          required
+        />
+        <textarea
+          class="contact__input contact__input--textarea"
+          name="message"
+          placeholder="Message"></textarea>
+        <button class="contact__input contact__input--submit" type="submit"
+          >Send</button
+        >
+      </form>
+    </section>
   </main>
 </Layout>
