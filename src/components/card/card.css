@@ -4,6 +4,7 @@
   border-radius: var(--radius-md);
   background-color: transparent;
   transition: background-color var(--transition-ease-slow);
+  text-decoration: unset;
   &:hover {
     background-color: var(--grey-900);
   }
@@ -11,7 +12,6 @@
     border-radius: var(--radius-md);
     object-fit: cover;
     filter: grayscale(1);
-    filter: gray;
     width: 384px;
     height: 196px;
   }

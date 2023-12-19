@@ -6,6 +6,7 @@ export const experienceSchema = defineCollection({
   schema: z.object({
     designation: z.string(),
     company: z.string(),
+    companyUrl: z.string(),
     location: z.string(),
     startDate: z.date(),
     endDate: z.date().optional(),

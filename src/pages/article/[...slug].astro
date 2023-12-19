@@ -1,5 +1,9 @@
 ---
 import { getAllPublishedArticles } from "@facade/article";
+import Layout from "@layout/layout/Layout.astro";
+import "@style/pages/article.css";
+import { formatDateWithDay } from "@util/date-string";
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -15,10 +19,31 @@ export async function getStaticPaths() {
 }
 
 const { article } = Astro.props;
+const { title, image, date } = article.data;
+
 const { Content } = await article.render();
+
+/* Dynamically importing images */
+const images = import.meta.glob("/src/assets/images/*.{jpg,jpeg,png,svg}");
 ---
 
-<article>
-  <h1>{article.data.title}</h1>
-  <Content />
-</article>
+<Layout title="Articles // Sarthik Gupta">
+  <article class="article">
+    <div class="article__cover">
+      <Image
+        class="article__cover__image"
+        src={images[image.src]()}
+        alt={image.alt}
+      />
+      <h1 class="article__cover__title">
+        {title}
+      </h1>
+      <h4 class="article__cover__date">
+        {formatDateWithDay(date)}
+      </h4>
+    </div>
+    <div class="article__content">
+      <Content />
+    </div>
+  </article>
+</Layout>

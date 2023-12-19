@@ -1,0 +1,24 @@
+---
+import { getSideQuests } from "@facade/side-quest";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  sideQuest: CollectionEntry<"side-quest">;
+}
+
+export async function getStaticPaths() {
+  const sideQuests = await getSideQuests();
+  return sideQuests.map((sideQuest) => ({
+    params: { slug: sideQuest.slug },
+    props: { sideQuest: sideQuest },
+  }));
+}
+
+const { sideQuest } = Astro.props;
+const { Content } = await sideQuest.render();
+---
+
+<article>
+  <h1>{sideQuest.data.title}</h1>
+  <Content />
+</article>

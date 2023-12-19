@@ -30,6 +30,7 @@ const allFeaturedArticles = await getAllFeaturedArticles();
               title={article.data.title}
               description={article.data.description}
               image={article.data.image}
+              url={`/article/${article.slug}`}
             />
           ))
         }
@@ -45,6 +46,7 @@ const allFeaturedArticles = await getAllFeaturedArticles();
               image={article.data.image}
               tags={article.data.tags}
               date={article.data.date}
+              url={`/article/${article.slug}`}
             />
           ))
         }

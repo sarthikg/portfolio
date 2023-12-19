@@ -9,14 +9,15 @@ interface Props {
     src: string;
     alt: string;
   };
+  url: string;
 }
 
-const { title, description, image } = Astro.props;
+const { title, description, image, url } = Astro.props;
 /* Dynamically importing images */
 const images = import.meta.glob("/src/assets/images/*.{jpg,jpeg,png,svg}");
 ---
 
-<div class="card">
+<a class="card" href={url}>
   <Image
     class="card__image"
     src={images[image.src]()}
@@ -26,4 +27,4 @@ const images = import.meta.glob("/src/assets/images/*.{jpg,jpeg,png,svg}");
   />
   <h2 class="card__title">{title}</h2>
   <p class="card__description">{description}</p>
-</div>
+</a>

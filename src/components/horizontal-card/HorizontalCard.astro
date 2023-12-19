@@ -12,14 +12,15 @@ interface Props {
   };
   tags: string[];
   date: Date;
+  url: string;
 }
 
-const { title, description, image, tags, date } = Astro.props;
+const { title, description, image, tags, date, url } = Astro.props;
 /* Dynamically importing images */
 const images = import.meta.glob("/src/assets/images/*.{jpg,jpeg,png,svg}");
 ---
 
-<div class="horizontal-card">
+<a class="horizontal-card" href={url}>
   <Image
     class="horizontal-card__image"
     src={images[image.src]()}
@@ -38,4 +39,4 @@ const images = import.meta.glob("/src/assets/images/*.{jpg,jpeg,png,svg}");
       >{formatDateWithDay(date)}</span
     >
   </p>
-</div>
+</a>

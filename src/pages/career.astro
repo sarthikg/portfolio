@@ -33,6 +33,7 @@ const sideQuests = await getSideQuests();
               title={quest.data.title}
               description={quest.data.description}
               image={quest.data.image}
+              url={`/side-quest/${quest.slug}`}
             />
           ))
         }

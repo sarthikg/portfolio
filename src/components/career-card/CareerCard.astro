@@ -1,25 +1,25 @@
 ---
+import type { CollectionEntry } from "astro:content";
 import "./career-card.css";
 
-import { formatDate, getDuration } from "@util/date-string";
+import { formatDate } from "@util/date-string";
 
 interface Props {
-  designation: string;
-  location: string;
-  company: string;
-  startDate: Date;
-  endDate?: Date;
+  experience: CollectionEntry<"experience">;
+  url: string;
 }
 
-const { designation, location, company, startDate, endDate } = Astro.props;
+const { experience, url } = Astro.props;
 
+const { designation, location, company, companyUrl, startDate, endDate } =
+  experience.data;
 const isActive = !endDate;
 ---
 
 <div class="career-card" class:list={[{ "career-card--active": isActive }]}>
-  <h2 class="career-card__title">{designation}</h2>
+  <a class="career-card__title" href={url}>{designation}</a>
   <h3 class="career-card__subtitle">
-    <span class="career-card__subtitle__company">{company}</span>
+    <a class="career-card__subtitle__company" href={companyUrl}>{company}</a>
     <span class="career-card__subtitle__location">{location}</span>
   </h3>
   <h3

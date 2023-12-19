@@ -48,13 +48,14 @@
     font-size: var(--fs-md);
     color: var(--grey-100);
     transition: border-color var(--transition-ease-slow);
+    width: 100%;
     &::placeholder {
       font-family: var(--fonts-body);
       color: var(--grey-500);
     }
     &:focus {
       outline: unset;
-      border: 1px solid var(--teal-200-accent);
+      border: 1px solid var(--teal-100-accent);
     }
     &[name="name"] {
       grid-row: 1 / 2;
@@ -82,9 +83,9 @@
       background-color: var(--grey-300);
       transition: all var(--transition-ease-slow);
       &:hover {
-        color: var(--grey-100);
+        color: var(--teal-100-accent);
         background-color: transparent;
-        border-color: var(--teal-200-accent);
+        border-color: var(--teal-100-accent);
       }
     }
   }
