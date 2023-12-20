@@ -7,8 +7,8 @@ interface Props {
   title: string;
   description: string;
   image: {
-    src: unknown;
-    alt: string;
+    src?: unknown; // TODO: Remove optional once Astro bug is fixed
+    alt?: string; // TODO: Remove optional once Astro bug is fixed
   };
   url: string;
 }
