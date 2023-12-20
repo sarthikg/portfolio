@@ -3,6 +3,14 @@ import Layout from "@layout/Layout.astro";
 import { Image } from "astro:assets";
 
 import profilePic from "@asset/images/profile-pic.webp";
+
+import dotenv from "dotenv";
+
+/**
+ * Load environment variables from .env
+ */
+dotenv.config();
+console.log(process.env);
 ---
 
 <Layout title="Sarthik Gupta">
