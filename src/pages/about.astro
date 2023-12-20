@@ -1,9 +1,15 @@
 ---
 import { getPageInfo } from "@facade/page-info";
-import Layout from "@layout/layout/Layout.astro";
-import "@style/pages/about.css";
+import Layout from "@layout/Layout.astro";
 
 const pageInfo = await getPageInfo("about");
+
+// This Page will include
+
+// Experience
+// Projects
+// Acheivements
+// Education
 ---
 
 <Layout title="About // Sarthik Gupta">
@@ -15,9 +21,41 @@ const pageInfo = await getPageInfo("about");
   </main>
 </Layout>
 
-<!-- This Page will include -->
+<style>
+  @media (min-width: 760px) {
+    .main--about {
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
 
-<!-- Experience -->
-<!-- Projects -->
-<!-- Acheivements -->
-<!-- Education -->
+  .about {
+    &__heading {
+      font-family: var(--fonts-heading);
+      font-size: var(--fs-3xl);
+      font-weight: 700;
+      background-image: linear-gradient(
+        135deg,
+        var(--purple-100-accent) 0%,
+        var(--indigo-100-accent) 100%
+      );
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      &__description {
+        font-size: var(--fs-md);
+        color: var(--grey-400);
+        margin: var(--space-s) 0;
+        line-height: 2;
+        font-weight: 500;
+      }
+    }
+    &__side-quests {
+      display: flex;
+      align-items: center;
+      margin-left: calc(-1 * var(--space-s));
+      margin-right: calc(-1 * var(--space-s));
+    }
+  }
+</style>

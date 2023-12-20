@@ -1,9 +1,8 @@
 ---
-import Card from "@component/card/Card.astro";
-import CareerTrack from "@component/career-track/CareerTrack.astro";
-import Section from "@component/section/Section.astro";
-import Layout from "@layout/layout/Layout.astro";
-import "@style/pages/career.css";
+import Card from "@component/Card.astro";
+import CareerTrack from "@component/CareerTrack.astro";
+import Section from "@component/Section.astro";
+import Layout from "@layout/Layout.astro";
 
 import { getExperiences } from "@facade/experience";
 import { getPageInfo } from "@facade/page-info";
@@ -12,6 +11,13 @@ import { getSideQuests } from "@facade/side-quest";
 const pageInfo = await getPageInfo("career");
 const experiences = await getExperiences();
 const sideQuests = await getSideQuests();
+
+// This Page will include
+
+// Experience
+// Projects
+// Acheivements
+// Education
 ---
 
 <Layout title="Career // Sarthik Gupta">
@@ -42,9 +48,41 @@ const sideQuests = await getSideQuests();
   </main>
 </Layout>
 
-<!-- This Page will include -->
+<style>
+  @media (min-width: 760px) {
+    .main--career {
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
 
-<!-- Experience -->
-<!-- Projects -->
-<!-- Acheivements -->
-<!-- Education -->
+  .career {
+    &__heading {
+      font-family: var(--fonts-heading);
+      font-size: var(--fs-3xl);
+      font-weight: 700;
+      background-image: linear-gradient(
+        135deg,
+        var(--cyan-100-accent) 0%,
+        var(--deep-purple-100-accent) 100%
+      );
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      &__description {
+        font-size: var(--fs-md);
+        color: var(--grey-400);
+        margin: var(--space-s) 0;
+        line-height: 2;
+        font-weight: 500;
+      }
+    }
+    &__side-quests {
+      display: flex;
+      align-items: center;
+      margin-left: calc(-1 * var(--space-s));
+      margin-right: calc(-1 * var(--space-s));
+    }
+  }
+</style>
