@@ -17,7 +17,14 @@ const { title, description, image, url } = Astro.props;
 ---
 
 <a class="card" href={url}>
-  <Image class="card__image" src={image.src as ImageMetadata} alt={image.alt} />
+  <Image
+    class="card__image"
+    src={image.src as ImageMetadata}
+    alt={image.alt}
+    format="avif"
+    height={196}
+    width={384}
+  />
   <h2 class="card__title">{title}</h2>
   <p class="card__description">{description}</p>
 </a>

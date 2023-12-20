@@ -24,6 +24,9 @@ const { title, description, image, tags, date, url } = Astro.props;
     class="horizontal-card__image"
     src={image.src as ImageMetadata}
     alt={image.alt}
+    format="avif"
+    height={128}
+    width={128}
   />
   <h2 class="horizontal-card__title">{title}</h2>
   <p class="horizontal-card__description">{description}</p>
