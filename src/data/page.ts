@@ -18,18 +18,18 @@ export const PageMap: Record<Page, PageInfo> = {
   },
   [Page.About]: {
     label: "About",
-    url: "/about",
+    url: "/about/",
   },
   [Page.Articles]: {
     label: "Articles",
-    url: "/articles",
+    url: "/articles/",
   },
   [Page.Career]: {
     label: "Career",
-    url: "/career",
+    url: "/career/",
   },
   [Page.Contact]: {
     label: "Contact",
-    url: "/contact",
+    url: "/contact/",
   },
 };
