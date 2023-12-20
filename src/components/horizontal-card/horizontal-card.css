@@ -8,9 +8,14 @@
   border-radius: var(--radius-md);
   background-color: transparent;
   text-decoration: unset;
-  transition: background-color var(--transition-ease-slow);
+  transition:
+    background-color var(--transition-ease-slow),
+    filter var(--transition-squish-slow);
   &:hover {
     background-color: var(--grey-900);
+    & .horizontal-card__image {
+      filter: grayscale(0.6);
+    }
   }
   &__image {
     grid-row: span 4;

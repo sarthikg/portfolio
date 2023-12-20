@@ -1,4 +1,5 @@
 ---
+import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 import "./card.css";
 
@@ -6,25 +7,17 @@ interface Props {
   title: string;
   description: string;
   image: {
-    src: string;
+    src: ImageMetadata;
     alt: string;
   };
   url: string;
 }
 
 const { title, description, image, url } = Astro.props;
-/* Dynamically importing images */
-const images = import.meta.glob("/src/assets/images/*.{jpg,jpeg,png,svg}");
 ---
 
 <a class="card" href={url}>
-  <Image
-    class="card__image"
-    src={images[image.src]()}
-    alt={image.alt}
-    width={384}
-    height={196}
-  />
+  <Image class="card__image" src={image.src} alt={image.alt} />
   <h2 class="card__title">{title}</h2>
   <p class="card__description">{description}</p>
 </a>

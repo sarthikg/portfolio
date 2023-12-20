@@ -3,10 +3,15 @@
   padding: var(--space-s);
   border-radius: var(--radius-md);
   background-color: transparent;
-  transition: background-color var(--transition-ease-slow);
+  transition:
+    background-color var(--transition-ease-slow),
+    filter var(--transition-squish-slow);
   text-decoration: unset;
   &:hover {
     background-color: var(--grey-900);
+    & .card__image {
+      filter: grayscale(0.6);
+    }
   }
   &__image {
     border-radius: var(--radius-md);

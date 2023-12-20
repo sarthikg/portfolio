@@ -1,5 +1,4 @@
-import { defineCollection } from "astro/content/runtime";
-import { z } from "astro/zod";
+import { z, defineCollection } from "astro:content";
 
 export const experienceSchema = defineCollection({
   type: "content",

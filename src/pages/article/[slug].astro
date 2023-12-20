@@ -23,26 +23,17 @@ const { article } = Astro.props;
 const { title, image, date } = article.data;
 
 const { Content } = await article.render();
-const rawContent = await article.body;
-const readingTime = getReadingTime(rawContent);
-
-/* Dynamically importing images */
-const images = import.meta.glob("/src/assets/images/*.{jpg,jpeg,png,svg}");
 ---
 
 <Layout title={`${title} // Sarthik Gupta`}>
   <article class="article">
     <div class="article__cover">
-      <Image
-        class="article__cover__image"
-        src={images[image.src]()}
-        alt={image.alt}
-      />
+      <Image class="article__cover__image" src={image.src} alt={image.alt} />
       <h1 class="article__cover__title">
         {title}
       </h1>
       <h4 class="article__cover__date">
-        {formatDateWithDay(date)} • {readingTime} min read
+        {formatDateWithDay(date)} • {getReadingTime(article.body)} min read
       </h4>
     </div>
     <main class="main main__article">

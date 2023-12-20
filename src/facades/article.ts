@@ -7,10 +7,7 @@ import { getCollection, type CollectionEntry } from "astro:content";
 export function getAllPublishedArticles(): Promise<
   CollectionEntry<"article">[]
 > {
-  return getCollection(
-    "article",
-    ({ data }: CollectionEntry<"article">) => !data.draft,
-  );
+  return getCollection("article", ({ data }) => !data.draft);
 }
 
 /**
@@ -20,10 +17,7 @@ export function getAllPublishedArticles(): Promise<
 export function getAllFeaturedArticles(): Promise<
   CollectionEntry<"article">[]
 > {
-  return getCollection(
-    "article",
-    ({ data }: CollectionEntry<"article">) => !data.draft && data.featured,
-  );
+  return getCollection("article", ({ data }) => !data.draft && data.featured);
 }
 
 /**
@@ -36,7 +30,6 @@ export function getAllArticlesWithTag(
 ): Promise<CollectionEntry<"article">[]> {
   return getCollection(
     "article",
-    ({ data }: CollectionEntry<"article">) =>
-      !data.draft && data.tags.includes(tag),
+    ({ data }) => !data.draft && data.tags.includes(tag),
   );
 }

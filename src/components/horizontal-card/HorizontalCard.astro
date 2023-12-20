@@ -1,5 +1,6 @@
 ---
 import { formatDateWithDay } from "@util/date-string";
+import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 import "./horizontal-card.css";
 
@@ -7,7 +8,7 @@ interface Props {
   title: string;
   description: string;
   image: {
-    src: string;
+    src: ImageMetadata;
     alt: string;
   };
   tags: string[];
@@ -16,18 +17,10 @@ interface Props {
 }
 
 const { title, description, image, tags, date, url } = Astro.props;
-/* Dynamically importing images */
-const images = import.meta.glob("/src/assets/images/*.{jpg,jpeg,png,svg}");
 ---
 
 <a class="horizontal-card" href={url}>
-  <Image
-    class="horizontal-card__image"
-    src={images[image.src]()}
-    alt={image.alt}
-    width={128}
-    height={128}
-  />
+  <Image class="horizontal-card__image" src={image.src} alt={image.alt} />
   <h2 class="horizontal-card__title">{title}</h2>
   <p class="horizontal-card__description">{description}</p>
   <ul class="horizontal-card__tags">

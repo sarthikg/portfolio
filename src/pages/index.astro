@@ -1,6 +1,9 @@
 ---
 import Layout from "@layout/layout/Layout.astro";
-import "@style/pages/index.css"
+import "@style/pages/index.css";
+import { Image } from "astro:assets";
+
+import profilePic from "@asset/images/profile-pic.webp";
 ---
 
 <Layout title="Sarthik Gupta">
@@ -10,7 +13,7 @@ import "@style/pages/index.css"
       <h2 class="index__content__title">Full Stack Developer</h2>
     </div>
     <div class="index__image">
-      <img src="/images/profile-pic.webp">
+      <Image src={profilePic} alt="Image of Sarthik Gupta" />
     </div>
   </main>
 </Layout>
