@@ -82,16 +82,17 @@
     }
     & table {
       margin: auto;
+      margin-top: 8px;
       border: 1px solid var(--grey-800);
     }
     & th {
-      border: 1px solid green;
+      /* border: 1px solid green; */
     }
     & td {
-      border: 1px solid red;
+      /* border: 1px solid red; */
     }
     & tr {
-      border: 1px solid yellow;
+      /* border: 1px solid yellow; */
     }
   }
 }
