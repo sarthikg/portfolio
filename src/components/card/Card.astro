@@ -7,7 +7,7 @@ interface Props {
   title: string;
   description: string;
   image: {
-    src: ImageMetadata;
+    src: unknown;
     alt: string;
   };
   url: string;
@@ -17,7 +17,7 @@ const { title, description, image, url } = Astro.props;
 ---
 
 <a class="card" href={url}>
-  <Image class="card__image" src={image.src} alt={image.alt} />
+  <Image class="card__image" src={image.src as ImageMetadata} alt={image.alt} />
   <h2 class="card__title">{title}</h2>
   <p class="card__description">{description}</p>
 </a>

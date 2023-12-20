@@ -6,19 +6,19 @@ import Layout from "@layout/layout/Layout.astro";
 import "@style/pages/career.css";
 
 import { getExperiences } from "@facade/experience";
+import { getPageInfo } from "@facade/page-info";
 import { getSideQuests } from "@facade/side-quest";
 
+const pageInfo = await getPageInfo("career");
 const experiences = await getExperiences();
 const sideQuests = await getSideQuests();
 ---
 
 <Layout title="Career // Sarthik Gupta">
   <main class="main main--career">
-    <h1 class="career__heading">Work. Quests. More.</h1>
+    <h1 class="career__heading">{pageInfo.data.title}</h1>
     <p class="career__heading__description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aperiam
-      corrupti facere illo labore dolorem minima voluptas, expedita sit dolore
-      dolor nostrum tempora doloribus!
+      {pageInfo.data.description}
     </p>
     <Section title="Work Experience">
       <div class="career__experience">

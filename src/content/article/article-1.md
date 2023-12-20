@@ -103,6 +103,13 @@ These are the rules defined in a database to maintain data accuracy, consistency
 3. **Referential Integrity Constraints** - According to this constraint, if data in 2 tables in related, then it should be related through foreign keys. This ensures that data cannot be added in child tables without first adding it to the parent tables.
 4. **Key Constraints** - According to this constraint, every table should have at least 1 unique column to maintain uniqueness of data. Though, a table can also have multiple unique columns, but at least 1 should be required. This unique column is linked with Candidate Key.
 
+| SID | Name  | CID | Course Name | FID | Faculty Name | Salary |
+| --- | ----- | --- | ----------- | --- | ------------ | ------ |
+| 1   | Ram   | C1  | DBMS        | F1  | John         | 30000  |
+| 2   | Ravi  | C2  | JAVA        | F2  | Bob          | 40000  |
+| 3   | Nitin | C1  | DBMS        | F1  | John         | 30000  |
+| 4   | Amrit | C1  | DBMS        | F1  | John         | 30000  |
+
 In the above case, we have 2 tables, one for Students & another for Courses. Having a many to many relationship, we create a third table, which maps a `student_id` with a `course_id`. The following are the things to note:
 
 1. This relationship table can have a composite key, the one that is comprised of both the `student_id` & the `course_id` as a primary key since the combination of both is unique.

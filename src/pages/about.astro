@@ -1,15 +1,16 @@
 ---
+import { getPageInfo } from "@facade/page-info";
 import Layout from "@layout/layout/Layout.astro";
 import "@style/pages/about.css";
+
+const pageInfo = await getPageInfo("about");
 ---
 
 <Layout title="About // Sarthik Gupta">
   <main class="main main--about">
-    <h1 class="about__heading">About. Skills. Social.</h1>
+    <h1 class="about__heading">{pageInfo.data.title}</h1>
     <p class="about__heading__description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aperiam
-      corrupti facere illo labore dolorem minima voluptas, expedita sit dolore
-      dolor nostrum tempora doloribus!
+      {pageInfo.data.description}
     </p>
   </main>
 </Layout>

@@ -8,7 +8,7 @@ interface Props {
   title: string;
   description: string;
   image: {
-    src: ImageMetadata;
+    src: unknown;
     alt: string;
   };
   tags: string[];
@@ -20,7 +20,11 @@ const { title, description, image, tags, date, url } = Astro.props;
 ---
 
 <a class="horizontal-card" href={url}>
-  <Image class="horizontal-card__image" src={image.src} alt={image.alt} />
+  <Image
+    class="horizontal-card__image"
+    src={image.src as ImageMetadata}
+    alt={image.alt}
+  />
   <h2 class="horizontal-card__title">{title}</h2>
   <p class="horizontal-card__description">{description}</p>
   <ul class="horizontal-card__tags">

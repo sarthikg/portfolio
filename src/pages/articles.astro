@@ -9,18 +9,18 @@ import {
   getAllFeaturedArticles,
   getAllPublishedArticles,
 } from "@facade/article";
+import { getPageInfo } from "@facade/page-info";
 
+const pageInfo = await getPageInfo("articles");
 const allArticles = await getAllPublishedArticles();
 const allFeaturedArticles = await getAllFeaturedArticles();
 ---
 
 <Layout title="Articles // Sarthik Gupta">
   <main class="main main--articles">
-    <h1 class="articles__heading">Stories. Thoughts. Guides.</h1>
+    <h1 class="articles__heading">{pageInfo.data.title}</h1>
     <p class="articles__heading__description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aperiam
-      corrupti facere illo labore dolorem minima voluptas, expedita sit dolore
-      dolor nostrum tempora doloribus!
+      {pageInfo.data.description}
     </p>
     <Section title="Featured Articles">
       <div class="articles__featured">

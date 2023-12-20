@@ -1,15 +1,16 @@
 ---
+import { getPageInfo } from "@facade/page-info";
 import Layout from "@layout/layout/Layout.astro";
 import "@style/pages/contact.css";
+
+const pageInfo = await getPageInfo("contact");
 ---
 
 <Layout title="Contact // Sarthik Gupta">
   <main class="main main--contact">
-    <h1 class="contact__heading">Connect. Enquire. Follow.</h1>
+    <h1 class="contact__heading">{pageInfo.data.title}</h1>
     <p class="contact__heading__description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aperiam
-      corrupti facere illo labore dolorem minima voluptas, expedita sit dolore
-      dolor nostrum tempora doloribus!
+      {pageInfo.data.description}
     </p>
     <section class="contact__form__section">
       <form class="contact__form" method="post" action="/api/contact">
