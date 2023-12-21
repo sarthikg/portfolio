@@ -58,11 +58,11 @@ const pageInfo = await getPageInfo("contact");
         method: form.method,
         body: new FormData(form),
       });
-      showSnackbar(response.status);
-      hideSnackbar();
       if (response.status === 200) {
         form.reset();
       }
+      showSnackbar(response.status);
+      hideSnackbar();
     });
 
   function showSnackbar(status: number): void {
