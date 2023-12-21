@@ -52,6 +52,7 @@ const pageInfo = await getPageInfo("contact");
     .querySelector(".contact__form")
     .addEventListener("submit", async function (e) {
       e.preventDefault();
+      addLoaderToButton();
       const form = e.target as HTMLFormElement;
       const response = await fetch(form.action, {
         method: form.method,
@@ -60,9 +61,20 @@ const pageInfo = await getPageInfo("contact");
       if (response.status === 200) {
         form.reset();
       }
+      removeLoaderFromButton();
       showSnackbar(response.status);
       hideSnackbar();
     });
+
+  function addLoaderToButton(): void {
+    const button = document.querySelector(".contact__form__input--submit");
+    button.classList.add("contact__form__input--submit--active");
+  }
+
+  function removeLoaderFromButton(): void {
+    const button = document.querySelector(".contact__form__input--submit");
+    button.classList.remove("contact__form__input--submit--active");
+  }
 
   function showSnackbar(status: number): void {
     const snackbar = document.querySelector(".snackbar") as HTMLDialogElement;
@@ -134,7 +146,7 @@ const pageInfo = await getPageInfo("contact");
         border-radius: var(--radius-md);
         caret-color: var(--grey-400);
         border: 1px solid var(--grey-900);
-        font-size: var(--fs-md);
+        font-size: var(--fs-sm);
         color: var(--grey-100);
         transition: border-color var(--transition-ease-slow);
         width: 100%;
@@ -171,6 +183,23 @@ const pageInfo = await getPageInfo("contact");
           border-color: var(--grey-300);
           background-color: var(--grey-300);
           transition: all var(--transition-ease-slow);
+          &--active {
+            color: var(--teal-100-accent);
+            background-color: transparent;
+            border-color: var(--teal-100-accent);
+            &::after {
+              content: " ";
+              margin-left: var(--space-2xs);
+              width: calc(var(--fs-sm) - 2px);
+              height: calc(var(--fs-sm) - 2px);
+              border: 2px solid var(--teal-100-accent);
+              border-bottom-color: transparent;
+              border-radius: 50%;
+              display: inline-block;
+              box-sizing: border-box;
+              animation: rotation 1s linear infinite;
+            }
+          }
           &:hover {
             color: var(--teal-100-accent);
             background-color: transparent;
@@ -178,6 +207,15 @@ const pageInfo = await getPageInfo("contact");
           }
         }
       }
+    }
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
     }
   }
 </style>
