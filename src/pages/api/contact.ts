@@ -125,7 +125,6 @@ function getEmailBody(
  * @return {Transporter} - The configured nodemailer transporter object.
  */
 function getTransporter() {
-  console.log(process.env);
   return nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: parseInt(process.env.SMTP_PORT),
