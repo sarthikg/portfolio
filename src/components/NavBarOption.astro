@@ -9,48 +9,58 @@ const { page } = Astro.props;
 const { pathname } = Astro.url;
 ---
 
-<li
-  class="navbar-option"
-  class:list={[{ "navbar-option--active": pathname === page.url }]}
->
-  <a class="navbar-option__link" href={page.url}>
-    {page.label}
+<li class="navbar-option">
+  <a
+    href={page.url}
+    class="navbar-option__link"
+    class:list={[{ "navbar-option__link--active": pathname === page.url }]}
+  >
+    <span class="navbar-option__text">
+      {page.label}
+    </span>
   </a>
 </li>
 
 <style>
   .navbar-option {
     list-style: none;
-    padding: var(--space-2xs) var(--space-s);
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    transition: background-color var(--transition-ease-slow);
-    &:hover {
-      background-color: var(--grey-900);
-      & .navbar-option__link {
-        color: var(--grey-100);
+
+    &__link {
+      padding: var(--space-2xs) var(--space-s);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: background-color var(--transition-ease-slow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      &:hover {
+        background-color: var(--grey-900);
+        & .navbar-option__text {
+          color: var(--grey-100);
+        }
       }
-    }
-    &--active {
-      & .navbar-option__link {
-        color: var(--grey-100);
-        &::after {
-          content: "";
-          position: absolute;
-          margin: 0px auto;
-          top: 18px;
-          left: 0px;
-          right: 0px;
-          height: 1px;
-          width: 20px;
-          background: var(--grey-100);
-          transition: opacity var(--transitions-duration) ease-in-out;
+      &--active {
+        & .navbar-option__text {
+          color: var(--grey-100);
+          &::after {
+            content: "";
+            position: absolute;
+            margin: 0px auto;
+            top: 18px;
+            left: 0px;
+            right: 0px;
+            height: 1px;
+            width: 20px;
+            background: var(--grey-100);
+            transition: opacity var(--transitions-duration) ease-in-out;
+          }
         }
       }
     }
-    &__link {
+    &__text {
       position: relative;
-      text-decoration: none;
+
       text-transform: uppercase;
       color: var(--grey-500);
       font-size: var(--fs-xs);
