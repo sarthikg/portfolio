@@ -1,5 +1,6 @@
 ---
 import Body from "@layout/Body.astro";
+import Footer from "@layout/Footer.astro";
 import Head from "@layout/Head.astro";
 import Header from "@layout/Header.astro";
 import "@style/colors.css";
@@ -20,5 +21,6 @@ const { title } = Astro.props;
   <Body>
     <Header />
     <slot />
+    <Footer />
   </Body>
 </html>

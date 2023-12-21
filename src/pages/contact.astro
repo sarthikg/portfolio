@@ -10,41 +10,40 @@ const pageInfo = await getPageInfo("contact");
   <Snackbar />
   <main class="main main--contact">
     <h1 class="contact__heading">{pageInfo.data.title}</h1>
-    <p class="contact__heading__description">
+    <p class="contact__description">
       {pageInfo.data.description}
     </p>
-    <section class="contact__form__section">
-      <form class="contact__form" method="post" action="/api/contact">
-        <input
-          class="contact__input"
-          name="name"
-          placeholder="Name"
-          type="text"
-          required
-        />
-        <input
-          class="contact__input"
-          name="email"
-          placeholder="Email"
-          type="email"
-          required
-        />
-        <input
-          class="contact__input"
-          name="subject"
-          placeholder="Subject"
-          type="text"
-          required
-        />
-        <textarea
-          class="contact__input contact__input--textarea"
-          name="message"
-          placeholder="Message"></textarea>
-        <button class="contact__input contact__input--submit" type="submit"
-          >Send</button
-        >
-      </form>
-    </section>
+    <form class="contact__form" method="post" action="/api/contact">
+      <input
+        class="contact__form__input"
+        name="name"
+        placeholder="Name"
+        type="text"
+        required
+      />
+      <input
+        class="contact__form__input"
+        name="email"
+        placeholder="Email"
+        type="email"
+        required
+      />
+      <input
+        class="contact__form__input"
+        name="subject"
+        placeholder="Subject"
+        type="text"
+        required
+      />
+      <textarea
+        class="contact__form__input contact__form__input--textarea"
+        name="message"
+        placeholder="Message"></textarea>
+      <button
+        class="contact__form__input contact__form__input--submit"
+        type="submit">Send</button
+      >
+    </form>
   </main>
 </Layout>
 
@@ -113,73 +112,70 @@ const pageInfo = await getPageInfo("contact");
       );
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      &__description {
-        font-size: var(--fs-md);
-        color: var(--grey-400);
-        margin: var(--space-s) 0;
-        line-height: 2;
-        font-weight: 500;
-      }
+    }
+    &__description {
+      font-size: var(--fs-md);
+      color: var(--grey-400);
+      margin: var(--space-s) 0;
+      line-height: 2;
+      font-weight: 500;
     }
     &__form {
-      display: contents;
-      &__section {
-        display: grid;
-        grid-template-columns: repeat(1fr 2);
-        grid-template-rows: 40px 40px 1fr 40px;
-        gap: 20px;
-        flex-grow: 1;
-        margin-top: var(--space-l);
-      }
-    }
-    &__input {
-      border: unset;
-      padding: 10px;
-      background-color: var(--grey-900);
-      border-radius: var(--radius-md);
-      caret-color: var(--grey-400);
-      border: 1px solid var(--grey-900);
-      font-size: var(--fs-md);
-      color: var(--grey-100);
-      transition: border-color var(--transition-ease-slow);
-      width: 100%;
-      &::placeholder {
-        font-family: var(--fonts-body);
-        color: var(--grey-500);
-      }
-      &:focus {
-        outline: unset;
-        border: 1px solid var(--teal-100-accent);
-      }
-      &[name="name"] {
-        grid-row: 1 / 2;
-        grid-column: 1 / 2;
-      }
-      &[name="email"] {
-        grid-row: 1 / 2;
-        grid-column: 2 / 3;
-      }
-      &[name="subject"] {
-        grid-row: 2 / 3;
-        grid-column: 1 / 3;
-      }
-      &--textarea {
-        resize: none;
-        grid-row: 3 / 4;
-        grid-column: 1 / 3;
-      }
-      &--submit {
-        cursor: pointer;
-        grid-row: 4 / 5;
-        grid-column: 2 / 3;
-        color: var(--grey-900);
-        border-color: var(--grey-300);
-        background-color: var(--grey-300);
-        transition: all var(--transition-ease-slow);
-        &:hover {
-          color: var(--teal-100-accent);
-          background-color: transparent;
-          border-color: var(--teal-100-accent);
+      display: grid;
+      grid-template-columns: repeat(1fr 2);
+      grid-template-rows: var(--space-l) var(--space-l) 1fr var(--space-l);
+      margin-top: var(--space-l);
+      gap: var(--space-s);
+      flex-grow: 1;
+      &__input {
+        border: unset;
+        padding: var(--space-2xs);
+        background-color: var(--grey-900);
+        border-radius: var(--radius-md);
+        caret-color: var(--grey-400);
+        border: 1px solid var(--grey-900);
+        font-size: var(--fs-md);
+        color: var(--grey-100);
+        transition: border-color var(--transition-ease-slow);
+        width: 100%;
+        &::placeholder {
+          font-family: var(--fonts-body);
+          color: var(--grey-500);
+        }
+        &:focus {
+          outline: unset;
+          border: 1px solid var(--teal-100-accent);
+        }
+        &[name="name"] {
+          grid-row: 1 / 2;
+          grid-column: 1 / 2;
+        }
+        &[name="email"] {
+          grid-row: 1 / 2;
+          grid-column: 2 / 3;
+        }
+        &[name="subject"] {
+          grid-row: 2 / 3;
+          grid-column: 1 / 3;
+        }
+        &--textarea {
+          resize: none;
+          grid-row: 3 / 4;
+          grid-column: 1 / 3;
+        }
+        &--submit {
+          cursor: pointer;
+          grid-row: 4 / 5;
+          grid-column: 2 / 3;
+          color: var(--grey-900);
+          border-color: var(--grey-300);
+          background-color: var(--grey-300);
+          transition: all var(--transition-ease-slow);
+          &:hover {
+            color: var(--teal-100-accent);
+            background-color: transparent;
+            border-color: var(--teal-100-accent);
+          }
         }
       }
     }

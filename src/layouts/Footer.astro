@@ -1,0 +1,57 @@
+---
+import { getSocials } from "@facade/socials";
+
+const socials = getSocials();
+---
+
+<footer class="footer">
+  <ul style={{ display: "contents" }}>
+    {
+      socials.map((social) => (
+        <li class="footer__social">
+          <a
+            class="footer__social__link"
+            href={`${social.url}/${social.username}`}
+            target="_blank"
+          >
+            <svg class="footer__social__icon" role="img">
+              <title>{social.name}</title>
+              <use href={`/icons/${social.icon}.svg#icon`} />
+            </svg>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</footer>
+
+<style>
+  .footer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    min-height: 59px;
+    width: 100%;
+    position: absolute;
+    z-index: 3;
+    bottom: 0px;
+    column-gap: 80px;
+    &__social {
+      list-style: none;
+      &__link {
+        text-decoration: none;
+        color: var(--grey-500);
+        transition: color var(--transition-ease-slow);
+        &:hover {
+          color: var(--grey-700);
+        }
+      }
+      &__icon {
+        height: 24px;
+        width: 24px;
+        transform: scale(0.8);
+      }
+    }
+  }
+</style>
