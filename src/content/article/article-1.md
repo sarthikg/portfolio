@@ -9,18 +9,36 @@ tags: ["JavaScript", "TypeScript"]
 featured: true
 ---
 
-## Definitions
+# This is the H1
 
-### Database
+A Database is a collection of related data. This data can be of the following 2 types:
+
+## This is the H2
+
+A Database is a collection of related data. This data can be of the following 2 types:
+
+### This is the H3
+
+A Database is a collection of related data. This data can be of the following 2 types:
+
+#### This is the H4
+
+A Database is a collection of related data. This data can be of the following 2 types:
+
+##### This is the H5
 
 A Database is a collection of related data. This data can be of the following 2 types:
 
 1. **Structured Data** - Data has a structure & can be easily stored in tables
 2. **Unstructured Data** - Data doesn't follow a structure & is hard to store in a table
 
+![The San Juan Mountains are beautiful!](/src/assets/images/article/placeholder.jpg "San Juan Mountains")
+
 ### DBMS
 
-A Database Management System comprises of operations that can be performed on the data by the user. This includes operations like create, read, update, delete.
+A Database Management System comprises of operations that can be performed on the data by the user . This includes operations like create, read, update, delete. [This is a link]()
+
+---
 
 ### Schema
 
@@ -116,3 +134,8 @@ In the above case, we have 2 tables, one for Students & another for Courses. Hav
 2. We cannot merge the relationship table with either of the other tables.
 
 _If a table consists of n columns & 1 of them is a candidate key, there would be total 2^(n-1) super keys. This is because, there are 2 options for each key, to include it or to not include it, except for the first key which has only 1 option, which is to include it_
+
+```typescript
+const a = "something";
+console.log(a);
+```
