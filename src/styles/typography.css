@@ -99,7 +99,35 @@
   font-style: italic;
 }
 
+/* Fira Code */
+@font-face {
+  font-family: "Fira Code";
+  src: url("/fonts/fira-code-bold.woff2") format("woff2");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Fira Code";
+  src: url("/fonts/fira-code-semi-bold.woff2") format("woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Fira Code";
+  src: url("/fonts/fira-code-medium.woff2") format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Fira Code";
+  src: url("/fonts/fira-code-regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Fira Code";
+  src: url("/fonts/fira-code-light.woff2") format("woff2");
+  font-weight: 300;
+}
+
 :root {
   --fonts-heading: "Neuzeit Grotesk", sans-serif;
   --fonts-body: "Biotif", sans-serif;
+  --font-code: "Fira Code", monospace;
 }

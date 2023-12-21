@@ -136,6 +136,30 @@ In the above case, we have 2 tables, one for Students & another for Courses. Hav
 _If a table consists of n columns & 1 of them is a candidate key, there would be total 2^(n-1) super keys. This is because, there are 2 options for each key, to include it or to not include it, except for the first key which has only 1 option, which is to include it_
 
 ```typescript
-const a = "something";
-console.log(a);
+/**
+ * Calculates the duration between two dates in years and months.
+ *
+ * @param {Date} startDate - The starting date of the duration.
+ * @param {Date} [endDate=new Date()] - The ending date of the duration. Defaults to the current date.
+ * @return {string} The duration between the start and end dates in the format "Xyr Ymos".
+ */
+export function getDuration(startDate: Date, endDate: Date): string {
+  const totalMonths =
+    endDate.getMonth() -
+    startDate.getMonth() +
+    12 * (endDate.getFullYear() - startDate.getFullYear());
+
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+
+  if (months && years) {
+    return `${years}yr ${months}mos`;
+  }
+  if (months) {
+    return `${months}mos`;
+  }
+  return `${years}yr`;
+}
 ```
+
+In the above case, we have 2 tables, one for Students & another for Courses. Having a many to many relationship, we create a third table, which maps a `student_id` with a `course_id`. The following are the things to note:

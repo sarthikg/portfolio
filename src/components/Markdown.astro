@@ -86,32 +86,68 @@
       line-height: 2;
     }
     & code {
+      font-family: var(--font-code);
       color: var(--grey-400);
-      font-size: var(--fs-sm);
+      font-size: calc(var(--fs-xs) + 1px);
       background-color: var(--grey-900);
       padding: calc(var(--space-3xs) / 1.5) calc(var(--space-2xs) / 1.4);
       border-radius: var(--radius-sm);
     }
+    & .astro-code {
+      margin-top: var(--space-3xs-2xs);
+      padding: var(--space-2xs) var(--space-s);
+      border-radius: var(--radius-md);
+      background-color: var(--grey-900);
+      > code {
+        font-size: calc(var(--fs-xs) + 1px);
+        padding: unset;
+        background-color: unset;
+        line-height: 1.2;
+      }
+    }
+
     & blockquote {
       border-left: 4px solid var(--grey-800);
       font-style: italic;
-      padding-bottom: 8px;
-      padding-left: 20px;
-      margin-top: 20px;
+      font-weight: 500;
+      padding-bottom: var(--space-3xs);
+      padding-left: var(--space-s);
+      margin-top: var(--space-s);
     }
     & table {
       margin: auto;
-      margin-top: 8px;
+      margin-top: var(--space-xs);
+      margin-bottom: var(--space-xs);
       border: 1px solid var(--grey-800);
+      font-size: var(--fs-sm);
+      line-height: 2;
+      border-radius: 1px;
+    }
+
+    & thead {
+      border-bottom: 1px solid var(--grey-800);
     }
     & th {
-      /* border: 1px solid green; */
+      padding: 0 var(--space-2xs);
+      color: var(--_color-heading);
+      border-bottom: 1px solid var(--grey-800);
+      &:not(:last-child) {
+        border-right: 1px solid var(--grey-800);
+      }
     }
     & td {
-      /* border: 1px solid red; */
+      padding: 0 var(--space-2xs);
+      color: var(--_color-body);
+      &:not(:last-child) {
+        border-right: 1px solid var(--grey-800);
+      }
     }
     & tr {
-      /* border: 1px solid yellow; */
+      &:not(:last-child) {
+        & > td {
+          border-bottom: 1px solid var(--grey-900);
+        }
+      }
     }
     & img {
       border-radius: var(--radius-md);
