@@ -1,0 +1,61 @@
+---
+
+---
+
+<dialog class="snackbar"></dialog>
+
+<style>
+  .snackbar {
+    background-color: var(--grey-900);
+    color: var(--grey-400);
+    font-size: var(--fs-sm);
+    font-family: var(--font-body);
+    line-height: 1;
+    padding: var(--space-2xs) var(--space-s);
+    top: var(--space-xl);
+    left: auto;
+    margin-right: var(--space-l);
+    border: 1px solid var(--grey-700);
+    border-radius: var(--radius-md);
+    line-height: var(--lh-1-4);
+    max-width: calc(calc(var(--content-4xl) + var(--content-3xl)) / 2);
+    white-space: pre-line;
+    &--success {
+      border-color: var(--green-100-accent);
+      color: var(--green-200-accent);
+    }
+    &--warning {
+      border-color: var(--orange-100-accent);
+      color: var(--orange-200-accent);
+    }
+    &--error {
+      border-color: var(--red-100-accent);
+      color: var(--red-200-accent);
+    }
+    &[open] {
+      animation:
+        fade-in 0.5s ease-in-out 0s normal,
+        fade-out 1s ease-in-out 4.2s normal;
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      top: var(--space-2xl);
+    }
+    to {
+      opacity: 1;
+      top: var(--space-xl);
+    }
+  }
+</style>

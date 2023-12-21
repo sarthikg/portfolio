@@ -1,4 +1,5 @@
 ---
+import Snackbar from "@component/Snackbar.astro";
 import { getPageInfo } from "@facade/page-info";
 import Layout from "@layout/Layout.astro";
 
@@ -6,6 +7,7 @@ const pageInfo = await getPageInfo("contact");
 ---
 
 <Layout title="Contact // Sarthik Gupta">
+  <Snackbar />
   <main class="main main--contact">
     <h1 class="contact__heading">{pageInfo.data.title}</h1>
     <p class="contact__heading__description">
@@ -56,11 +58,37 @@ const pageInfo = await getPageInfo("contact");
         method: form.method,
         body: new FormData(form),
       });
-
+      showSnackbar(response.status);
+      hideSnackbar();
       if (response.status === 200) {
         form.reset();
       }
     });
+
+  function showSnackbar(status: number): void {
+    const snackbar = document.querySelector(".snackbar") as HTMLDialogElement;
+    if (status === 200) {
+      snackbar.textContent = `Message sent! 🎉 \r\n You should be hearing back soon.`;
+      snackbar.classList.add("snackbar--success");
+    } else if (status === 400) {
+      snackbar.textContent =
+        "Incorrect input! 😓 \r\n Please fill all the fields & try again.";
+      snackbar.classList.add("snackbar--warning");
+    } else {
+      snackbar.textContent =
+        "Something went wrong! 😭 \r\n Please connect using one of the social media channels.";
+      snackbar.classList.add("snackbar--error");
+    }
+    snackbar.show();
+    snackbar.blur();
+  }
+
+  function hideSnackbar(): void {
+    const snackbar = document.querySelector(".snackbar") as HTMLDialogElement;
+    setTimeout(() => {
+      snackbar.close();
+    }, 5000);
+  }
 </script>
 
 <style>
