@@ -1,4 +1,4 @@
-import { socials } from "@content/data/socials";
+import socials from "@content/data/socials.json";
 import type { Social } from "@schema/contact";
 
 /**
