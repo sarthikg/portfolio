@@ -52,16 +52,7 @@ const { Content } = await article.render();
 </Layout>
 
 <style>
-  @media (min-width: 760px) {
-    .main__article {
-      margin: 0 auto;
-      display: flex;
-      align-items: flex-start;
-      flex-direction: column;
-      padding-top: 0;
-    }
-  }
-
+  /* Global Styles */
   .article {
     &__cover {
       min-height: 500px;
@@ -99,6 +90,23 @@ const { Content } = await article.render();
         bottom: var(--space-s);
         z-index: 3;
       }
+    }
+  }
+
+  /* Desktop Overrides */
+  @media (min-width: 760px) {
+    .main__article {
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      padding-top: 0;
+    }
+  }
+  /* Mobile Overrides */
+  @media (max-width: 480px) {
+    .main__article {
+      padding-top: var(--space-l);
     }
   }
 </style>
