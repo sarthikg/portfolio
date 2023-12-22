@@ -18,16 +18,7 @@ import profilePic from "@asset/images/profile-pic.webp";
 </Layout>
 
 <style>
-  @media (min-width: 760px) {
-    .main--index {
-      margin: 0 auto;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
-  }
-
+  /* Global Styles */
   .index {
     &__content {
       flex-direction: column;
@@ -60,6 +51,40 @@ import profilePic from "@asset/images/profile-pic.webp";
         object-fit: cover;
         width: var(--content-3xl);
         height: var(--content-3xl);
+      }
+    }
+  }
+  /* Desktop Overrides */
+  @media (min-width: 760px) {
+    .main--index {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  /* Mobile Overrides */
+  @media (max-width: 480px) {
+    .main--index {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+    .index {
+      &__content {
+        align-items: center;
+        &__name {
+          text-align: center;
+        }
+        &__title {
+          text-align: center;
+        }
+      }
+      &__image {
+        transform: none;
       }
     }
   }
