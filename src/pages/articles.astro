@@ -55,15 +55,7 @@ const allFeaturedArticles = await getAllFeaturedArticles();
 </Layout>
 
 <style>
-  @media (min-width: 760px) {
-    .main--articles {
-      margin: 0 auto;
-      display: flex;
-      align-items: flex-start;
-      flex-direction: column;
-    }
-  }
-
+  /* Global Styles */
   .articles {
     &__heading {
       font-family: var(--fonts-heading);
@@ -95,6 +87,37 @@ const allFeaturedArticles = await getAllFeaturedArticles();
       flex-direction: column;
       margin-left: calc(-1 * var(--space-s));
       margin-right: calc(-1 * var(--space-s));
+    }
+  }
+
+  /* Desktop Overrides */
+  @media (min-width: 760px) {
+    .main--articles {
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .articles {
+      &__heading {
+      }
+      &__featured {
+        flex-direction: row;
+      }
+    }
+  }
+  /* Mobile Overrides */
+  @media (max-width: 480px) {
+    .articles {
+      &__featured {
+        flex-direction: column;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      &__list {
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
   }
 </style>

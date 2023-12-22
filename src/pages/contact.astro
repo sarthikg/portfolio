@@ -103,15 +103,7 @@ const pageInfo = await getPageInfo("contact");
 </script>
 
 <style>
-  @media (min-width: 760px) {
-    .main--contact {
-      margin: 0 auto;
-      display: flex;
-      align-items: flex-start;
-      flex-direction: column;
-    }
-  }
-
+  /* Global Styles */
   .contact {
     &__heading {
       font-family: var(--fonts-heading);
@@ -206,6 +198,29 @@ const pageInfo = await getPageInfo("contact");
             border-color: var(--teal-100-accent);
           }
         }
+      }
+    }
+  }
+
+  /* Desktop Overrides */
+  @media (min-width: 760px) {
+    .main--contact {
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+  /* Mobile Overrides */
+  @media (max-width: 480px) {
+    .main--contact {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .contact {
+      &__form {
+        flex-grow: 1;
       }
     }
   }

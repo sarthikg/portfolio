@@ -3,7 +3,7 @@ import NavBar from "@component/NavBar.astro";
 ---
 
 <header class="header">
-  <a class="header__logo">
+  <a class="header__logo" href="/">
     <span class="header__logo__text"> S</span>
   </a>
   <NavBar />
@@ -11,6 +11,7 @@ import NavBar from "@component/NavBar.astro";
 </header>
 
 <style>
+  /* Global Styles */
   .header {
     display: flex;
     width: 100%;
@@ -31,6 +32,7 @@ import NavBar from "@component/NavBar.astro";
       border-radius: var(--radius-md);
       cursor: pointer;
       transition: background-color var(--transition-ease-slow);
+      text-decoration: none;
       &:hover {
         background-color: var(--grey-900);
         & .header__logo__text {
@@ -49,6 +51,21 @@ import NavBar from "@component/NavBar.astro";
       height: var(--fs-xl);
       width: var(--fs-xl);
       margin-right: 12px;
+    }
+  }
+
+  /* Desktop Overrides */
+  @media (min-width: 760px) {
+  }
+  /* Mobile Overrides */
+  @media (max-width: 480px) {
+    .header {
+      flex-direction: column;
+      margin-top: var(--space-xs);
+      row-gap: var(--space-xs);
+      &__filler {
+        display: none;
+      }
     }
   }
 </style>

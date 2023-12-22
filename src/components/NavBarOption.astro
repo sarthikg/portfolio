@@ -22,6 +22,7 @@ const { pathname } = Astro.url;
 </li>
 
 <style>
+  /* Global Styles */
   .navbar-option {
     list-style: none;
 
@@ -60,7 +61,6 @@ const { pathname } = Astro.url;
     }
     &__text {
       position: relative;
-
       text-transform: uppercase;
       color: var(--grey-500);
       font-size: var(--fs-xs);
@@ -68,6 +68,18 @@ const { pathname } = Astro.url;
       background-color: transparent;
       letter-spacing: 1.2px;
       transition: color var(--transition-ease-slow);
+    }
+  }
+
+  /* Desktop Overrides */
+  @media (min-width: 760px) {
+  }
+  /* Mobile Overrides */
+  @media (max-width: 480px) {
+    .navbar-option {
+      &__link {
+        padding: var(--space-2xs) var(--space-xs);
+      }
     }
   }
 </style>

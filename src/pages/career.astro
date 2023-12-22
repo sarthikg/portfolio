@@ -49,15 +49,7 @@ const sideQuests = await getSideQuests();
 </Layout>
 
 <style>
-  @media (min-width: 760px) {
-    .main--career {
-      margin: 0 auto;
-      display: flex;
-      align-items: flex-start;
-      flex-direction: column;
-    }
-  }
-
+  /* Global Styles */
   .career {
     &__heading {
       font-family: var(--fonts-heading);
@@ -83,6 +75,26 @@ const sideQuests = await getSideQuests();
       align-items: center;
       margin-left: calc(-1 * var(--space-s));
       margin-right: calc(-1 * var(--space-s));
+    }
+  }
+
+  /* Desktop Overrides */
+  @media (min-width: 760px) {
+    .main--career {
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+  /* Mobile Overrides */
+  @media (max-width: 480px) {
+    .career {
+      &__side-quests {
+        flex-direction: column;
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
   }
 </style>

@@ -1,5 +1,4 @@
 export enum Page {
-  Home = "Home",
   About = "About",
   Career = "Career",
   Articles = "Articles",
@@ -12,10 +11,6 @@ export interface PageInfo {
 }
 
 export const PageMap: Record<Page, PageInfo> = {
-  [Page.Home]: {
-    label: "Home",
-    url: "/",
-  },
   [Page.About]: {
     label: "About",
     url: "/about/",

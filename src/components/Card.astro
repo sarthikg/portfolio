@@ -29,6 +29,7 @@ const { title, description, image, url } = Astro.props;
 </a>
 
 <style>
+  /* Global Styles */
   .card {
     cursor: pointer;
     padding: var(--space-s);
@@ -67,6 +68,22 @@ const { title, description, image, url } = Astro.props;
       text-overflow: ellipsis;
       overflow: hidden;
       line-height: 2;
+    }
+  }
+
+  /* Desktop Overrides */
+  @media (min-width: 760px) {
+  }
+  /* Mobile Overrides */
+  @media (max-width: 480px) {
+    .card {
+      &__image {
+        height: 180px;
+        width: 384px;
+      }
+      &__description {
+        line-height: 1.8;
+      }
     }
   }
 </style>
