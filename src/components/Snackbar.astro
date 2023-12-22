@@ -6,6 +6,7 @@
 
 <style>
   .snackbar {
+    position: fixed;
     background-color: var(--grey-900);
     color: var(--grey-400);
     font-size: var(--fs-sm);
@@ -20,6 +21,7 @@
     line-height: var(--lh-1-4);
     max-width: calc(calc(var(--content-4xl) + var(--content-3xl)) / 2);
     white-space: pre-line;
+    z-index: 4;
     &--success {
       border-color: var(--green-100-accent);
       color: var(--green-200-accent);
