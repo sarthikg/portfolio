@@ -221,6 +221,11 @@ const pageInfo = await getPageInfo("contact");
     .contact {
       &__form {
         flex-grow: 1;
+        &__input {
+          &--textarea {
+            min-height: var(--content-2xl);
+          }
+        }
       }
     }
   }
