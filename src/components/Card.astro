@@ -36,18 +36,21 @@ const { title, description, image, url } = Astro.props;
     background-color: transparent;
     transition:
       background-color var(--transition-ease-slow),
-      filter var(--transition-squish-slow);
+      filter var(--transition-squish-slow),
+      opacity var(--transition-ease-slow);
     text-decoration: unset;
     &:hover {
       background-color: var(--grey-900);
       & .card__image {
-        filter: grayscale(0.6);
+        filter: grayscale(0.4);
+        opacity: 0.9;
       }
     }
     &__image {
       border-radius: var(--radius-md);
       object-fit: cover;
-      filter: grayscale(1);
+      filter: grayscale(0.6);
+      opacity: 0.8;
       width: 384px;
       height: 196px;
     }
