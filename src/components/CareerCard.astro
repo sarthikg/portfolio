@@ -18,7 +18,7 @@ const isActive = !endDate;
 <div class="career-card" class:list={[{ "career-card--active": isActive }]}>
   <a class="career-card__title" href={url}>{designation}</a>
   <h3 class="career-card__subtitle">
-    <a class="career-card__subtitle__company" href={companyUrl}>{company}</a>
+    <a class="career-card__subtitle__company" href={companyUrl} target="_blank">{company}</a>
     <span class="career-card__subtitle__location">{location}</span>
   </h3>
   <h3
