@@ -13,10 +13,7 @@ const { experiences } = Astro.props;
   {
     experiences.map((experience) => (
       <li class="career-track__item">
-        <CareerCard
-          experience={experience}
-          url={`/experience/${experience.slug}`}
-        />
+        <CareerCard experience={experience} />
       </li>
     ))
   }

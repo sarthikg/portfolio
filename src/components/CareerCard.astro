@@ -5,10 +5,9 @@ import { formatDate } from "@util/date-string";
 
 interface Props {
   experience: CollectionEntry<"experience">;
-  url: string;
 }
 
-const { experience, url } = Astro.props;
+const { experience } = Astro.props;
 
 const { designation, location, company, companyUrl, startDate, endDate } =
   experience.data;
@@ -16,9 +15,11 @@ const isActive = !endDate;
 ---
 
 <div class="career-card" class:list={[{ "career-card--active": isActive }]}>
-  <a class="career-card__title" href={url}>{designation}</a>
+  <a class="career-card__title">{designation}</a>
   <h3 class="career-card__subtitle">
-    <a class="career-card__subtitle__company" href={companyUrl} target="_blank">{company}</a>
+    <a class="career-card__subtitle__company" href={companyUrl} target="_blank"
+      >{company}</a
+    >
     <span class="career-card__subtitle__location">{location}</span>
   </h3>
   <h3
