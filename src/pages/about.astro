@@ -1,23 +1,36 @@
 ---
+import Section from "@component/Section.astro";
+import SkillCard from "@component/SkillCard.astro";
 import { getPageInfo } from "@facade/page-info";
+import { getSkills } from "@facade/skills";
 import Layout from "@layout/Layout.astro";
 
 const pageInfo = await getPageInfo("about");
-
-// This Page will include
-
-// Experience
-// Projects
-// Acheivements
-// Education
+const skills = await getSkills();
 ---
 
 <Layout title="About // Sarthik Gupta">
   <main class="main main--about">
     <h1 class="about__heading">{pageInfo.data.title}</h1>
-    <p class="about__heading__description">
-      {pageInfo.data.description}
-    </p>
+    <Section title="Bio">
+      <div class="about__bio">
+        {pageInfo.data.description}
+      </div>
+    </Section>
+    <Section title="Tools I work with">
+      <div class="about__skills">
+        {
+          skills.map((skill) => (
+            <SkillCard
+              name={skill.name}
+              description={skill.description}
+              url={skill.url}
+              iconName={skill.iconName}
+            />
+          ))
+        }
+      </div>
+    </Section>
   </main>
 </Layout>
 
@@ -43,19 +56,17 @@ const pageInfo = await getPageInfo("about");
       );
       background-clip: text;
       -webkit-text-fill-color: transparent;
-      &__description {
-        font-size: var(--fs-md);
-        color: var(--grey-400);
-        margin: var(--space-s) 0;
-        line-height: 2;
-        font-weight: 500;
-      }
     }
-    &__side-quests {
+    &__bio {
+      font-size: var(--fs-md);
+      color: var(--grey-400);
+      margin: var(--space-s) 0;
+      line-height: 2;
+      font-weight: 500;
+    }
+    &__skills {
       display: flex;
-      align-items: center;
-      margin-left: calc(-1 * var(--space-s));
-      margin-right: calc(-1 * var(--space-s));
+      flex-wrap: wrap;
     }
   }
 </style>

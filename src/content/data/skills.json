@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Angular",
+    "iconName": "angular",
+    "description": "Frontend Application Framework",
+    "url": "https://angular.dev/"
+  },
+  {
+    "name": "React",
+    "iconName": "react",
+    "description": "Frontend Application Library",
+    "url": "https://react.dev/"
+  },
+  {
+    "name": "Astro",
+    "iconName": "astro",
+    "description": "Full-Stack Application Framework",
+    "url": "https://astro.build/"
+  },
+  {
+    "name": "Flask",
+    "iconName": "flask",
+    "description": "Backend Application Framework",
+    "url": "https://flask.palletsprojects.com"
+  },
+  {
+    "name": "Docker",
+    "iconName": "docker",
+    "description": "Container Management",
+    "url": "https://www.docker.com/"
+  },
+  {
+    "name": "GraphQL",
+    "iconName": "graphql",
+    "description": "Query Language",
+    "url": "https://graphql.org/"
+  }
+]

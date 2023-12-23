@@ -1,4 +1,5 @@
 ---
+import Svg from "@component/Svg.astro";
 import { getSocials } from "@facade/socials";
 
 const socials = getSocials();
@@ -14,10 +15,7 @@ const socials = getSocials();
             href={`${social.url}/${social.username}`}
             target="_blank"
           >
-            <svg class="footer__social__icon" role="img">
-              <title>{social.name}</title>
-              <use href={`/icons/${social.icon}.svg#icon`} />
-            </svg>
+            <Svg name={social.icon} alt={social.name} size={19.2} />
           </a>
         </li>
       ))
@@ -47,11 +45,6 @@ const socials = getSocials();
         &:hover {
           color: var(--grey-700);
         }
-      }
-      &__icon {
-        height: 24px;
-        width: 24px;
-        transform: scale(0.8);
       }
     }
   }
