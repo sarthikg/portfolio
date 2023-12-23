@@ -2,6 +2,9 @@
   "name": "portfolio",
   "type": "module",
   "version": "0.0.1",
+  "browserslist": [
+    "defaults and fully supports es6-module"
+  ],
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -28,6 +31,7 @@
     "@types/nodemailer": "^6.4.14",
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "@typescript-eslint/parser": "^6.15.0",
+    "autoprefixer": "^10.4.16",
     "eslint": "^8.55.0",
     "eslint-plugin-astro": "^0.31.0",
     "postcss": "^8.4.32",
