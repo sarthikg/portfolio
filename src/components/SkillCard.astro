@@ -31,7 +31,9 @@ const { name, description, url, iconName } = Astro.props;
     border-radius: var(--radius-md);
     background-color: transparent;
     text-decoration: unset;
-    transition: background-color var(--transition-ease-slow);
+    transition:
+      background-color var(--transition-ease-slow),
+      color var(--transition-ease-slow);
     min-width: 300px;
     color: var(--grey-300);
     &:hover {
