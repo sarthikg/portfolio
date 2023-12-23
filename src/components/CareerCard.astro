@@ -68,6 +68,13 @@ const isActive = !endDate;
         text-decoration-color: var(--grey-700);
         color: var(--grey-300);
         font-weight: 500;
+        transition: opacity var(--transition-ease-slow);
+        &:hover {
+          opacity: 0.8;
+        }
+        &:focus {
+          opacity: 0.8;
+        }
       }
       &__location {
         color: var(--grey-500);
