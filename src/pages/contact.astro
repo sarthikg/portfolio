@@ -126,7 +126,7 @@ const pageInfo = await getPageInfo("contact");
     }
     &__form {
       display: grid;
-      grid-template-columns: repeat(1fr 2);
+      grid-template-columns: repeat(2, 1fr);
       grid-template-rows: var(--space-l) var(--space-l) 1fr var(--space-l);
       margin-top: var(--space-l);
       gap: var(--space-s);
@@ -209,6 +209,13 @@ const pageInfo = await getPageInfo("contact");
       display: flex;
       align-items: flex-start;
       flex-direction: column;
+    }
+    .contact {
+      &__form {
+        &__input {
+          min-width: var(--content-3xl);
+        }
+      }
     }
   }
   /* Mobile Overrides */

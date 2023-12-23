@@ -1,6 +1,7 @@
 ---
 import Markdown from "@component/Markdown.astro";
 import { getAllPublishedArticles } from "@facade/article";
+import { getSideQuests } from "@facade/side-quest";
 import Layout from "@layout/Layout.astro";
 import { formatDateWithDay } from "@util/date-string";
 import { getReadingTime } from "@util/reading-time";
@@ -9,25 +10,39 @@ import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
-  article: CollectionEntry<"article">;
+  article: CollectionEntry<"article"> | CollectionEntry<"side-quest">;
+  isArticle: boolean;
 }
 
 export async function getStaticPaths() {
   const articles = await getAllPublishedArticles();
-  return articles.map((article) => ({
+  const sideQuests = await getSideQuests();
+
+  const articleMap = articles.map((article) => ({
     params: { slug: article.slug },
-    props: { article },
+    props: { article, isArticle: true },
   }));
+  const sideQuestMap = sideQuests.map((article) => ({
+    params: { slug: article.slug },
+    props: { article, isArticle: false },
+  }));
+
+  return [...articleMap, ...sideQuestMap];
 }
 
-const { article } = Astro.props;
-const { title, image, date } = article.data;
+const { article, isArticle } = Astro.props;
+const { title, image } = article.data;
+
+// Capture date only from article
+const date = isArticle
+  ? (article as CollectionEntry<"article">).data.date
+  : null;
 
 const { Content } = await article.render();
 ---
 
 <Layout title={`${title} // Sarthik Gupta`}>
-  <article class="article">
+  <article class="article" class:list={{ "article--side-quest": !isArticle }}>
     <div class="article__cover">
       <Image
         class="article__cover__image"
@@ -40,7 +55,8 @@ const { Content } = await article.render();
         {title}
       </h1>
       <h4 class="article__cover__date">
-        {formatDateWithDay(date)} • {getReadingTime(article.body)} min read
+        {date && `${formatDateWithDay(date)} • `}{getReadingTime(article.body)}
+         min read
       </h4>
     </div>
     <main class="main main__article">
@@ -61,6 +77,7 @@ const { Content } = await article.render();
       align-items: center;
       justify-content: center;
       position: relative;
+      padding: 0 var(--space-xs);
       &__image {
         position: absolute;
         background-repeat: no-repeat;
@@ -79,6 +96,7 @@ const { Content } = await article.render();
         font-size: var(--fs-4xl);
         font-weight: 700;
         z-index: 3;
+        text-align: center;
       }
       &__date {
         position: absolute;
@@ -89,6 +107,11 @@ const { Content } = await article.render();
         color: var(--grey-300);
         bottom: var(--space-s);
         z-index: 3;
+      }
+    }
+    &--side-quest {
+      & .article__cover__image {
+        filter: blur(3px);
       }
     }
   }
