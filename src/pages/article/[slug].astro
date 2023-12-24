@@ -31,6 +31,7 @@ export async function getStaticPaths() {
 }
 
 const { article, isArticle } = Astro.props;
+const slug = article.slug;
 const { title, image } = article.data;
 
 // Capture date only from article
@@ -46,12 +47,16 @@ const { Content } = await article.render();
     <div class="article__cover">
       <Image
         class="article__cover__image"
+        transition:name={`article_image_${slug}`}
         src={image.src as ImageMetadata}
         alt={image.alt}
         width={1470}
         height={834}
       />
-      <h1 class="article__cover__title">
+      <h1
+        class="article__cover__title"
+        transition:name={`article_title_${slug}`}
+      >
         {title}
       </h1>
       <h4 class="article__cover__date">

@@ -3,6 +3,7 @@ import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 
 interface Props {
+  slug: string;
   title: string;
   description: string;
   image: {
@@ -12,20 +13,25 @@ interface Props {
   url: string;
 }
 
-const { title, description, image, url } = Astro.props;
+const { slug, title, description, image, url } = Astro.props;
 ---
 
 <a class="card" href={url}>
   <Image
     class="card__image"
+    transition:name={`article_image_${slug}`}
     src={image.src as ImageMetadata}
     alt={image.alt}
     format="avif"
     height={196}
     width={384}
   />
-  <h2 class="card__title">{title}</h2>
-  <p class="card__description">{description}</p>
+  <h2 class="card__title" transition:name={`article_title_${slug}`}>
+    {title}
+  </h2>
+  <p class="card__description">
+    {description}
+  </p>
 </a>
 
 <style>

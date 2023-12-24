@@ -21,13 +21,14 @@ const { title, description, image, tags, date, url } = Astro.props;
 <a class="horizontal-card" href={url}>
   <Image
     class="horizontal-card__image"
+    transition:animate="none"
     src={image.src as ImageMetadata}
     alt={image.alt}
     format="avif"
     height={128}
     width={128}
   />
-  <h2 class="horizontal-card__title">{title}</h2>
+  <h2 class="horizontal-card__title" transition:animate="none">{title}</h2>
   <p class="horizontal-card__description">{description}</p>
   <ul class="horizontal-card__tags">
     {tags.map((tag) => <li class="horizontal-card__tag">{tag}</li>)}

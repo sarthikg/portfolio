@@ -29,6 +29,7 @@ const sideQuests = await getSideQuests();
         {
           sideQuests.map((quest) => (
             <Card
+              slug={quest.slug}
               title={quest.data.title}
               description={quest.data.description}
               image={quest.data.image}

@@ -13,7 +13,12 @@ const pageInfo = await getPageInfo("contact");
     <p class="contact__description">
       {pageInfo.data.description}
     </p>
-    <form class="contact__form" method="post" action="/api/contact">
+    <form
+      class="contact__form"
+      method="post"
+      action="/api/contact"
+      data-astro-reload
+    >
       <input
         class="contact__form__input"
         name="name"
