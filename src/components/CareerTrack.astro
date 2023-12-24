@@ -12,7 +12,10 @@ const { experiences } = Astro.props;
 <ol class="career-track">
   {
     experiences.map((experience) => (
-      <li class="career-track__item">
+      <li
+        class="career-track__item"
+        class:list={{ "career-track__item--active": !experience.data.endDate }}
+      >
         <CareerCard experience={experience} />
       </li>
     ))
@@ -54,6 +57,11 @@ const { experiences } = Astro.props;
         margin-top: calc(0.5 * var(--fs-base));
         height: var(--dot-radius);
         width: var(--dot-radius);
+      }
+      &--active {
+        &::after {
+          background-color: var(--grey-300);
+        }
       }
     }
   }
