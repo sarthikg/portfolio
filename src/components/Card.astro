@@ -40,6 +40,7 @@ const { title, description, image, url } = Astro.props;
       filter var(--transition-squish-slow),
       opacity var(--transition-ease-slow);
     text-decoration: unset;
+    flex: 1;
     &:hover {
       background-color: var(--grey-900);
       & .card__image {
@@ -63,11 +64,16 @@ const { title, description, image, url } = Astro.props;
       margin-top: var(--space-s);
     }
     &__description {
+      margin-top: var(--space-2xs);
       color: var(--grey-500);
       font-size: var(--fs-sm);
       text-overflow: ellipsis;
       overflow: hidden;
-      line-height: 2;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* number of lines to show */
+      -webkit-box-orient: vertical;
+      line-clamp: 2;
+      line-height: 1.8;
     }
   }
 

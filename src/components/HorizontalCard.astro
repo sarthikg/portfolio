@@ -41,6 +41,7 @@ const { title, description, image, tags, date, url } = Astro.props;
 </a>
 
 <style>
+  /* Global Styles */
   .horizontal-card {
     display: grid;
     width: 100%;
@@ -78,6 +79,9 @@ const { title, description, image, tags, date, url } = Astro.props;
       font-size: var(--fs-base);
       font-weight: 500;
       line-height: var(--lh-1-4);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
     &__description {
       grid-row: span 1;
@@ -87,6 +91,9 @@ const { title, description, image, tags, date, url } = Astro.props;
       text-overflow: ellipsis;
       overflow: hidden;
       line-height: 2;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
     &__tags {
       display: flex;
@@ -127,6 +134,20 @@ const { title, description, image, tags, date, url } = Astro.props;
         overflow: hidden;
         line-height: 2;
         text-transform: uppercase;
+      }
+    }
+  }
+
+  /* Desktop Overrides */
+  @media (min-width: 760px) {
+  }
+  /* Mobile Overrides */
+  @media (max-width: 480px) {
+    .horizontal-card {
+      &__description {
+        display: none;
+      }
+      &__tags {
       }
     }
   }
