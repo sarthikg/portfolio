@@ -9,44 +9,51 @@
 <style is:global>
   .markdown {
     text-rendering: optimizeLegibility;
+    text-align: justify;
 
     --_color-heading: var(--grey-300);
     --_color-body: var(--grey-500);
 
+    color: var(--_color-body);
+
     & h1 {
-      margin-top: var(--space-l);
+      margin: var(--space-l) 0;
       font-size: var(--fs-xl);
       line-height: var(--lh-1.4);
       color: var(--_color-heading);
+      font-weight: 600;
     }
     & h2 {
-      margin-top: var(--space-m);
+      margin: var(--space-m) 0;
       font-size: var(--fs-lg);
       line-height: var(--lh-1.4);
       color: var(--_color-heading);
+      font-weight: 600;
     }
     & h3 {
-      margin-top: var(--space-s);
+      margin: var(--space-s) 0;
       font-size: calc(var(--fs-lg) - 3px);
       line-height: var(--lh-1.4);
       color: var(--_color-heading);
+      font-weight: 600;
     }
     & h4 {
-      margin-top: var(--space-xs);
+      margin: var(--space-xs-s) 0;
       font-size: var(--fs-base);
       line-height: var(--lh-1.4);
       color: var(--_color-heading);
+      font-weight: 600;
     }
     & h5 {
-      margin-top: var(--space-2xs-xs);
+      margin: var(--space-xs-s) 0;
       font-size: calc(var(--fs-base) - 2px);
       line-height: var(--lh-1.4);
       color: var(--_color-heading);
+      font-weight: 500;
     }
     & p {
-      margin-top: var(--space-3xs-2xs);
+      margin: var(--space-xs-s) 0;
       font-size: var(--fs-sm);
-      color: var(--_color-body);
       line-height: 2;
     }
     & a {
@@ -71,30 +78,33 @@
     }
     & em {
       font-size: var(--fs-sm);
-      color: var(--_color-body);
       font-style: italic;
       line-height: 2;
+    }
+    & u {
+      font-size: var(--fs-sm);
+      border-bottom: 0.5px solid var(--_color-body);
+      text-decoration: none;
     }
     & ol,
     ul {
       padding-left: var(--space-l);
     }
     & li {
-      margin-top: var(--space-3xs-2xs);
+      margin: var(--space-2xs-xs) 0;
       font-size: var(--fs-sm);
-      color: var(--_color-body);
       line-height: 2;
     }
     & code {
       font-family: var(--font-code);
       color: var(--grey-400);
-      font-size: calc(var(--fs-xs) + 1px);
+      font-size: var(--fs-xs);
       background-color: var(--grey-900);
       padding: calc(var(--space-3xs) / 1.5) calc(var(--space-2xs) / 1.4);
       border-radius: var(--radius-sm);
     }
     & .astro-code {
-      margin-top: var(--space-3xs-2xs);
+      margin: var(--space-2xs-xs) 0;
       padding: var(--space-2xs) var(--space-s);
       border-radius: var(--radius-md);
       background-color: var(--grey-900) !important;
@@ -110,9 +120,8 @@
       border-left: 4px solid var(--grey-800);
       font-style: italic;
       font-weight: 500;
-      padding-bottom: var(--space-3xs);
-      padding-left: var(--space-s);
-      margin-top: var(--space-s);
+      padding-left: var(--space-m);
+      margin: var(--space-m) 0;
     }
     & table {
       margin: auto;
