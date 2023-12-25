@@ -7,6 +7,7 @@
 </div>
 
 <style is:global>
+  /* Global Styles */
   .markdown {
     text-rendering: optimizeLegibility;
     text-align: justify;
@@ -169,6 +170,15 @@
       width: var(--content-md);
       border-style: dotted none none;
       border-width: var(--space-2xs);
+    }
+  }
+  /* Desktop Overrides */
+  @media (min-width: 760px) {
+  }
+  /* Mobile Overrides */
+  @media (max-width: 480px) {
+    .markdown {
+      text-align: left;
     }
   }
 </style>
