@@ -61,14 +61,15 @@ const { title, description, image, date, url } = Astro.props;
       }
     }
     &__image {
+      align-self: center;
       grid-row: 1 / 4;
       grid-column: 1 / 2;
       border-radius: var(--radius-md);
       object-fit: cover;
       filter: grayscale(0.6);
       opacity: 0.8;
-      aspect-ratio: calc(16 / 9);
-      height: 100%;
+      width: 250px;
+      aspect-ratio: calc (16 / 9);
     }
     &__title {
       grid-row: 1 / 2;
