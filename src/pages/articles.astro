@@ -44,7 +44,6 @@ const allFeaturedArticles = await getAllFeaturedArticles();
               title={article.data.title}
               description={article.data.description}
               image={article.data.image}
-              tags={article.data.tags}
               date={article.data.date}
               url={`/article/${article.slug}/`}
             />
@@ -73,7 +72,7 @@ const allFeaturedArticles = await getAllFeaturedArticles();
         font-size: var(--fs-md);
         color: var(--grey-400);
         margin: var(--space-s) 0;
-        line-height: 2;
+        line-height: var(--lh-2);
         font-weight: 500;
       }
     }
@@ -118,6 +117,9 @@ const allFeaturedArticles = await getAllFeaturedArticles();
       &__list {
         margin-left: 0;
         margin-right: 0;
+        row-gap: 1px;
+        background-color: var(--grey-900);
+        padding-bottom: 1px;
       }
     }
   }

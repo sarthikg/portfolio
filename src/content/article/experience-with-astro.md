@@ -1,10 +1,14 @@
 ---
-slug: "article-2"
+slug: "experience-with-astro"
 
-title: "This is the title"
-description: "This is the description"
+title: "My experience using Astro"
+description: "My experience using Astro for building v2 of my portfolio website"
 date: 2023-11-12
-image: { src: "/src/assets/images/article/placeholder.jpg", alt: "A picture" }
+image:
+  {
+    src: "/src/assets/images/article/astro.webp",
+    alt: "Cover Image of Astro Framework",
+  }
 tags: ["JavaScript", "TypeScript"]
 featured: true
 ---
