@@ -36,7 +36,7 @@ A Database is a collection of related data. This data can be of the following 2 
 1. **Structured Data** - Data has a structure & can be easily stored in tables
 2. **Unstructured Data** - Data doesn't follow a structure & is hard to store in a table
 
-![The San Juan Mountains are beautiful!](/src/assets/images/article/placeholder.jpg "San Juan Mountains")
+![The San Juan Mountains are beautiful!](@asset/images/article/placeholder.jpg)
 
 ### DBMS
 
