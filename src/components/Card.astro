@@ -23,8 +23,6 @@ const { slug, title, description, image, url } = Astro.props;
     src={image.src as ImageMetadata}
     alt={image.alt}
     format="avif"
-    height={196}
-    width={384}
   />
   <h2 class="card__title" transition:name={`article_title_${slug}`}>
     {title}
