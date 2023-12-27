@@ -2,7 +2,7 @@
 slug: "microsoft-azure-bug-bounty"
 
 title: "Microsoft Azure Bug Bounty"
-description: "This is the description of the article which can span to 2 lines..."
+description: "Identified and reported an Information Disclosure bug in Azure DevOps. Rewarded with a $5000 bounty."
 image:
   {
     src: "/src/assets/images/side-quest/msrc-hero.png",
