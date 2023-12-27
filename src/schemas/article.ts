@@ -1,4 +1,4 @@
-import { DEFAULT_ARTICLE_ALT, DEFAULT_ARTICLE_COVER } from "@data/defaults";
+import { DEFAULT_ARTICLE_ALT, DEFAULT_ARTICLE_COVER } from "src/constants";
 import { z, defineCollection } from "astro:content";
 
 export const articleSchema = defineCollection({
