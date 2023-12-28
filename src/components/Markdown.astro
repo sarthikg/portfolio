@@ -201,8 +201,10 @@
   function addImageLoader(): void {
     const imageEls = document.querySelectorAll(".markdown img");
     imageEls.forEach((image: HTMLImageElement) => {
-      image.classList.add("markdown__image--loading");
-      image.onload = () => removeImageLoader(image);
+      if (!image.complete) {
+        image.classList.add("markdown__image--loading");
+        image.onload = () => removeImageLoader(image);
+      }
     });
   }
 

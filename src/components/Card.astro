@@ -115,8 +115,10 @@ const { slug, title, description, image, url } = Astro.props;
   function addImageLoader(): void {
     const imageEls = document.querySelectorAll(".card__image");
     imageEls.forEach((image: HTMLImageElement) => {
-      image.classList.add("card__image--loading");
-      image.onload = () => removeImageLoader(image);
+      if (!image.complete) {
+        image.classList.add("card__image--loading");
+        image.onload = () => removeImageLoader(image);
+      }
     });
   }
 
