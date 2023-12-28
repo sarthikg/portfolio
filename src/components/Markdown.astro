@@ -196,21 +196,3 @@
     }
   }
 </style>
-
-<script>
-  function addImageLoader(): void {
-    const imageEls = document.querySelectorAll(".markdown img");
-    imageEls.forEach((image: HTMLImageElement) => {
-      if (!image.complete) {
-        image.classList.add("markdown__image--loading");
-        image.onload = () => removeImageLoader(image);
-      }
-    });
-  }
-
-  function removeImageLoader(image: HTMLImageElement): void {
-    image.classList.remove("markdown__image--loading");
-  }
-
-  document.addEventListener("astro:page-load", addImageLoader);
-</script>

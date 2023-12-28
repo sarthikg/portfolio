@@ -9,9 +9,9 @@ const pageInfo = await getPageInfo("about");
 const skills = await getSkills();
 ---
 
-<Layout title="About // Sarthik Gupta">
+<Layout title={pageInfo.data.title}>
   <main class="main main--about">
-    <h1 class="about__heading">{pageInfo.data.title}</h1>
+    <h1 class="about__heading">{pageInfo.data.tagline}</h1>
     <Section title="Bio">
       <div class="about__bio">
         {pageInfo.data.description}

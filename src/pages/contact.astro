@@ -6,10 +6,10 @@ import Layout from "@layout/Layout.astro";
 const pageInfo = await getPageInfo("contact");
 ---
 
-<Layout title="Contact // Sarthik Gupta">
+<Layout title={pageInfo.data.title}>
   <Snackbar />
   <main class="main main--contact">
-    <h1 class="contact__heading">{pageInfo.data.title}</h1>
+    <h1 class="contact__heading">{pageInfo.data.tagline}</h1>
     <p class="contact__description">
       {pageInfo.data.description}
     </p>

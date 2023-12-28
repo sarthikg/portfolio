@@ -13,9 +13,9 @@ const experiences = await getExperiences();
 const sideQuests = await getSideQuests();
 ---
 
-<Layout title="Career // Sarthik Gupta">
+<Layout title={pageInfo.data.title}>
   <main class="main main--career">
-    <h1 class="career__heading">{pageInfo.data.title}</h1>
+    <h1 class="career__heading">{pageInfo.data.tagline}</h1>
     <p class="career__heading__description">
       {pageInfo.data.description}
     </p>
@@ -41,6 +41,12 @@ const sideQuests = await getSideQuests();
     </Section>
   </main>
 </Layout>
+
+<!-- TODO: Move this to component files -->
+<script>
+  import { addSkeletonLoader } from "@util/image-skeleton";
+  addSkeletonLoader(".card__image", "card__image--loading");
+</script>
 
 <style>
   /* Global Styles */

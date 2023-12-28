@@ -3,9 +3,12 @@ import Layout from "@layout/Layout.astro";
 import { Image } from "astro:assets";
 
 import profilePic from "@asset/images/profile-pic.webp";
+import { getPageInfo } from "@facade/page-info";
+
+const pageInfo = await getPageInfo("index");
 ---
 
-<Layout title="Sarthik Gupta">
+<Layout title={pageInfo.data.title}>
   <main class="main main--index">
     <div class="index__content">
       <h1 class="index__content__name">Sarthik Gupta</h1>

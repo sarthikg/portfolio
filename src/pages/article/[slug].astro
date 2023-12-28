@@ -70,6 +70,14 @@ const { Content } = await article.render();
   </article>
 </Layout>
 
+<!-- TODO: Move this to component files -->
+<script>
+  import { addSkeletonLoader } from "@util/image-skeleton";
+  document.addEventListener("astro:page-load", () => {
+    addSkeletonLoader(".markdown img", "markdown__image--loading");
+  });
+</script>
+
 <style>
   /* Global Styles */
   .article {

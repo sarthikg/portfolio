@@ -15,9 +15,9 @@ const allArticles = await getAllPublishedArticles();
 const allFeaturedArticles = await getAllFeaturedArticles();
 ---
 
-<Layout title="Articles // Sarthik Gupta">
+<Layout title={pageInfo.data.title}>
   <main class="main main--articles">
-    <h1 class="articles__heading">{pageInfo.data.title}</h1>
+    <h1 class="articles__heading">{pageInfo.data.tagline}</h1>
     <p class="articles__heading__description">
       {pageInfo.data.description}
     </p>
@@ -53,6 +53,16 @@ const allFeaturedArticles = await getAllFeaturedArticles();
     </Section>
   </main>
 </Layout>
+
+<!-- TODO: Move this to component files -->
+<script>
+  import { addSkeletonLoader } from "@util/image-skeleton";
+  addSkeletonLoader(".card__image", "card__image--loading");
+  addSkeletonLoader(
+    ".horizontal-card__image",
+    "horizontal-card__image--loading",
+  );
+</script>
 
 <style>
   /* Global Styles */
