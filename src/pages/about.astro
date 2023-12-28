@@ -78,3 +78,17 @@ const { Content } = await pageInfo.render();
     }
   }
 </style>
+
+<style is:global>
+  .about {
+    &__bio {
+      & > p {
+        margin: var(--space-s) 0;
+      }
+      & strong {
+        font-weight: 500;
+        color: var(--grey-100);
+      }
+    }
+  }
+</style>
