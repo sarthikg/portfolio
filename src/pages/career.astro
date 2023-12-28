@@ -11,14 +11,16 @@ import { getSideQuests } from "@facade/side-quest";
 const pageInfo = await getPageInfo("career");
 const experiences = await getExperiences();
 const sideQuests = await getSideQuests();
+
+const { Content } = await pageInfo.render();
 ---
 
 <Layout title={pageInfo.data.title}>
   <main class="main main--career">
     <h1 class="career__heading">{pageInfo.data.tagline}</h1>
-    <p class="career__heading__description">
-      {pageInfo.data.description}
-    </p>
+    <div class="career__heading__description">
+      <Content />
+    </div>
     <Section title="Work Experience">
       <div class="career__experience">
         <CareerTrack experiences={experiences} />

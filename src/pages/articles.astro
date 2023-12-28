@@ -13,14 +13,16 @@ import { getPageInfo } from "@facade/page-info";
 const pageInfo = await getPageInfo("articles");
 const allArticles = await getAllPublishedArticles();
 const allFeaturedArticles = await getAllFeaturedArticles();
+
+const { Content } = await pageInfo.render();
 ---
 
 <Layout title={pageInfo.data.title}>
   <main class="main main--articles">
     <h1 class="articles__heading">{pageInfo.data.tagline}</h1>
-    <p class="articles__heading__description">
-      {pageInfo.data.description}
-    </p>
+    <div class="articles__heading__description">
+      <Content />
+    </div>
     <Section title="Featured Articles">
       <div class="articles__featured">
         {

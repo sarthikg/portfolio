@@ -7,15 +7,15 @@ import Layout from "@layout/Layout.astro";
 
 const pageInfo = await getPageInfo("about");
 const skills = await getSkills();
+
+const { Content } = await pageInfo.render();
 ---
 
 <Layout title={pageInfo.data.title}>
   <main class="main main--about">
     <h1 class="about__heading">{pageInfo.data.tagline}</h1>
     <Section title="Bio">
-      <div class="about__bio">
-        {pageInfo.data.description}
-      </div>
+      <div class="about__bio"><Content /></div>
     </Section>
     <Section title="Tech Stack">
       <div class="about__skills">
