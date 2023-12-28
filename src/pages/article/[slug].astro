@@ -43,10 +43,15 @@ const { Content } = await article.render();
 ---
 
 <Layout
-  title={`${title} // Sarthik Gupta`}
-  imageUrl={image.src as ImageMetadata}
-  description={description}
-  pageUrl={`https://sarthikg.com/article/${slug}`}
+  metaData={{
+    title: `${title} // Sarthik Gupta`,
+    description: description,
+    imageUrl: image.src as ImageMetadata,
+    pageUrl: `https://sarthikg.com/article/${slug}`,
+    author: "Sarthik Gupta",
+    publishDate: date,
+    contentType: "article",
+  }}
 >
   <article class="article" class:list={{ "article--side-quest": !isArticle }}>
     <div class="article__cover">

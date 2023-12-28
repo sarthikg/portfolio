@@ -1,27 +1,24 @@
 ---
 import Body from "@layout/Body.astro";
 import Footer from "@layout/Footer.astro";
-import Head from "@layout/Head.astro";
+import Head, { type MetaData } from "@layout/Head.astro";
 import Header from "@layout/Header.astro";
 import "@style/colors.css";
 import "@style/global.css";
 import "@style/reset.css";
 import "@style/typography.css";
 import "@style/variables.css";
-import type { ImageMetadata } from "astro";
 
 interface Props {
-  title: string;
-  pageUrl: string;
-  description?: string;
-  imageUrl?: ImageMetadata;
+  metaData: MetaData;
 }
-const { title, description, pageUrl, imageUrl } = Astro.props;
+
+const { metaData } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-  <Head {title} {description} {pageUrl} {imageUrl} />
+  <Head {metaData} />
   <Body>
     <Header />
     <slot />

@@ -13,10 +13,12 @@ const { Content } = await pageInfo.render();
 ---
 
 <Layout
-  title={pageInfo.data.title}
-  description="This is the description"
-  imageUrl={pageInfo.data.imageUrl as ImageMetadata}
-  pageUrl={pageInfo.data.pageUrl}
+  metaData={{
+    title: pageInfo.data.title,
+    description: "This is the description",
+    imageUrl: pageInfo.data.imageUrl as ImageMetadata,
+    pageUrl: pageInfo.data.pageUrl,
+  }}
 >
   <main class="main main--about">
     <h1 class="about__heading">{pageInfo.data.tagline}</h1>

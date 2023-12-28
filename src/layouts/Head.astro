@@ -3,17 +3,27 @@ import type { ImageMetadata } from "astro";
 import { getImage } from "astro:assets";
 import { ViewTransitions } from "astro:transitions";
 
-interface Props {
+export interface MetaData {
   title: string;
   pageUrl: string;
   description?: string;
   imageUrl?: ImageMetadata;
+  publishDate?: Date;
+  author?: string;
+  contentType?: "article" | "website";
 }
-const { title, description, pageUrl, imageUrl } = Astro.props;
+
+interface Props {
+  metaData: MetaData;
+}
+
+const { metaData: meta } = Astro.props;
 
 const image = await getImage({
-  src: imageUrl,
+  src: meta.imageUrl,
   format: "png",
+  width: 1200,
+  height: 630,
 });
 ---
 
@@ -22,12 +32,42 @@ const image = await getImage({
   <meta name="description" content="Astro description" />
   <meta name="viewport" content="width=device-width" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <title>{title}</title>
+  <title>{meta.title}</title>
   <meta name="generator" content={Astro.generator} />
-  <meta content={title} property="og:title" />
-  {description && <meta content={description} property="og:description" />}
-  {description && <meta content={description} name="description" />}
-  {imageUrl && <meta content={image.src} property="og:image" />}
-  <meta content={pageUrl} property="og:url" />
+  <meta content={meta.title} property="og:title" />
+  <meta content={meta.pageUrl} property="og:url" />
+  <meta content={meta.pageUrl} property="og:url" />
+  <meta property="og:type" content={meta.contentType || "website"} />
+  {meta.imageUrl && <meta content={image.src} property="og:image" />}
+  {
+    meta.description && (
+      <meta
+        content={meta.description}
+        name="description"
+        property="og:description"
+      />
+    )
+  }
+  {
+    meta.publishDate && (
+      <meta
+        name="publish_date"
+        property="og:publish_date"
+        content={meta.publishDate.toISOString()}
+      />
+    )
+  }
+  {
+    meta.author && (
+      <>
+        <meta
+          name="author"
+          property="og:article:author"
+          content={meta.author}
+        />
+      </>
+    )
+  }
+
   <ViewTransitions />
 </head>
