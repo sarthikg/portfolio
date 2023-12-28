@@ -1,0 +1,6 @@
+[
+  { "page": "About", "url": "/about/" },
+  { "page": "Career", "url": "/career/" },
+  { "page": "Articles", "url": "/articles/" },
+  { "page": "Contact", "url": "/contact/" }
+]

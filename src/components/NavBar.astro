@@ -1,11 +1,17 @@
 ---
 import NavBarOption from "@component/NavBarOption.astro";
-import { PageMap } from "@data/page";
+import { getNavbarOptions } from "@facade/navbar";
+
+const navbarOptions = getNavbarOptions();
 ---
 
 <nav class="navbar">
   <ul class="navbar__list">
-    {Object.values(PageMap).map((page) => <NavBarOption {page} />)}
+    {
+      navbarOptions.map((navbarOption) => (
+        <NavBarOption option={navbarOption} />
+      ))
+    }
   </ul>
 </nav>
 
