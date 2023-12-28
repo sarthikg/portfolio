@@ -33,16 +33,23 @@ const isActive = !endDate;
 
 <script>
   import { getDuration } from "@util/date-string";
-  const descriptionEls = document.querySelectorAll(".career-card__description");
-  descriptionEls.forEach((description) => {
-    const startDate = new Date(description.getAttribute("data-startDate"));
-    const endDate = description.getAttribute("data-endDate");
-    const duration = getDuration(
-      startDate,
-      endDate ? new Date(endDate) : new Date(),
+
+  function setDuration(): void {
+    const descriptionEls = document.querySelectorAll(
+      ".career-card__description",
     );
-    description.textContent = `${description.textContent} ${duration}`;
-  });
+    descriptionEls.forEach((description) => {
+      const startDate = new Date(description.getAttribute("data-startDate"));
+      const endDate = description.getAttribute("data-endDate");
+      const duration = getDuration(
+        startDate,
+        endDate ? new Date(endDate) : new Date(),
+      );
+      description.textContent = `${description.textContent} ${duration}`;
+    });
+  }
+
+  document.addEventListener("astro:page-load", setDuration);
 </script>
 
 <style>
