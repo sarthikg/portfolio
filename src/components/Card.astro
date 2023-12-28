@@ -59,6 +59,10 @@ const { slug, title, description, image, url } = Astro.props;
       opacity: 0.8;
       width: 384px;
       height: 196px;
+      &--loading {
+        animation: skeleton-loading 0.8s linear infinite alternate;
+        color: transparent;
+      }
     }
     &__title {
       color: var(--grey-300);
@@ -81,6 +85,15 @@ const { slug, title, description, image, url } = Astro.props;
     }
   }
 
+  @keyframes skeleton-loading {
+    0% {
+      background-color: var(--grey-800);
+    }
+    100% {
+      background-color: var(--grey-900);
+    }
+  }
+
   /* Desktop Overrides */
   @media (min-width: 760px) {
   }
@@ -97,3 +110,19 @@ const { slug, title, description, image, url } = Astro.props;
     }
   }
 </style>
+
+<script>
+  function addImageLoader(): void {
+    const imageEls = document.querySelectorAll(".card__image");
+    imageEls.forEach((image: HTMLImageElement) => {
+      image.classList.add("card__image--loading");
+      image.onload = () => removeImageLoader(image);
+    });
+  }
+
+  function removeImageLoader(image: HTMLImageElement): void {
+    image.classList.remove("card__image--loading");
+  }
+
+  document.addEventListener("astro:page-load", addImageLoader);
+</script>

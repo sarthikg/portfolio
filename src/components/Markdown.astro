@@ -171,7 +171,21 @@
       border-style: dotted none none;
       border-width: var(--space-2xs);
     }
+    & .markdown__image--loading {
+      animation: skeleton-loading 0.8s linear infinite alternate;
+      color: transparent;
+    }
   }
+
+  @keyframes skeleton-loading {
+    0% {
+      background-color: var(--grey-800);
+    }
+    100% {
+      background-color: var(--grey-900);
+    }
+  }
+
   /* Desktop Overrides */
   @media (min-width: 760px) {
   }
@@ -182,3 +196,19 @@
     }
   }
 </style>
+
+<script>
+  function addImageLoader(): void {
+    const imageEls = document.querySelectorAll(".markdown img");
+    imageEls.forEach((image: HTMLImageElement) => {
+      image.classList.add("markdown__image--loading");
+      image.onload = () => removeImageLoader(image);
+    });
+  }
+
+  function removeImageLoader(image: HTMLImageElement): void {
+    image.classList.remove("markdown__image--loading");
+  }
+
+  document.addEventListener("astro:page-load", addImageLoader);
+</script>
