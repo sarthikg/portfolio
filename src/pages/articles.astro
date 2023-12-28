@@ -9,6 +9,7 @@ import {
   getAllPublishedArticles,
 } from "@facade/article";
 import { getPageInfo } from "@facade/page-info";
+import type { ImageMetadata } from "astro";
 
 const pageInfo = await getPageInfo("articles");
 const allArticles = await getAllPublishedArticles();
@@ -20,7 +21,7 @@ const { Content } = await pageInfo.render();
 <Layout
   title={pageInfo.data.title}
   description="This is the description"
-  imageUrl={pageInfo.data.imageUrl}
+  imageUrl={pageInfo.data.imageUrl as ImageMetadata}
   pageUrl={pageInfo.data.pageUrl}
 >
   <main class="main main--articles">

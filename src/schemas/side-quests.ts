@@ -8,7 +8,6 @@ export const sideQuestSchema = defineCollection({
       title: z.string(),
       description: z.string(),
       image: z.object({
-        coverUrl: z.string(), // TODO: Remove once Astro bug is fixed
         src: image().default({ src: DEFAULT_ARTICLE_COVER }),
         alt: z.string().default(DEFAULT_ARTICLE_ALT),
       }),

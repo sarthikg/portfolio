@@ -34,8 +34,6 @@ const { article, isArticle } = Astro.props;
 const slug = article.slug;
 const { title, image, description } = article.data;
 
-console.log(image);
-
 // Capture date only from article
 const date = isArticle
   ? (article as CollectionEntry<"article">).data.date
@@ -46,7 +44,7 @@ const { Content } = await article.render();
 
 <Layout
   title={`${title} // Sarthik Gupta`}
-  imageUrl={image.coverUrl}
+  imageUrl={image.src as ImageMetadata}
   description={description}
   pageUrl={`https://sarthikg.com/article/${slug}`}
 >

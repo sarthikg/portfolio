@@ -8,12 +8,13 @@ import "@style/global.css";
 import "@style/reset.css";
 import "@style/typography.css";
 import "@style/variables.css";
+import type { ImageMetadata } from "astro";
 
 interface Props {
   title: string;
   pageUrl: string;
   description?: string;
-  imageUrl?: string;
+  imageUrl?: ImageMetadata;
 }
 const { title, description, pageUrl, imageUrl } = Astro.props;
 ---

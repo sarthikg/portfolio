@@ -4,6 +4,7 @@ import SkillCard from "@component/SkillCard.astro";
 import { getPageInfo } from "@facade/page-info";
 import { getSkills } from "@facade/skills";
 import Layout from "@layout/Layout.astro";
+import type { ImageMetadata } from "astro";
 
 const pageInfo = await getPageInfo("about");
 const skills = await getSkills();
@@ -14,7 +15,7 @@ const { Content } = await pageInfo.render();
 <Layout
   title={pageInfo.data.title}
   description="This is the description"
-  imageUrl={pageInfo.data.imageUrl}
+  imageUrl={pageInfo.data.imageUrl as ImageMetadata}
   pageUrl={pageInfo.data.pageUrl}
 >
   <main class="main main--about">

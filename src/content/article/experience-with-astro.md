@@ -6,7 +6,6 @@ description: "My experience using Astro for building v2 of my portfolio website"
 date: 2023-11-12
 image:
   {
-    coverUrl: "/src/assets/images/article/astro.webp",
     src: "/src/assets/images/article/astro.webp",
     alt: "Cover Image of Astro Framework",
   }
