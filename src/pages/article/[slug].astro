@@ -32,7 +32,9 @@ export async function getStaticPaths() {
 
 const { article, isArticle } = Astro.props;
 const slug = article.slug;
-const { title, image } = article.data;
+const { title, image, description } = article.data;
+
+console.log(image);
 
 // Capture date only from article
 const date = isArticle
@@ -42,7 +44,12 @@ const date = isArticle
 const { Content } = await article.render();
 ---
 
-<Layout title={`${title} // Sarthik Gupta`}>
+<Layout
+  title={`${title} // Sarthik Gupta`}
+  imageUrl={image.coverUrl}
+  description={description}
+  pageUrl={`https://sarthikg.com/article/${slug}`}
+>
   <article class="article" class:list={{ "article--side-quest": !isArticle }}>
     <div class="article__cover">
       <Image

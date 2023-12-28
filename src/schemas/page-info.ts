@@ -4,7 +4,8 @@ export const pageInfoSchema = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    tagline: z.string(),
-    image: z.string(),
+    tagline: z.string().optional(),
+    pageUrl: z.string(),
+    imageUrl: z.string(),
   }),
 });

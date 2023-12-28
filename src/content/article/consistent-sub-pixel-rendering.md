@@ -6,7 +6,8 @@ description: "Achieve consistent sub-pixel rendering across browsers with improv
 date: 2023-11-12
 image:
   {
-    src: "/src/assets/images/article/browsers.jpg",
+    coverUrl: "/src/assets/images/article/browsers.webp",
+    src: "/src/assets/images/article/browsers.webp",
     alt: "Image of Browser Icons",
   }
 tags: ["CSS"]

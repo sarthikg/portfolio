@@ -1,7 +1,8 @@
 ---
 title: "About // Sarthik Gupta"
 tagline: "About. Skills. Social."
-image: ""
+imageUrl: "/src/assets/images/og/snapshot.webp"
+pageUrl: "https://sarthikg.com/about/"
 ---
 
 My journey in the realm of software engineering has been nothing short of a dynamic and transformative adventure over the past three years. Transitioning from my initial foray into programming, I have spent the last 2.5 years as a dedicated software engineer, specializing in web frontend development using Angular.

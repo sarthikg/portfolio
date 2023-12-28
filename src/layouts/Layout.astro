@@ -11,13 +11,16 @@ import "@style/variables.css";
 
 interface Props {
   title: string;
+  pageUrl: string;
+  description?: string;
+  imageUrl?: string;
 }
-const { title } = Astro.props;
+const { title, description, pageUrl, imageUrl } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-  <Head title={title} />
+  <Head {title} {description} {pageUrl} {imageUrl} />
   <Body>
     <Header />
     <slot />

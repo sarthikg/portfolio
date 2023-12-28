@@ -15,7 +15,12 @@ const sideQuests = await getSideQuests();
 const { Content } = await pageInfo.render();
 ---
 
-<Layout title={pageInfo.data.title}>
+<Layout
+  title={pageInfo.data.title}
+  description="This is the description"
+  imageUrl={pageInfo.data.imageUrl}
+  pageUrl={pageInfo.data.pageUrl}
+>
   <main class="main main--career">
     <h1 class="career__heading">{pageInfo.data.tagline}</h1>
     <div class="career__heading__description">

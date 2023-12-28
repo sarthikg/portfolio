@@ -6,6 +6,7 @@ description: "My experience using Astro for building v2 of my portfolio website"
 date: 2023-11-12
 image:
   {
+    coverUrl: "/src/assets/images/article/astro.webp",
     src: "/src/assets/images/article/astro.webp",
     alt: "Cover Image of Astro Framework",
   }
@@ -36,7 +37,7 @@ A Database is a collection of related data. This data can be of the following 2 
 1. **Structured Data** - Data has a structure & can be easily stored in tables
 2. **Unstructured Data** - Data doesn't follow a structure & is hard to store in a table
 
-![The San Juan Mountains are beautiful!](@asset/images/article/placeholder.jpg)
+![The San Juan Mountains are beautiful!](@asset/images/article/placeholder.webp)
 
 ### DBMS
 

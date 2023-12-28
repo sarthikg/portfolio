@@ -8,7 +8,12 @@ const pageInfo = await getPageInfo("contact");
 const { Content } = await pageInfo.render();
 ---
 
-<Layout title={pageInfo.data.title}>
+<Layout
+  title={pageInfo.data.title}
+  description="This is the description"
+  imageUrl={pageInfo.data.imageUrl}
+  pageUrl={pageInfo.data.pageUrl}
+>
   <Snackbar />
   <main class="main main--contact">
     <h1 class="contact__heading">{pageInfo.data.tagline}</h1>

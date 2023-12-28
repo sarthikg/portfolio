@@ -9,6 +9,7 @@ export const articleSchema = defineCollection({
       description: z.string(),
       date: z.date(),
       image: z.object({
+        coverUrl: z.string(), // TODO: Remove once Astro bug is fixed
         src: image().default({ src: DEFAULT_ARTICLE_COVER }),
         alt: z.string().default(DEFAULT_ARTICLE_ALT),
       }),

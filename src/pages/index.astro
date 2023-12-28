@@ -8,7 +8,12 @@ import { getPageInfo } from "@facade/page-info";
 const pageInfo = await getPageInfo("index");
 ---
 
-<Layout title={pageInfo.data.title}>
+<Layout
+  title={pageInfo.data.title}
+  description="This is the description"
+  imageUrl={pageInfo.data.imageUrl}
+  pageUrl={pageInfo.data.pageUrl}
+>
   <main class="main main--index">
     <div class="index__content">
       <h1 class="index__content__name">Sarthik Gupta</h1>
