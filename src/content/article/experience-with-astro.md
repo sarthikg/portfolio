@@ -13,157 +13,92 @@ tags: ["JavaScript", "TypeScript"]
 featured: true
 ---
 
-# This is the H1
+### Introduction
 
-A Database is a collection of related data. This data can be of the following 2 types:
+I initiated my portfolio website back in February 2021, aiming for a **flashy** yet **minimalistic** design – a goal I successfully achieved.
 
-## This is the H2
+Back then, **Create React App (CRA)** was the default choice for most, as frameworks like Next.js, Solid, Astro, etc., either hadn't surfaced or hadn't yet captured the limelight.
 
-A Database is a collection of related data. This data can be of the following 2 types:
+But there were a few major issues with my website back then,
 
-### This is the H3
+1. **It wasn't extensible** - The UI was initially crafted based on the available information and looked good at the time. However, as more information needed inclusion, constant redesign became a necessity.
+2. **It was resource-heavy** - The inclusion of a marquee for the skills section resulted in a heavyweight animation. This, unfortunately, led to frame drops even on reasonably powerful systems.
 
-A Database is a collection of related data. This data can be of the following 2 types:
+Therefore, with the need to incorporate additional information, a redesign became imperative, ultimately driving the development of version 2.0.
 
-#### This is the H4
+For version 2 of my portfolio, my primary objectives were:
 
-A Database is a collection of related data. This data can be of the following 2 types:
+1. **Extensibility** - This was more of a design requirement
+2. **Ease of Maintenance** - Involved decision around CSR vs SSR vs SSG
+3. **Lightweight Structure** - Optimise the assets & ship as little js as possible.
 
-##### This is the H5
+### Why Astro?
 
-A Database is a collection of related data. This data can be of the following 2 types:
+The web development landscape is ever-evolving, and as I pen down this article, new frameworks are likely emerging.
 
-1. **Structured Data** - Data has a structure & can be easily stored in tables
-2. **Unstructured Data** - Data doesn't follow a structure & is hard to store in a table
+Among the plethora of frameworks out there, Astro stood out to me for the following reasons:
 
-![The San Juan Mountains are beautiful!](@asset/images/article/placeholder.webp)
+1. **Positive Reviews** - Astro garnered a lot of praise from Youtube & Tech-Twitter, atleast for my use-case.
 
-### DBMS
+2. **Emphasis on Content-Driven Websites** - Astro marketed itself as the web-framework for content-driven websites, which aligned with me.
 
-A Database Management System comprises of operations that can be performed on the data by the user . This includes operations like create, read, update, delete. [This is a link]()
+3. **Flexible Rendering Options** - Astro's support for SSR and CSR, with a default preference for SSG, perfectly aligned with my requirements.
 
----
+4. **Ease of Use with Concise Documentation** - The accessibility and minimal documentation of Astro made it easy to dive into without an extensive learning curve.
 
-### Schema
+I hold the belief that things should not be overcomplicated unless necessitated. The ease of managing a static website surpasses that of a SSG website, which, in turn, is simpler than managing a SSR website.
 
-A Schema is a logical representation of a database. In RDBMS, a database is logically represented as tables, even though the underlying physical structure on the drive might be different.
+**<center>Less moving parts, the better.</center>**
 
-## History
+Considering this, Astro made perfect sense for me as it enabled the judicious use of these features based on specific requirements.
 
-Prior to existence of DBMS, everything used to be a file-system. File-systems rely on storing the data in form of files in a hierarchical form. For the following reasons, databases took over file-systems for storing data for application systems:
+### What I liked about Astro?
 
-1. **Searching** - If we want to search for some data, in file-systems, we will end up with a file. But databases help us to search even more granularly. Imagine searching for a train in IRCTC. In a file-system data, that might return the file with all the trains, but in databases, we can search for the exact train we are looking for. This makes the searching fast & memory-efficient.
-2. **Attributes** - To search for a file in a file-system, we need some meta-data about it. In the above example, we might require information like path to the file, permissions of the file access, etc. While, in databases, this is not the case. DBMS exposes a way to query data without knowing the exact metadata for it.
-3. **Concurrency** - When multiple users are trying to access same piece of data at a single time, there is no protocol in file-system to prevent inconsistency. Databases have concepts of locks, etc. to manage this.
-4. **Security** - Providing role-based access control over data is much better managed in a database compared to a file-system.
-5. **Redundancy** - There's no protocol (expect having 2 files with same names) to eliminate data redundancy in file-systems. If a piece of information is stored multiple times in a single file, or if the same information is stored across multiple files with different names, there is no provision in file-systems to handle that. But, in databases, there are concepts like primary keys that can handle data redundancies in a much better way.
+Using Astro was a **breeze**. The **speed** at which I could develop was **astonishing**. It took me just _four days_ to complete the major components of the portfolio website.
 
-## Architecture Tiers
+#### UI Features
 
-### 2-Tier Architecture
+With Astro, creating a SSG website was **effortlessly seamless**. It was configured to work in SSG mode by default, eliminating the need for any additional effort on my part.
 
-In a 2-tier architecture, a client directly connects with the database and performs the crud operations on it. This kind of architecture is followed in banks where the bankers directly connect to the database to perform the operations.
+In instances where I needed snippets of client-side JavaScript, Astro seamlessly accommodated that. It was as straightforward as incorporating that portion of the code within the `<script/>` tag.
 
-#### Pros:
+It **supported TypeScript** across the board, supported **scoped-styles**, and what not. In my opinion, it supported everything anyone could have wanted.
 
-1. **Maintenance** - It is easy to maintain as there are less moving pieces.
+#### Server Features
 
-#### Cons:
+The contact page required an **api-endpoint** which would trigger an email when someone filled the contact form.
 
-1. **Scalability** - It is usually implemented when there are a limited number of clients. Hence scalability is tough.
-2. **Security** - The clients directly connect with the database to perform operations. This impacts the overall security of the system
+Surprisingly, Astro even facilitated this, requiring only a switch in app rendering to hybrid mode.
 
-### 3-Tier Architecture
+#### Other Features
 
-In a 3-tier architecture, a client sends the query to an application server, which in-turn forms a relevant query for the database, and executes the query on the database. This kind of architecture is followed in almost all the modern applications, and the application server is usually called the backend.
+Astro also came equipped with additional features such as the `<Image/>` Component, **View-Transitions**, and **Content-Collections**, which significantly eased the development process.
 
-#### Pros:
+With all these features in the arsenal, the final website was **optimized**, while providing a **seamless** and **enjoyable** user experience.
 
-1. **Security** - Since the clients are only interacting with the application-server, this enhances the security as the operations on the database are only the one's that are provided by the app-server based on role-based access control.
-2. **Scalability** - Clients interact with a common application-server. This means, clients do not require technical know-how of the database, and hence, the number of clients can be easily scaled.
+### What I disliked about Astro?
 
-#### Cons:
+Despite positive reviews on Twitter and YouTube, it's essential to note that the framework still has a **few rough edges**. The primary challenge lies not so much in these rough edges but more in the dated or **missing documentation** for certain features.
 
-1. **Maintenance** - Having to maintain an extra application-server, this impacts maintenance when compared to the 2-tier architecture.
+Here's a few issues I faced during development:
 
-## 3-Schema Architecture
+1. Importing CSS files ended up rendering different results in development & production.
+2. Content-Collections misses bits & pieces of documentation around working with individual pieces of data.
+3. `<Image/>` Component lacked serious documentation, and making it work was more of a pain. This includes missing typing support for it.
+4. `<Image/>` Component has weird edge-case where it worked in development at times, but not in production.
+5. `<Image/>` Component has compatibility issues with different deployment services. This includes delay in Netlify, paid support in Cloudflare, etc.
+6. View-Transitions had issues with client-side scripts for components being used across pages of the application.
+7. Lifecycle events associated with View-Transitions had unexpected behaviour where they fired off after images were loaded on the page.
+8. View-Transitions in-general felt like a half-baked idea, not generally from Astro's implementation perspective, but the raw spec in general.
 
-A 3 schema architecture for managing data is used to decouple the client from the physical representation of data, i.e. users should be abstracted away from where & how the data is actually stored in the disk.
-This architecture also allows developers to work independently from database designers & database administrators in managing the database.
+I want to clarify that my intention is not to criticize the framework. Rather, I aim to highlight the fact that, like any tool, **it does have a few rough edges**.
 
-![[3-schema-architecture.excalidraw]]
+### Conclusion
 
-### External Schema
+I thoroughly **enjoyed** working with Astro throughout the week or two that I dedicated to building this website.
 
-External Schema is the data representation for clients. This means, its the format of data that is presented to the frontend layer. There can be multiple external schemas for each type of user based on their role-based access control policies.
+Aside from encountering a few rough edges, I didn't find myself needing to Google or delve extensively into the documentation. An initial read-through proved to be sufficient for most of the development process.
 
-### Conceptual Schema
+Additionally, I've never experienced such a **swift pace** in developing a website from scratch. Astro truly facilitated an **efficient** and **accelerated** development process.
 
-Conceptual Schema is the logical representation of the database. This logical representation is usually done in form of ER-Diagrams. Database designers usually work on this layer to design how the data should be structured.
-
-### Physical Schema
-
-Physical Schema is the representation of data storage in the physical form, i.e. disk. This takes into account where the data is stored in disk, while also managing the files that stores the actual data. Database administrators usually work on this layer.
-
-## Data Independence
-
-Data Independence means that changes in the database management should not affect the users above in the hierarchy. In the above 3-schema archicture:
-
-1. Changing the conceptual schema should not affect the external schema. This means, if we change the name of the tables, add a new column, change data type, etc., these changes should not affect the data that is received by the frontend.
-2. Changing the logical schema should not affect the application code & the external schema. This means, if we change the storage structure, location, data-structure or indexes, the app-server should not be required to make changes, i.e. it should not affect the backend or the frontend.
-   This helps in making sure that developers can work on enhancing the database, or be able to add new features without impacting the end consumers.
-
-> [!info] Table Relationship Representation
-> In the given representation, i.e. `R(ABCD)` , it means that a given table has 4 columns named `A`, `B`, `C` & `D`.
-
-## Integrity Constraints
-
-These are the rules defined in a database to maintain data accuracy, consistency & reliability. This ensures that the data stored in the database follows predefined rules or conditions. There are following 4 types of integrity constraints:
-
-1. **Domain Constraint** - These work on the attributes of the data, i.e. data to be stored in each column. Every column has some specified set of rules that enables the type of data that can be entered in it. This includes, datatype, range-based conditions, length-based constraints, etc.
-2. **Entity Integrity Constraint** - According to this constraint, every table should have at least 1 primary key to make sure data is unique. This primary key should also be "not null" as well as unique.
-3. **Referential Integrity Constraints** - According to this constraint, if data in 2 tables in related, then it should be related through foreign keys. This ensures that data cannot be added in child tables without first adding it to the parent tables.
-4. **Key Constraints** - According to this constraint, every table should have at least 1 unique column to maintain uniqueness of data. Though, a table can also have multiple unique columns, but at least 1 should be required. This unique column is linked with Candidate Key.
-
-<!-- | SID | Name  | CID | Course Name | FID | Faculty Name | Salary |
-| --- | ----- | --- | ----------- | --- | ------------ | ------ |
-| 1   | Ram   | C1  | DBMS        | F1  | John         | 30000  |
-| 2   | Ravi  | C2  | JAVA        | F2  | Bob          | 40000  |
-| 3   | Nitin | C1  | DBMS        | F1  | John         | 30000  |
-| 4   | Amrit | C1  | DBMS        | F1  | John         | 30000  | -->
-
-In the above case, we have 2 tables, one for Students & another for Courses. Having a many to many relationship, we create a third table, which maps a `student_id` with a `course_id`. The following are the things to note:
-
-1. This relationship table can have a composite key, the one that is comprised of both the `student_id` & the `course_id` as a primary key since the combination of both is unique.
-2. We cannot merge the relationship table with either of the other tables.
-
-_If a table consists of n columns & 1 of them is a candidate key, there would be total 2^(n-1) super keys. This is because, there are 2 options for each key, to include it or to not include it, except for the first key which has only 1 option, which is to include it_
-
-```typescript
-/**
- * Calculates the duration between two dates in years and months.
- *
- * @param {Date} startDate - The starting date of the duration.
- * @param {Date} [endDate=new Date()] - The ending date of the duration. Defaults to the current date.
- * @return {string} The duration between the start and end dates in the format "Xyr Ymos".
- */
-export function getDuration(startDate: Date, endDate: Date): string {
-  const totalMonths =
-    endDate.getMonth() -
-    startDate.getMonth() +
-    12 * (endDate.getFullYear() - startDate.getFullYear());
-
-  const years = Math.floor(totalMonths / 12);
-  const months = totalMonths % 12;
-
-  if (months && years) {
-    return `${years}yr ${months}mos`;
-  }
-  if (months) {
-    return `${months}mos`;
-  }
-  return `${years}yr`;
-}
-```
-
-In the above case, we have 2 tables, one for Students & another for Courses. Having a many to many relationship, we create a third table, which maps a `student_id` with a `course_id`. The following are the things to note:
+Speaking of the portfolio, I'm pleased with how it turned out. Acknowledging my limited design skills, I drew significant inspiration from [Zeno Rocha's portfolio](https://zenorocha.com/).
