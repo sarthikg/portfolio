@@ -89,6 +89,20 @@ const { Content } = await pageInfo.render();
         font-weight: 500;
         color: var(--grey-100);
       }
+      & a {
+        font-size: var(--fs-sm);
+        color: var(--grey-100);
+        line-height: var(--lh-2);
+        text-decoration: none;
+        border-bottom: 0.5px solid var(--grey-500);
+        transition: opacity var(--transition-ease-slow);
+        &:hover {
+          opacity: 0.8;
+        }
+        &:focus {
+          opacity: 0.8;
+        }
+      }
     }
   }
 </style>
