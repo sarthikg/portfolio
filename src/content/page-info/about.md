@@ -5,8 +5,8 @@ imageUrl: "/src/assets/images/og/snapshot.webp"
 pageUrl: "https://sarthikg.com/about/"
 ---
 
-My software engineering journey began **2.5 years** ago, focusing on **web frontend development** in Angular. In this role, I achieved milestones such as creating a **design system**, implementing **micro-frontends**, and optimizing build pipelines. My experience includes working with GraphQL.
+My journey in software engineering commenced **2.5 years** ago, specializing in **web frontend development** with a focus on **Angular**. During this time, I achieved significant milestones, including the creation of a **design system**, implementation of **micro-frontends**, and successful management of **major-version upgrades**.
 
-In 2022, I participated in **Google Summer of Code (GSoC)** with **The Tor Project**, leading the development of **Tor-Weather**. Post-GSoC, I maintained and enhanced the project, culminating in a complete rewrite in July-December 2023. This effort earned me a role as a **Core Contributor** within The Tor Project.
+In 2022, I had the privilege of being selected for [Google Summer of Code (GSoC)](https://summerofcode.withgoogle.com/) with [The Tor Project](https://www.torproject.org/), where I took the lead in developing [Tor-Weather](https://weather.torproject.org). Following GSoC, my commitment persisted as I continued to maintain and enhance the project, culminating in a complete rewrite from July to December 2023. This dedication led to my appointment as a Core Contributor within The Tor Project, a recognition highlighted on their [Core Contributors page](https://www.torproject.org/about/people/).
 
-In July 2022, I discovered and reported a bug in Microsoft Azure, qualifying for a **$5000 bug bounty** and earning a spot on the **quarterly and yearly leaderboards**. These experiences define my commitment to innovation and growth in the ever-evolving field of software engineering.
+In July 2022, I discovered and reported a bug in Microsoft Azure, earning me a **$5000 bug bounty** and securing a position on both the **quarterly and yearly leaderboards**. These experiences underscore my unwavering commitment to innovation and personal growth in the dynamic field of software engineering.
