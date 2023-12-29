@@ -1,0 +1,85 @@
+---
+import type { NavbarOption } from "@schema/navbar";
+
+interface Props {
+  option: NavbarOption;
+}
+
+const { option } = Astro.props;
+const { pathname } = Astro.url;
+---
+
+<li class="navbar-option">
+  <a
+    href={option.url}
+    class="navbar-option__link"
+    class:list={[{ "navbar-option__link--active": pathname === option.url }]}
+  >
+    <span class="navbar-option__text">
+      {option.page}
+    </span>
+  </a>
+</li>
+
+<style>
+  /* Global Styles */
+  .navbar-option {
+    list-style: none;
+
+    &__link {
+      padding: var(--space-2xs) var(--space-s);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: background-color var(--transition-ease-slow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      &:hover {
+        background-color: var(--grey-900);
+        & .navbar-option__text {
+          color: var(--grey-100);
+        }
+      }
+      &--active {
+        & .navbar-option__text {
+          color: var(--grey-100);
+          &::after {
+            content: "";
+            position: absolute;
+            margin: 0px auto;
+            top: 18px;
+            left: 0px;
+            right: 0px;
+            height: 1px;
+            width: 20px;
+            background: var(--grey-100);
+            transition: opacity var(--transitions-duration) ease-in-out;
+          }
+        }
+      }
+    }
+    &__text {
+      position: relative;
+      text-transform: uppercase;
+      color: var(--grey-500);
+      font-size: var(--fs-xs);
+      font-family: var(--fonts-heading);
+      background-color: transparent;
+      letter-spacing: 1.2px;
+      transition: color var(--transition-ease-slow);
+    }
+  }
+
+  /* Desktop Overrides */
+  @media (min-width: 760px) {
+  }
+  /* Mobile Overrides */
+  @media (max-width: 480px) {
+    .navbar-option {
+      &__link {
+        padding: var(--space-2xs) var(--space-xs);
+      }
+    }
+  }
+</style>

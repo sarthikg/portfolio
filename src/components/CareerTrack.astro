@@ -1,0 +1,68 @@
+---
+import CareerCard from "@component/CareerCard.astro";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  experiences: CollectionEntry<"experience">[];
+}
+
+const { experiences } = Astro.props;
+---
+
+<ol class="career-track">
+  {
+    experiences.map((experience) => (
+      <li
+        class="career-track__item"
+        class:list={{ "career-track__item--active": !experience.data.endDate }}
+      >
+        <CareerCard experience={experience} />
+      </li>
+    ))
+  }
+</ol>
+
+<style>
+  .career-track {
+    margin-top: var(--space-m);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-left: var(--space-l);
+    &__item {
+      position: relative;
+      --dot-radius: 10px;
+      &:last-child {
+        margin-bottom: calc(-1 * var(--space-s));
+      }
+      &:not(:last-child):before {
+        content: "";
+        position: absolute;
+        left: calc(-1 * var(--space-m));
+        height: 100%;
+        border-left: var(--border-md) solid var(--grey-600);
+        margin-top: calc(0.5 * var(--fs-base));
+      }
+      &::after {
+        position: absolute;
+        left: calc(
+          calc(-1 * var(--space-m)) +
+            calc(calc(-0.5 * var(--dot-radius)) + calc(0.5 * var(--border-md)))
+        );
+        content: "";
+        top: calc(-0.5 * var(--dot-radius));
+        background-color: var(--grey-600);
+        border-radius: var(--radius-full);
+        margin-top: calc(0.5 * var(--fs-base));
+        height: var(--dot-radius);
+        width: var(--dot-radius);
+      }
+      &--active {
+        &::after {
+          background-color: var(--grey-300);
+        }
+      }
+    }
+  }
+</style>

@@ -1,0 +1,27 @@
+---
+import Body from "@layout/Body.astro";
+import Footer from "@layout/Footer.astro";
+import Head, { type MetaData } from "@layout/Head.astro";
+import Header from "@layout/Header.astro";
+import "@style/colors.css";
+import "@style/global.css";
+import "@style/reset.css";
+import "@style/typography.css";
+import "@style/variables.css";
+
+interface Props {
+  metaData: MetaData;
+}
+
+const { metaData } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <Head {metaData} />
+  <Body>
+    <Header />
+    <slot />
+    <Footer />
+  </Body>
+</html>

@@ -1,0 +1,58 @@
+---
+import Svg from "@component/Svg.astro";
+import { getSocials } from "@facade/socials";
+
+const socials = getSocials();
+---
+
+<footer class="footer">
+  <ul style={{ display: "contents" }}>
+    {
+      socials.map((social) => (
+        <li class="footer__social">
+          <a
+            class="footer__social__link"
+            href={`${social.url}/${social.username}`}
+            target="_blank"
+          >
+            <Svg name={social.icon} alt={social.name} size={19.2} />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</footer>
+
+<style>
+  /* Global Styles */
+  .footer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    min-height: 59px;
+    width: 100%;
+    position: absolute;
+    z-index: 3;
+    bottom: 0px;
+    column-gap: 80px;
+    &__social {
+      list-style: none;
+      &__link {
+        text-decoration: none;
+        color: var(--grey-500);
+        transition: color var(--transition-ease-slow);
+        &:hover {
+          color: var(--grey-700);
+        }
+      }
+    }
+  }
+
+  /* Desktop Overrides */
+  @media (min-width: 760px) {
+  }
+  /* Mobile Overrides */
+  @media (max-width: 480px) {
+  }
+</style>

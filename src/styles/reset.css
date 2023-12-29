@@ -1,0 +1,30 @@
+/* CSS RESET */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+nav :where(ol, ul) {
+  list-style: none;
+}
+
+img,
+picture {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}

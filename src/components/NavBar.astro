@@ -1,0 +1,49 @@
+---
+import NavBarOption from "@component/NavBarOption.astro";
+import { getNavbarOptions } from "@facade/navbar";
+
+const navbarOptions = getNavbarOptions();
+---
+
+<nav class="navbar">
+  <ul class="navbar__list">
+    {
+      navbarOptions.map((navbarOption) => (
+        <NavBarOption option={navbarOption} />
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  /* Global Styles */
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    &__list {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+  /* Desktop Overrides */
+  @media (min-width: 760px) {
+  }
+  /* Mobile Overrides */
+  @media (max-width: 480px) {
+    .navbar {
+      width: 100%;
+      padding: 0 var(--space-s);
+      &__list {
+        width: calc(100% + calc(2 * var(--space-xs)));
+        margin-left: calc(-1 * var(--space-xs));
+        margin-right: calc(-1 * var(--space-xs));
+        justify-content: space-between;
+      }
+    }
+  }
+</style>

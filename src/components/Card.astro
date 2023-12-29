@@ -1,0 +1,112 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  image: {
+    src?: unknown; // TODO: Remove optional once Astro bug is fixed
+    alt?: string; // TODO: Remove optional once Astro bug is fixed
+  };
+  url: string;
+}
+
+const { slug, title, description, image, url } = Astro.props;
+---
+
+<a class="card" href={url}>
+  <Image
+    class="card__image"
+    transition:name={`article_image_${slug}`}
+    src={image.src as ImageMetadata}
+    alt={image.alt}
+    format="avif"
+  />
+  <h2 class="card__title" transition:name={`article_title_${slug}`}>
+    {title}
+  </h2>
+  <p class="card__description">
+    {description}
+  </p>
+</a>
+
+<style>
+  /* Global Styles */
+  .card {
+    cursor: pointer;
+    padding: var(--space-s);
+    border-radius: var(--radius-md);
+    background-color: transparent;
+    transition:
+      background-color var(--transition-ease-slow),
+      filter var(--transition-squish-slow),
+      opacity var(--transition-ease-slow);
+    text-decoration: unset;
+    flex: 1;
+    &:hover {
+      background-color: var(--grey-900);
+      & .card__image {
+        filter: grayscale(0.4);
+        opacity: 0.9;
+      }
+    }
+    &__image {
+      border-radius: var(--radius-md);
+      object-fit: cover;
+      filter: grayscale(0.6);
+      opacity: 0.8;
+      width: 384px;
+      height: 196px;
+      color: transparent;
+      &--loading {
+        animation: skeleton-loading 0.8s linear infinite alternate;
+      }
+    }
+    &__title {
+      color: var(--grey-300);
+      font-size: var(--fs-base);
+      font-weight: 500;
+      line-height: var(--lh-1-4);
+      margin-top: var(--space-s);
+    }
+    &__description {
+      margin-top: var(--space-2xs);
+      color: var(--grey-500);
+      font-size: var(--fs-sm);
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* number of lines to show */
+      -webkit-box-orient: vertical;
+      line-clamp: 2;
+      line-height: 1.8;
+    }
+  }
+
+  @keyframes skeleton-loading {
+    0% {
+      background-color: var(--grey-800);
+    }
+    100% {
+      background-color: var(--grey-900);
+    }
+  }
+
+  /* Desktop Overrides */
+  @media (min-width: 760px) {
+  }
+  /* Mobile Overrides */
+  @media (max-width: 480px) {
+    .card {
+      &__image {
+        height: 180px;
+        width: 384px;
+      }
+      &__description {
+        line-height: 1.8;
+      }
+    }
+  }
+</style>

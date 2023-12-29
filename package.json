@@ -1,42 +1,44 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "aos": "^2.3.4",
-    "axios": "^0.21.1",
-    "fontfaceobserver": "^2.1.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-google-recaptcha": "^2.1.0",
-    "react-marquee-slider": "^1.1.2",
-    "react-scripts": "^4.0.3",
-    "sass": "^1.42.1",
-    "styled-components": "^5.3.3",
-    "typewriter-effect": "^2.17.0"
-  },
+  "name": "portfolio",
+  "type": "module",
+  "version": "2.0.0",
+  "browserslist": [
+    "defaults and fully supports es6-module"
+  ],
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier . --ignore-unknown --log-level=warn",
+    "format:check": "npm run format -- --check",
+    "format:fix": "npm run format -- --write",
+    "lint": "eslint .",
+    "lint:check": "npm run lint -- --max-warnings 0",
+    "lint:fix": "npm run lint -- --fix ."
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "dependencies": {
+    "@astrojs/check": "^0.3.1",
+    "@astrojs/vercel": "^6.1.1",
+    "astro": "^4.0.3",
+    "dotenv": "^16.3.1",
+    "nodemailer": "^6.9.7",
+    "typescript": "^5.3.3",
+    "zod-form-data": "^2.0.2"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.14",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.55.0",
+    "eslint-plugin-astro": "^0.31.0",
+    "postcss": "^8.4.32",
+    "postcss-nested": "^6.0.1",
+    "postcss-preset-env": "^9.3.0",
+    "prettier": "^3.1.1",
+    "prettier-plugin-astro": "^0.12.2",
+    "prettier-plugin-astro-organize-imports": "^0.3.3"
   }
 }

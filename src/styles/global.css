@@ -1,0 +1,22 @@
+body {
+  background-color: var(--background);
+  font-family: var(--fonts-body);
+}
+
+@media (max-width: 480px) {
+  .main {
+    width: 100%;
+    padding: 140px 20px;
+  }
+}
+
+@media (min-width: 760px) {
+  .main {
+    width: 800px;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 110px 0;
+  }
+}

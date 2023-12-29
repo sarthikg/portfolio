@@ -1,0 +1,101 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import { formatDate } from "@util/date-string";
+
+interface Props {
+  experience: CollectionEntry<"experience">;
+}
+
+const { experience } = Astro.props;
+
+const { designation, location, company, companyUrl, startDate, endDate } =
+  experience.data;
+const isActive = !endDate;
+---
+
+<div class="career-card" class:list={[{ "career-card--active": isActive }]}>
+  <a class="career-card__title">{designation}</a>
+  <h3 class="career-card__subtitle">
+    <a class="career-card__subtitle__company" href={companyUrl} target="_blank"
+      >{company}</a
+    >
+    <span class="career-card__subtitle__location">{location}</span>
+  </h3>
+  <h3
+    class="career-card__description"
+    data-startDate={startDate}
+    data-endDate={endDate}
+  >
+    {formatDate(startDate)} - {isActive ? "Present" : formatDate(endDate)} •
+  </h3>
+</div>
+
+<script>
+  import { getDuration } from "@util/date-string";
+
+  function setDuration(): void {
+    const descriptionEls = document.querySelectorAll(
+      ".career-card__description",
+    );
+    descriptionEls.forEach((description) => {
+      const startDate = new Date(description.getAttribute("data-startDate"));
+      const endDate = description.getAttribute("data-endDate");
+      const duration = getDuration(
+        startDate,
+        endDate ? new Date(endDate) : new Date(),
+      );
+      description.textContent = `${description.textContent} ${duration}`;
+    });
+  }
+
+  document.addEventListener("astro:page-load", setDuration);
+</script>
+
+<style>
+  .career-card {
+    display: grid;
+    grid-template-rows: repeat(1fr, 3);
+    grid-template-columns: max-content min-content min-content;
+    margin-bottom: var(--space-m);
+
+    &__title {
+      grid-row: 1 / 2;
+      color: var(--grey-300);
+      font-size: var(--fs-base);
+      line-height: var(--lh-1-4);
+      text-decoration-color: var(--grey-700);
+      font-weight: 500;
+    }
+    &__subtitle {
+      grid-row: 2 / 3;
+      margin-top: var(--space-3xs);
+      font-size: var(--fs-sm);
+      &__company {
+        text-decoration-color: var(--grey-700);
+        color: var(--grey-300);
+        font-weight: 500;
+        transition: opacity var(--transition-ease-slow);
+        &:hover {
+          opacity: 0.8;
+        }
+        &:focus {
+          opacity: 0.8;
+        }
+      }
+      &__location {
+        color: var(--grey-500);
+        &::before {
+          content: " • ";
+          color: var(--grey-300);
+        }
+      }
+    }
+    &__description {
+      grid-row: 3 / 4;
+      margin-top: var(--space-3xs);
+      font-size: var(--fs-sm);
+      color: var(--grey-500);
+    }
+  }
+</style>

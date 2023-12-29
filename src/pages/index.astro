@@ -1,0 +1,106 @@
+---
+import Layout from "@layout/Layout.astro";
+import { Image } from "astro:assets";
+
+import profilePic from "@asset/images/profile-pic.webp";
+import { getPageInfo } from "@facade/page-info";
+import type { ImageMetadata } from "astro";
+
+const pageInfo = await getPageInfo("index");
+---
+
+<Layout
+  metaData={{
+    title: pageInfo.data.title,
+    description: "This is the description",
+    imageUrl: pageInfo.data.imageUrl as ImageMetadata,
+    pageUrl: pageInfo.data.pageUrl,
+  }}
+>
+  <main class="main main--index">
+    <div class="index__content">
+      <h1 class="index__content__name">Sarthik Gupta</h1>
+      <h2 class="index__content__title">Full Stack Developer</h2>
+    </div>
+    <div class="index__image">
+      <Image src={profilePic} alt="Image of Sarthik Gupta" />
+    </div>
+  </main>
+</Layout>
+
+<style>
+  /* Global Styles */
+  .main--index {
+    height: 100vh;
+  }
+
+  .index {
+    &__content {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      &__name {
+        color: var(--grey-300);
+        font-family: var(--fonts-heading);
+        font-size: var(--fs-3xl);
+        font-weight: 700;
+        letter-spacing: 1.2px;
+      }
+      &__title {
+        color: var(--grey-400);
+        font-size: var(--fs-md);
+        font-weight: 400;
+        margin: var(--space-s) 0;
+        font-family: var(--fonts-body);
+        text-transform: uppercase;
+      }
+    }
+    &__image {
+      width: var(--content-3xl);
+      height: var(--content-3xl);
+      overflow: hidden;
+      border-radius: var(--radius-full);
+      transform: translateX(10%);
+      border: var(--border-xl) solid var(--grey-800);
+      & > img {
+        object-fit: cover;
+        width: var(--content-3xl);
+        height: var(--content-3xl);
+      }
+    }
+  }
+  /* Desktop Overrides */
+  @media (min-width: 760px) {
+    .main--index {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  /* Mobile Overrides */
+  @media (max-width: 480px) {
+    .main--index {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+    .index {
+      &__content {
+        align-items: center;
+        &__name {
+          text-align: center;
+        }
+        &__title {
+          text-align: center;
+        }
+      }
+      &__image {
+        transform: none;
+      }
+    }
+  }
+</style>

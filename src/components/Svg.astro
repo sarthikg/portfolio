@@ -1,0 +1,22 @@
+---
+interface Props {
+  name: string;
+  alt: string;
+  size?: number;
+}
+
+const { name, alt, size = 24 } = Astro.props;
+---
+
+<svg class="svg" role="img">
+  <title>{alt}</title>
+  <use href={`/icons/${name}.svg#icon`}></use>
+</svg>
+
+<style define:vars={{ size }}>
+  .svg {
+    height: 24px;
+    width: 24px;
+    transform: scale(calc(var(--size) / 24));
+  }
+</style>
