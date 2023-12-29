@@ -56,3 +56,31 @@ From this pool of around 60 projects, I incorporated the previously assigned sco
 #### Final Round of Shortlisting
 
 With a narrowed-down list of 25 projects, it finally became feasible to delve into detailed research about each one. And that's precisely what I did.
+
+I delved into the codebases (if they were already available), immersed myself in project documentation, acquired insights into the business and technical prerequisites, and actively engaged in the respective communication channels.
+
+After a week of this meticulous exploration, a clear front-runner among the projects began to emerge—the one I was gearing up to aim for.
+
+The standout choice that crystallized was the "Tor Weather: Improving the Tor network" Project under "The Tor Project". Beyond my affinity for the organization, this project offered a perfect blend aligning with my tech-stack and the direction I was heading towards
+
+### Drafting the Proposal
+
+With the project shortlisted, it was time for writing the proposal.
+
+To prepare for this, my friend and I collaborated to collect a few proposals from previous years. This provided us with a solid head start, answering questions about the proposal's length, required level of detail, and the sections to be covered.
+
+Over the next couple of weeks, we dedicated ourselves to researching our chosen projects, engaging in conversations with mentors, acquiring additional business knowledge, and meticulously crafting every detail into a Notion document.
+
+From what I can recall, it was just a day before the deadline when both of us finally submitted our proposals. Unfortunately, I didn't even get a chance to receive an initial review from my mentor.
+
+However, we were already deviating from the conventional wisdom often shared in articles and videos on "Cracking GSoC," which typically advises submitting proposals on the very first day of the submission window. So, how detrimental could the absence of an initial review be?
+
+With that initial setback, we submitted our proposals. Here's a link to my proposal if anyone is interested, [Sarthik's GSoC Proposal](/document/gsoc/proposal.pdf).
+
+### Selection
+
+Fortunately, on the day the results were announced, both my friend and I celebrated with joy as we were both selected by our respective organizations.
+
+However, the happiness was short-lived as both of us began contemplating the time-management challenges that would be required to pull this off.
+
+But we allowed the joyous emotions to overshadow any looming concerns.
