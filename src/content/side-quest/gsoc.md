@@ -84,16 +84,3 @@ Fortunately, on the day the results were announced, both my friend and I **celeb
 However, the happiness was short-lived as both of us began **contemplating** the **time-management challenges** that would be required to pull this off.
 
 _But we allowed the joyous emotions to overshadow any looming concerns_.
-
-### Takeaways
-
-The entire application process shattered a few misconceptions, often perpetuated by so-called 'pseudo-techfluencers' on the internet:
-
-1. **PR's Before Proposal** - Contrary to popular belief, submitting pull requests to the project before proposal submission or selection is not a prerequisite.
-2. **Timely Proposal Submission** - There's no rush to submit your proposal the moment the time window opens. Take the time you need to craft a thoughtful and well-researched proposal.
-3. **Constant Mentor Interaction** - Contrary to the notion of constant mentor interaction, it's not mandatory to have your mentor review your proposal beforehand. It's more about the quality of your proposal than constant back-and-forth.
-4. **Tech Wizardry Not Required** - You don't have to be a tech wizard with an arsenal of skills. Having a solid grasp of a programming language is a good starting point.
-
-TLDR is,
-
-**<center>Cracking GSoC is not as hard as its advertised!</center>**
