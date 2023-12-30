@@ -3,7 +3,7 @@ slug: "experience-with-astro"
 
 title: "My experience using Astro"
 description: "My experience using Astro for building v2 of my portfolio website"
-date: 2023-11-12
+date: 2023-12-29
 image:
   {
     src: "/src/assets/images/article/astro.webp",
