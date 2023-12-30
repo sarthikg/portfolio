@@ -3,7 +3,7 @@ slug: "consistent-sub-pixel-rendering"
 
 title: "Consistent sub-pixel rendering"
 description: "Achieve consistent sub-pixel rendering across browsers with improved readability"
-date: 2023-11-12
+date: 2023-12-24
 image:
   {
     src: "/src/assets/images/article/browsers.webp",
