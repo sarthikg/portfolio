@@ -9,6 +9,7 @@ import {
   getAllPublishedArticles,
 } from "@facade/article";
 import { getPageInfo } from "@facade/page-info";
+import { extractTextFromMarkdown } from "@util/markdown-text";
 import type { ImageMetadata } from "astro";
 
 const pageInfo = await getPageInfo("articles");
@@ -21,7 +22,7 @@ const { Content } = await pageInfo.render();
 <Layout
   metaData={{
     title: pageInfo.data.title,
-    description: "This is the description",
+    description: extractTextFromMarkdown(pageInfo.body),
     imageUrl: pageInfo.data.imageUrl as ImageMetadata,
     pageUrl: pageInfo.data.pageUrl,
   }}

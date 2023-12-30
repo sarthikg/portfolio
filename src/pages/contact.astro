@@ -2,6 +2,7 @@
 import Snackbar from "@component/Snackbar.astro";
 import { getPageInfo } from "@facade/page-info";
 import Layout from "@layout/Layout.astro";
+import { extractTextFromMarkdown } from "@util/markdown-text";
 import type { ImageMetadata } from "astro";
 
 const pageInfo = await getPageInfo("contact");
@@ -12,7 +13,7 @@ const { Content } = await pageInfo.render();
 <Layout
   metaData={{
     title: pageInfo.data.title,
-    description: "This is the description",
+    description: extractTextFromMarkdown(pageInfo.body),
     imageUrl: pageInfo.data.imageUrl as ImageMetadata,
     pageUrl: pageInfo.data.pageUrl,
   }}
