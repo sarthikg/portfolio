@@ -7,9 +7,7 @@
  */
 export function addSkeletonLoader(selector: string, className: string): void {
   const images = document.querySelectorAll(selector);
-  console.log(images);
   images.forEach((image: HTMLImageElement) => {
-    console.log(image.complete);
     if (!image.complete) {
       image.classList.add(className);
       image.onload = () => image.classList.remove(className);
