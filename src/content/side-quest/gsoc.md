@@ -75,7 +75,7 @@ From what I can recall, it was just a **day before the deadline** when both of u
 
 However, we were already deviating from the conventional wisdom often shared in articles and videos on "Cracking GSoC," which typically advises submitting proposals on the very first day of the submission window. So, how detrimental could the absence of an initial review be?
 
-With that initial setback, we submitted our proposals. Here's a link to my proposal if anyone is interested, [Sarthik's GSoC Proposal](/document/gsoc/proposal.pdf).
+With that initial setback, we submitted our proposals. Here's a link to my proposal if anyone is interested, [Sarthik's GSoC Proposal](/gsoc/proposal.pdf).
 
 ### Selection
 
