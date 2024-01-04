@@ -71,7 +71,6 @@ async function sendEmail(
   return await transporter.sendMail({
     from: process.env.FROM_ADDRESS,
     to: [process.env.FROM_ADDRESS],
-    cc: [fromEmail],
     replyTo: [fromEmail],
     subject: `[Contact Request] ${subject}`,
     html: emailBody,
