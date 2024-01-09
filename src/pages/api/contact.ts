@@ -31,6 +31,7 @@ const formSchema = zfd.formData({
  * @returns {Promise<Response>} A promise that resolves to the response.
  */
 export async function POST({ request }: APIContext<Props>): Promise<Response> {
+  console.log(request);
   try {
     const data = await request.formData();
     const parsedData = formSchema.parse(data);
