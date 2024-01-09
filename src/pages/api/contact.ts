@@ -1,13 +1,7 @@
 import { z } from "astro/zod";
 import type { APIContext, Props } from "astro";
 import { zfd } from "zod-form-data";
-import dotenv from "dotenv";
 import nodemailer from "nodemailer";
-
-/**
- * Load environment variables from .env
- */
-dotenv.config();
 
 /**
  * Set prerendering to false to be rendered on the server
@@ -70,8 +64,8 @@ async function sendEmail(
   const emailBody = getEmailBody(fromEmail, fromName, message);
 
   return await transporter.sendMail({
-    from: process.env.FROM_ADDRESS,
-    to: [process.env.FROM_ADDRESS],
+    from: import.meta.env.FROM_ADDRESS,
+    to: [import.meta.env.FROM_ADDRESS],
     replyTo: [fromEmail],
     subject: `[Contact Request] ${subject}`,
     html: emailBody,
@@ -126,12 +120,12 @@ function getEmailBody(
  */
 function getTransporter() {
   return nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: parseInt(process.env.SMTP_PORT),
+    host: import.meta.env.SMTP_HOST,
+    port: parseInt(import.meta.env.SMTP_PORT),
     secure: false,
     auth: {
-      user: process.env.SMTP_USERNAME,
-      pass: process.env.SMTP_PASSWORD,
+      user: import.meta.env.SMTP_USERNAME,
+      pass: import.meta.env.SMTP_PASSWORD,
     },
   });
 }
