@@ -2,6 +2,7 @@ import { z } from "astro/zod";
 import type { APIContext, Props } from "astro";
 import { zfd } from "zod-form-data";
 import nodemailer from "nodemailer";
+import { isProd, siteUrl } from "src/env";
 
 /**
  * Set prerendering to false to be rendered on the server
@@ -25,7 +26,11 @@ const formSchema = zfd.formData({
  * @returns {Promise<Response>} A promise that resolves to the response.
  */
 export async function POST({ request }: APIContext<Props>): Promise<Response> {
-  console.log({ url: request.url });
+  // Block requests not made from the dashboard in production mode
+  if (isProd && request.url !== `${siteUrl}api/contact/`) {
+    return new Response("Unexpected request", { status: 400 });
+  }
+
   try {
     const data = await request.formData();
     const parsedData = formSchema.parse(data);
