@@ -6,8 +6,8 @@
     "defaults and fully supports es6-module"
   ],
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
+    "dev": "astro dev --host 0.0.0.0",
+    "start": "astro dev --host 0.0.0.0",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",

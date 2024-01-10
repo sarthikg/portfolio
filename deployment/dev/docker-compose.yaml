@@ -1,0 +1,27 @@
+version: "3"
+services:
+  app_server:
+    build:
+      context: ../../
+      dockerfile: ./deployment/dev/Dockerfile
+    container_name: app_server
+    ports:
+      - 4321:4321
+    volumes:
+      - ../../:/app
+      - /app/node_modules
+      - ~/.ssh:/root/.ssh
+      - ~/.gitconfig:/root/.gitconfig
+    command: ["bash", "./deployment/dev/startup-script.sh"]
+    stdin_open: true
+    tty: true
+  mailcatcher:
+    image: mailhog/mailhog:latest
+    container_name: mailcatcher
+    ports:
+      - 1025:1025
+      - 1080:8025
+    environment:
+      SMTP_PORT: 1025
+      SMTP_USERNAME: sarthik@sarthikg.com
+      SMTP_PASSWORD: password
