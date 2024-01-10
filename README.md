@@ -1,54 +1,135 @@
-# Astro Starter Kit: Basics
+# sarthikg.com
 
-```sh
-npm create astro@latest -- --template basics
-```
+> My portfolio website ❤️
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Tech Stack
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- Frontend - Astro Components
+- Backend - Astro Endpoints
+- Deployment - Vercel
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Running locally (with vs-code & docker-compose)
+
+1. Clone this repo:
+
+   ```sh
+     git clone https://github.com/sarthikg/portfolio.git
+   ```
+
+2. Navigate to the project folder:
+
+   ```sh
+     cd portfolio
+   ```
+
+3. Open the project in vs-code
+
+   ```sh
+     code .
+   ```
+
+4. Install dev-containers extension in vs-cde if not already installed (ms-vscode-remote.remote-containers).
+5. You'll see a popup appear on bottom-right corner of vs-code saying `Folder contains a Dev Container configuration file. Reopen folder to develop in a container`. Click on `Reopen in Container`.
+6. Start the server:
+
+   ```sh
+     npm run dev
+   ```
+
+## Running locally (docker-compose)
+
+1. Clone this repo:
+
+   ```sh
+     git clone https://github.com/sarthikg/portfolio.git
+   ```
+
+2. Navigate to the project folder:
+
+   ```sh
+     cd portfolio
+   ```
+
+3. Run docker-compose
+
+   ```sh
+     docker compose --file ./deployment/dev/docker-compose.yaml up
+   ```
+
+4. Start the server:
+
+   ```sh
+     npm run dev
+   ```
+
+## Running locally (without docker-compose)
+
+1. Clone this repo:
+
+   ```sh
+     git clone https://github.com/sarthikg/portfolio.git
+   ```
+
+2. Navigate to the project folder:
+
+   ```sh
+     cd portfolio
+   ```
+
+3. Install dependencies:
+
+   ```sh
+     npm i
+   ```
+
+4. Start the server:
+
+   ```sh
+     npm run dev
+   ```
 
 ## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
 
 ```text
 /
 ├── public/
-│   └── favicon.svg
 ├── src/
+│   ├── assets/
 │   ├── components/
-│   │   └── Card.astro
+│   ├── content/
+│   ├── facades/
 │   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
+│   ├── pages/
+│   ├── schemas/
+│   ├── styles/
+│   └── utils/
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
+| Directory    | Description                                                                  |
+| :----------- | :--------------------------------------------------------------------------- |
+| `public`     | Contains assets which don't require processing                               |
+| `assets`     | Contains assets which requires processing like images which require scaling  |
+| `components` | Contains the Reusable UI Components                                          |
+| `content`    | Contains the content like data, articles, etc.                               |
+| `facades`    | Contains functions to get `content` in `components`                          |
+| `layouts`    | Contains layouts for the `pages`                                             |
+| `pages`      | Contains the pages/routes available in the site, including backend endpoints |
+| `schemas`    | Contains schemas for `content`                                               |
+| `styles`     | Contains global styles like typography, colors, variables, etc.              |
+| `utils`      | Contains utility functions used across the app                               |
 
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| Command                | Action                                       |
+| :--------------------- | :------------------------------------------- |
+| `npm install`          | Installs dependencies                        |
+| `npm run dev`          | Starts local dev server at `localhost:4321`  |
+| `npm run build`        | Build your production site to `./dist/`      |
+| `npm run preview`      | Preview your build locally, before deploying |
+| `npm run format:fix`   | Fixes the formatting issues across all files |
+| `npm run format:check` | Checks formatting issues across all files    |
+| `npm run lint:fix`     | Fixes the linting issues across all files    |
+| `npm run lint:check`   | Checks linting issues across all files       |
