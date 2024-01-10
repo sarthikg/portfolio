@@ -1,0 +1,16 @@
+{
+  "name": "Sarthik's Portfolio Website",
+  "dockerComposeFile": "../deployment/dev/docker-compose.yaml",
+  "service": "app_server",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "astro-build.astro-vscode",
+        "dbaeumer.vscode-eslint",
+        "ms-vscode.vscode-typescript-next",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
