@@ -16,7 +16,6 @@ const formSchema = zfd.formData({
   email_id: zfd.text(z.string().email()),
   subject: zfd.text(),
   message: zfd.text().optional(),
-  email_id_confirm: zfd.text(z.string().email()).optional(),
 });
 
 /**
@@ -28,12 +27,13 @@ const formSchema = zfd.formData({
 export async function POST({ request }: APIContext<Props>): Promise<Response> {
   try {
     const data = await request.formData();
-    const parsedData = formSchema.parse(data);
 
     // Honeypot for preventing spam
-    if (parsedData.email_id_confirm) {
+    if (data.get("email_id_confirm") !== "") {
       return new Response("Unexpected request!", { status: 400 });
     }
+
+    const parsedData = formSchema.parse(data);
 
     await sendEmail(
       parsedData.email_id,
