@@ -39,10 +39,17 @@ const { Content } = await pageInfo.render();
       />
       <input
         class="contact__form__input"
-        name="email"
+        name="email_id"
         placeholder="Email"
         type="email"
         required
+      />
+      <input
+        class="contact__form__input"
+        name="email_id_confirm"
+        placeholder="Confirm Email"
+        type="email"
+        style={{ display: "none" }}
       />
       <input
         class="contact__form__input"
