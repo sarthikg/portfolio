@@ -20,7 +20,10 @@
     "lint:fix": "npm run lint -- --fix ."
   },
   "lint-staged": {
-    "*": "prettier --ignore-unknown --write"
+    "*": [
+      "prettier --ignore-unknown --write",
+      "eslint --fix"
+    ]
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
