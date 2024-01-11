@@ -11,8 +11,5 @@ RUN chmod +x /app/deployment/dev/startup-script.sh
 COPY ./package.json /app
 COPY ./package-lock.json /app
 
-# Copy Environment Variables
-COPY ./deployment/dev/.env ./.env.development
-
 # Install the packages
 RUN npm install
