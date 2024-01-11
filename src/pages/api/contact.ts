@@ -2,7 +2,6 @@ import { z } from "astro/zod";
 import type { APIContext, Props } from "astro";
 import { zfd } from "zod-form-data";
 import nodemailer from "nodemailer";
-import { isProd, siteUrl } from "src/env";
 
 /**
  * Set prerendering to false to be rendered on the server
