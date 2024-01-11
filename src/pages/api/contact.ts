@@ -14,9 +14,10 @@ export const prerender = false;
  */
 const formSchema = zfd.formData({
   name: zfd.text(),
-  email: zfd.text(z.string().email()),
+  email_id: zfd.text(z.string().email()),
   subject: zfd.text(),
   message: zfd.text().optional(),
+  email_id_confirm: zfd.text(z.string().email()).optional(),
 });
 
 /**
@@ -26,16 +27,17 @@ const formSchema = zfd.formData({
  * @returns {Promise<Response>} A promise that resolves to the response.
  */
 export async function POST({ request }: APIContext<Props>): Promise<Response> {
-  // Block requests not made from the dashboard in production mode
-  if (isProd && request.url !== `${siteUrl}api/contact/`) {
-    return new Response("Unexpected request", { status: 400 });
-  }
-
   try {
     const data = await request.formData();
     const parsedData = formSchema.parse(data);
+
+    // Honeypot for preventing spam
+    if (parsedData.email_id_confirm) {
+      return new Response("Unexpected request!", { status: 400 });
+    }
+
     await sendEmail(
-      parsedData.email,
+      parsedData.email_id,
       parsedData.name,
       parsedData.subject,
       parsedData.message,
@@ -44,6 +46,7 @@ export async function POST({ request }: APIContext<Props>): Promise<Response> {
     if (error instanceof z.ZodError) {
       return new Response(JSON.stringify(error.format()), { status: 400 });
     } else {
+      console.log(error);
       return new Response("Something went wrong!", { status: 500 });
     }
   }
