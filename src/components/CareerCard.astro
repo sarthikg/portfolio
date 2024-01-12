@@ -38,7 +38,6 @@ const isActive = !endDate;
     const descriptionEls = document.querySelectorAll(
       ".career-card__description",
     );
-    console.log("Set Duration", { descriptionEls });
     descriptionEls.forEach((description) => {
       const startDate = new Date(description.getAttribute("data-startDate"));
       const endDate = description.getAttribute("data-endDate");
