@@ -20,9 +20,11 @@
     "lint:fix": "npm run lint -- --fix ."
   },
   "lint-staged": {
-    "*": [
-      "prettier --ignore-unknown --write",
+    "*.{js,jsx,ts,tsx}": [
       "eslint --fix"
+    ],
+    "*.{js,jsx,ts,tsx,json}": [
+      "prettier --ignore-unknown --write"
     ]
   },
   "dependencies": {
