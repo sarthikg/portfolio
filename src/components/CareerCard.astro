@@ -9,27 +9,39 @@ interface Props {
 
 const { experience } = Astro.props;
 
-const { designation, location, company, companyUrl, startDate, endDate } =
-  experience.data;
-const isActive = !endDate;
+const { titles, location, company, companyUrl } = experience.data;
 ---
 
-<div class="career-card" class:list={[{ "career-card--active": isActive }]}>
-  <a class="career-card__title">{designation}</a>
-  <h3 class="career-card__subtitle">
-    <a class="career-card__subtitle__company" href={companyUrl} target="_blank"
-      >{company}</a
-    >
-    <span class="career-card__subtitle__location">{location}</span>
-  </h3>
-  <h3
-    class="career-card__description"
-    data-startDate={startDate}
-    data-endDate={endDate}
-  >
-    {formatDate(startDate)} - {isActive ? "Present" : formatDate(endDate)} •
-  </h3>
-</div>
+<ol class="career-card__list">
+  {
+    titles.map((title) => (
+      <div
+        class="career-card"
+        class:list={[{ "career-card--active": !title.endDate }]}
+      >
+        <a class="career-card__title">{title.title}</a>
+        <h3 class="career-card__subtitle">
+          <a
+            class="career-card__subtitle__company"
+            href={companyUrl}
+            target="_blank"
+          >
+            {company}
+          </a>
+          <span class="career-card__subtitle__location">{location}</span>
+        </h3>
+        <h3
+          class="career-card__description"
+          data-startDate={title.startDate}
+          data-endDate={title.endDate}
+        >
+          {formatDate(title.startDate)} -{" "}
+          {!title.endDate ? "Present" : formatDate(title.endDate)} •
+        </h3>
+      </div>
+    ))
+  }
+</ol>
 
 <script>
   import { getDuration } from "@util/date-string";
@@ -55,9 +67,47 @@ const isActive = !endDate;
 <style>
   .career-card {
     display: grid;
+    position: relative;
     grid-template-rows: repeat(1fr, 3);
     grid-template-columns: max-content min-content min-content;
-    margin-bottom: var(--space-m);
+    padding-bottom: var(--space-m);
+    --dot-radius: 8px;
+
+    &:not(:last-child)::before {
+      content: "";
+      position: absolute;
+      left: calc(-1 * var(--space-s));
+      height: 100%;
+      border-left: var(--border-sm) solid var(--grey-600);
+      margin-top: calc(0.5 * var(--fs-base));
+    }
+    &:not(:only-child)::after {
+      position: absolute;
+      left: calc(
+        calc(-1 * var(--space-s)) +
+          calc(calc(-0.5 * var(--dot-radius)) + calc(0.5 * var(--border-sm)))
+      );
+      content: "";
+      top: calc(-0.5 * var(--dot-radius));
+      background-color: var(--grey-600);
+      border-radius: var(--radius-full);
+      margin-top: calc(0.5 * var(--fs-base));
+      height: var(--dot-radius);
+      width: var(--dot-radius);
+    }
+    &--active {
+      &::after {
+        background-color: var(--grey-300) !important;
+      }
+    }
+
+    &__list:not(:has(:only-child)) {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      margin-left: var(--space-s);
+    }
 
     &__title {
       grid-row: 1 / 2;

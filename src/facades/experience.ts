@@ -10,8 +10,8 @@ export async function getExperiences(): Promise<
 > {
   const experiences = await getCollection("experience");
   experiences.sort((a, b) => {
-    const endDateA = (a.data.endDate || new Date()).getTime();
-    const endDateB = (b.data.endDate || new Date()).getTime();
+    const endDateA = getMostRecentEndDate(a).getTime();
+    const endDateB = getMostRecentEndDate(b).getTime();
 
     if (endDateA > endDateB) {
       return -1;
@@ -23,4 +23,15 @@ export async function getExperiences(): Promise<
   });
 
   return experiences;
+}
+
+/**
+ * Get most recent end-date for the experience
+ * @param experience - Experience object
+ * @returns - Date of th most recent end-date
+ */
+function getMostRecentEndDate(experience: CollectionEntry<"experience">): Date {
+  return experience.data.titles
+    .map((title) => title.endDate || new Date())
+    .reduce((a, b) => (a.getTime() > b.getTime() ? a : b));
 }
