@@ -61,7 +61,18 @@ const { titles, location, company, companyUrl } = experience.data;
     });
   }
 
+  // TODO: Remove once Astro bug is fixed
+  function trimCompanyName(): void {
+    const companyEls = document.querySelectorAll(
+      ".career-card__subtitle__company",
+    );
+    companyEls.forEach((company) => {
+      company.textContent = `${company.textContent.trim()}`;
+    });
+  }
+
   document.addEventListener("astro:page-load", setDuration);
+  document.addEventListener("astro:page-load", trimCompanyName);
 </script>
 
 <style>
