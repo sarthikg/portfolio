@@ -46,8 +46,11 @@ export function getDuration(startDate: Date, endDate: Date): string {
   if (months && years) {
     return `${years}yr ${months}mos`;
   }
-  if (months) {
+  if (months && !years) {
     return `${months}mos`;
   }
-  return `${years}yr`;
+  if (years && !months) {
+    return `${years}yr`;
+  }
+  return `Just started 😊`;
 }

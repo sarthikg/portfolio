@@ -14,7 +14,9 @@ const { experiences } = Astro.props;
     experiences.map((experience) => (
       <li
         class="career-track__item"
-        class:list={{ "career-track__item--active": !experience.data.endDate }}
+        class:list={{
+          "career-track__item--active": !experience.data.titles.at(0).endDate,
+        }}
       >
         <CareerCard experience={experience} />
       </li>
@@ -36,7 +38,7 @@ const { experiences } = Astro.props;
       &:last-child {
         margin-bottom: calc(-1 * var(--space-s));
       }
-      &:not(:last-child):before {
+      &:not(:last-child)::before {
         content: "";
         position: absolute;
         left: calc(-1 * var(--space-m));
