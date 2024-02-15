@@ -35,8 +35,8 @@ const image = await getImage({
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <title>{meta.title}</title>
   <meta name="generator" content={Astro.generator} />
+  <!-- Open Graph -->
   <meta content={meta.title} property="og:title" />
-  <meta content={meta.pageUrl} property="og:url" />
   <meta content={meta.pageUrl} property="og:url" />
   <meta property="og:type" content={meta.contentType || "website"} />
   {meta.imageUrl && <meta content={image.src} property="og:image" />}
@@ -67,6 +67,20 @@ const image = await getImage({
           content={meta.author}
         />
       </>
+    )
+  }
+
+  <!-- Twitter -->
+  <meta content={meta.title} property="twitter:title" />
+  <meta content="@sarthikg" property="twitter:creator" />
+  {meta.imageUrl && <meta content={image.src} property="twitter:image" />}
+  {
+    meta.description && (
+      <meta
+        content={meta.description}
+        name="description"
+        property="twitter:description"
+      />
     )
   }
 
