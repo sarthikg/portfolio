@@ -71,16 +71,13 @@ const image = await getImage({
   }
 
   <!-- Twitter -->
-  <meta content={meta.title} property="twitter:title" />
-  <meta content="@sarthikg" property="twitter:creator" />
-  {meta.imageUrl && <meta content={image.src} property="twitter:image" />}
+  <meta content={meta.title} name="twitter:title" />
+  <meta content="@sarthikg" name="twitter:creator" />
+  <meta content="summary_large_image" name="twitter:card" />
+  {meta.imageUrl && <meta content={image.src} name="twitter:image" />}
   {
     meta.description && (
-      <meta
-        content={meta.description}
-        name="description"
-        property="twitter:description"
-      />
+      <meta content={meta.description} name="twitter:description" />
     )
   }
 
