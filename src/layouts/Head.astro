@@ -30,13 +30,12 @@ const image = await getImage({
 <head>
   <meta charset="UTF-8" />
   <link rel="sitemap" href="/sitemap-index.xml" />
-  <meta name="description" content="Astro description" />
   <meta name="viewport" content="width=device-width" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <title>{meta.title}</title>
   <meta name="generator" content={Astro.generator} />
+  <!-- Open Graph -->
   <meta content={meta.title} property="og:title" />
-  <meta content={meta.pageUrl} property="og:url" />
   <meta content={meta.pageUrl} property="og:url" />
   <meta property="og:type" content={meta.contentType || "website"} />
   {meta.imageUrl && <meta content={image.src} property="og:image" />}
@@ -44,7 +43,7 @@ const image = await getImage({
     meta.description && (
       <meta
         content={meta.description}
-        name="description"
+        name="og:description"
         property="og:description"
       />
     )
@@ -67,6 +66,17 @@ const image = await getImage({
           content={meta.author}
         />
       </>
+    )
+  }
+
+  <!-- Twitter -->
+  <meta content={meta.title} name="twitter:title" />
+  <meta content="@sarthikg" name="twitter:creator" />
+  <meta content="summary_large_image" name="twitter:card" />
+  {meta.imageUrl && <meta content={image.src} name="twitter:image" />}
+  {
+    meta.description && (
+      <meta content={meta.description} name="twitter:description" />
     )
   }
 
