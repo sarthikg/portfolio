@@ -28,10 +28,10 @@
     ]
   },
   "dependencies": {
-    "@astrojs/check": "^0.4.1",
+    "@astrojs/check": "^0.5.5",
     "@astrojs/sitemap": "^3.1.1",
     "@astrojs/vercel": "^7.3.3",
-    "astro": "^4.4.3",
+    "astro": "^4.4.4",
     "nodemailer": "^6.9.10",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
@@ -45,7 +45,7 @@
     "@typescript-eslint/parser": "^6.15.0",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.55.0",
-    "eslint-plugin-astro": "^0.31.0",
+    "eslint-plugin-astro": "^0.31.4",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "postcss": "^8.4.32",
