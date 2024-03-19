@@ -30,7 +30,7 @@
   "dependencies": {
     "@astrojs/check": "^0.5.6",
     "@astrojs/sitemap": "^3.1.1",
-    "@astrojs/vercel": "^7.3.4",
+    "@astrojs/vercel": "^7.3.6",
     "astro": "^4.5.0",
     "nodemailer": "^6.9.12",
     "remark-parse": "^11.0.0",
