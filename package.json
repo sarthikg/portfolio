@@ -30,7 +30,7 @@
   "dependencies": {
     "@astrojs/check": "^0.5.10",
     "@astrojs/sitemap": "^3.1.4",
-    "@astrojs/vercel": "^7.5.4",
+    "@astrojs/vercel": "^7.6.0",
     "astro": "^4.7.1",
     "nodemailer": "^6.9.13",
     "remark-parse": "^11.0.0",
@@ -45,7 +45,7 @@
     "@typescript-eslint/parser": "^6.15.0",
     "autoprefixer": "^10.4.18",
     "eslint": "^8.57.0",
-    "eslint-plugin-astro": "^0.34.0",
+    "eslint-plugin-astro": "^1.1.2",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "postcss": "^8.4.32",
