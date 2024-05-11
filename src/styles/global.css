@@ -3,16 +3,23 @@ body {
   font-family: var(--fonts-body);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 769px) {
   .main {
     width: 100%;
     padding: 140px 20px;
   }
 }
 
-@media (min-width: 760px) {
+@media (min-width: 481px) and (max-width: 768px) {
   .main {
-    width: 800px;
+    width: 100%;
+    padding: 140px 20px;
+  }
+}
+
+@media (min-width: 769px) {
+  .main {
+    width: 769px;
     display: flex;
     align-items: center;
     flex-grow: 1;
