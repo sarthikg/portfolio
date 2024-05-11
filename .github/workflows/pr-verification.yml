@@ -22,4 +22,4 @@ jobs:
       # Check linting
       - run: npm run lint:check
       # Run tests
-      # - run: npm test
+      - run: npm run test:unit:ci

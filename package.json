@@ -17,7 +17,9 @@
     "format:fix": "npm run format -- --write",
     "lint": "eslint .",
     "lint:check": "npm run lint -- --max-warnings 0",
-    "lint:fix": "npm run lint -- --fix ."
+    "lint:fix": "npm run lint -- --fix .",
+    "test:unit": "vitest",
+    "test:unit:ci": "vitest run"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -53,6 +55,7 @@
     "postcss-preset-env": "^9.5.11",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
-    "prettier-plugin-astro-organize-imports": "^0.4.7"
+    "prettier-plugin-astro-organize-imports": "^0.4.7",
+    "vitest": "^1.6.0"
   }
 }
