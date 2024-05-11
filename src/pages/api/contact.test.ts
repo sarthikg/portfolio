@@ -1,15 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {
-  beforeAll,
-  beforeEach,
-  describe,
-  expect,
-  expectTypeOf,
-  it,
-  test,
-  vi,
-} from "vitest";
 import * as contact from "./contact";
 import nodemailer from "nodemailer";
 

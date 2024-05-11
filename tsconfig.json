@@ -12,6 +12,7 @@
       "@content/*": ["src/content/*"],
       "@facade/*": ["src/facades/*"],
       "@util/*": ["src/utils/*"]
-    }
+    },
+    "types": ["vitest/globals"]
   }
 }
