@@ -18,7 +18,8 @@
     "lint": "eslint .",
     "lint:check": "npm run lint -- --max-warnings 0",
     "lint:fix": "npm run lint -- --fix .",
-    "test": "vitest"
+    "test:unit": "vitest",
+    "test:unit:ci": "vitest run"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

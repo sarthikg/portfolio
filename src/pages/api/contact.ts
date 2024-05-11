@@ -61,7 +61,7 @@ export async function POST({ request }: APIContext<Props>): Promise<Response> {
  * @param {string} message - The content of the email.
  * @return {Promise<any>} A promise that resolves when the email is sent successfully.
  */
-async function sendEmail(
+export async function sendEmail(
   fromEmail: string,
   fromName: string,
   subject: string,
@@ -87,7 +87,7 @@ async function sendEmail(
  * @param {string} message - The message content of the email.
  * @return {string} The generated HTML email body.
  */
-function getEmailBody(
+export function getEmailBody(
   fromEmail: string,
   fromName: string,
   message: string,
@@ -125,7 +125,7 @@ function getEmailBody(
  *
  * @return {Transporter} - The configured nodemailer transporter object.
  */
-function getTransporter() {
+export function getTransporter() {
   return nodemailer.createTransport({
     host: import.meta.env.SMTP_HOST,
     port: parseInt(import.meta.env.SMTP_PORT),
