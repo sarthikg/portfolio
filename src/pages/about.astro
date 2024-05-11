@@ -33,7 +33,7 @@ const { Content } = await pageInfo.render();
             <SkillCard
               name={skill.name}
               description={skill.description}
-              url={skill.url}
+              url={skill.url ?? skill.name?.toLowerCase()}
               iconName={skill.iconName}
             />
           ))
