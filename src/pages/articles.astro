@@ -112,7 +112,23 @@ const { Content } = await pageInfo.render();
   }
 
   /* Desktop Overrides */
-  @media (min-width: 760px) {
+  @media (min-width: 769px) {
+    .main--articles {
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .articles {
+      &__heading {
+      }
+      &__featured {
+        flex-direction: row;
+      }
+    }
+  }
+  /* Tablet Overrides */
+  @media (min-width: 481px) and (max-width: 768px) {
     .main--articles {
       margin: 0 auto;
       display: flex;
