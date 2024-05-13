@@ -52,7 +52,7 @@
     "lint-staged": "^15.2.2",
     "postcss": "^8.4.32",
     "postcss-nested": "^6.0.1",
-    "postcss-preset-env": "^9.5.11",
+    "postcss-preset-env": "^9.5.12",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-astro-organize-imports": "^0.4.7",
