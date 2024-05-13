@@ -55,7 +55,7 @@
     "postcss-preset-env": "^9.5.12",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
-    "prettier-plugin-astro-organize-imports": "^0.4.7",
+    "prettier-plugin-astro-organize-imports": "^0.4.8",
     "vitest": "^1.6.0"
   }
 }
