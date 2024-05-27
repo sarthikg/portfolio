@@ -54,7 +54,7 @@
     "postcss-nested": "^6.0.1",
     "postcss-preset-env": "^9.5.13",
     "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-astro": "^0.14.0",
     "prettier-plugin-astro-organize-imports": "^0.4.8",
     "vitest": "^1.6.0"
   }
