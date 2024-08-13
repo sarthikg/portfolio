@@ -37,13 +37,12 @@ export const GET: APIRoute<Props> = ({ props }) => {
   const profilePicPath = "@asset/images/profile-pic.png";
   const coverPicPath = props.image;
 
-  console.log(coverPicPath);
   const coverPic = readFileSync(
     process.env.NODE_ENV === "development"
       ? path.resolve(
           coverPicPath.src.src.replace(/\?.*/, "").replace("/@fs", ""),
         )
-      : path.resolve(coverPicPath.src.src.replace("/", "dist/")),
+      : path.resolve(coverPicPath.src.src.replace("/", "dist/server/")),
   );
 
   const profilePic = readFileSync(

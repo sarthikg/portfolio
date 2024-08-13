@@ -3,16 +3,15 @@ import vercel from "@astrojs/vercel/serverless";
 import sitemap from "@astrojs/sitemap";
 import react from "@astrojs/react";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://sarthikg.com/",
   output: "hybrid",
-  trailingSlash: "always",
+  trailingSlash: "never",
   adapter: vercel({
     webAnalytics: {
-      enabled: true
+      enabled: true,
     },
-    imageService: true
+    imageService: true,
   }),
-  integrations: [sitemap(), react()]
+  integrations: [sitemap(), react()],
 });

@@ -40,7 +40,7 @@ const { Content } = await pageInfo.render();
               title={article.data.title}
               description={article.data.description}
               image={article.data.image}
-              url={`/article/${article.slug}/`}
+              url={`/article/${article.slug}`}
             />
           ))
         }
@@ -55,7 +55,7 @@ const { Content } = await pageInfo.render();
               description={article.data.description}
               image={article.data.image}
               date={article.data.date}
-              url={`/article/${article.slug}/`}
+              url={`/article/${article.slug}`}
             />
           ))
         }
