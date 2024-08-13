@@ -1,5 +1,4 @@
 ---
-import { getImage } from "astro:assets";
 import { ViewTransitions } from "astro:transitions";
 
 export interface MetaData {
@@ -17,13 +16,6 @@ interface Props {
 }
 
 const { metaData: meta } = Astro.props;
-
-const image = await getImage({
-  src: meta.imageUrl,
-  format: "png",
-  width: 1200,
-  height: 630,
-});
 ---
 
 <head>
@@ -39,14 +31,7 @@ const image = await getImage({
   <meta property="og:title" content={meta.title} />
   <meta property="og:url" content={meta.pageUrl} />
   <meta property="og:type" content={meta.contentType || "website"} />
-  {
-    image && (
-      <meta
-        property="og:image"
-        content={`${import.meta.env.SITE}${image.src}`}
-      />
-    )
-  }
+  {meta.imageUrl && <meta property="og:image" content={meta.imageUrl} />}
   {
     meta.description && (
       <meta
@@ -89,14 +74,7 @@ const image = await getImage({
       />
     )
   }
-  {
-    image && (
-      <meta
-        name="twitter:image"
-        content={`${import.meta.env.SITE}${image.src}`}
-      />
-    )
-  }
+  {meta.imageUrl && <meta name="twitter:image" content={meta.imageUrl} />}
 
   <!-- Enable View-Transitions -->
   <ViewTransitions />
