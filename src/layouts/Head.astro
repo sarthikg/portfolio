@@ -39,7 +39,14 @@ const image = await getImage({
   <meta property="og:title" content={meta.title} />
   <meta property="og:url" content={meta.pageUrl} />
   <meta property="og:type" content={meta.contentType || "website"} />
-  {image && <meta property="og:image" content={image.src} />}
+  {
+    image && (
+      <meta
+        property="og:image"
+        content={`${import.meta.env.SITE}${image.src}`}
+      />
+    )
+  }
   {
     meta.description && (
       <meta
@@ -82,7 +89,14 @@ const image = await getImage({
       />
     )
   }
-  {image && <meta name="twitter:image" content={image.src} />}
+  {
+    image && (
+      <meta
+        name="twitter:image"
+        content={`${import.meta.env.SITE}${image.src}`}
+      />
+    )
+  }
 
   <!-- Enable View-Transitions -->
   <ViewTransitions />
