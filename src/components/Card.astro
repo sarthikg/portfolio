@@ -1,14 +1,14 @@
 ---
-import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
+import Pills from "./Pills.astro";
 
 interface Props {
   slug: string;
   title: string;
   description: string;
   image: {
-    src?: unknown; // TODO: Remove optional once Astro bug is fixed
-    alt?: string; // TODO: Remove optional once Astro bug is fixed
+    src?: string;
+    alt?: string;
   };
   url: string;
 }
@@ -20,9 +20,10 @@ const { slug, title, description, image, url } = Astro.props;
   <Image
     class="card__image"
     transition:name={`article_image_${slug}`}
-    src={image.src as ImageMetadata}
+    src={image.src}
     alt={image.alt}
-    format="avif"
+    width={384}
+    height={196}
   />
   <h2 class="card__title" transition:name={`article_title_${slug}`}>
     {title}
@@ -30,6 +31,9 @@ const { slug, title, description, image, url } = Astro.props;
   <p class="card__description">
     {description}
   </p>
+  <div class="card__pills">
+    <Pills values={["Low Level Design", "Creational Design Pattern"]} />
+  </div>
 </a>
 
 <style>
@@ -82,6 +86,9 @@ const { slug, title, description, image, url } = Astro.props;
       -webkit-box-orient: vertical;
       line-clamp: 2;
       line-height: 1.8;
+    }
+    &__pills {
+      margin-top: var(--space-2xs);
     }
   }
 

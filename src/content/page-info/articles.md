@@ -1,7 +1,7 @@
 ---
 title: "Articles // Sarthik Gupta"
 tagline: "Stories. Thoughts. Guides."
-imageUrl: "/src/assets/images/og/snapshot.webp"
+imageUrl: "/src/assets/images/og/snapshot.png"
 pageUrl: "https://sarthikg.com/articles/"
 ---
 

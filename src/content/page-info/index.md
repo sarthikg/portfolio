@@ -1,6 +1,6 @@
 ---
 title: "Sarthik Gupta"
-imageUrl: "/src/assets/images/og/snapshot.webp"
+imageUrl: "/src/assets/images/og/snapshot.png"
 pageUrl: "https://sarthikg.com/"
 ---
 

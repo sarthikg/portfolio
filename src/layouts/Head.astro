@@ -1,5 +1,4 @@
 ---
-import type { ImageMetadata } from "astro";
 import { getImage } from "astro:assets";
 import { ViewTransitions } from "astro:transitions";
 
@@ -7,7 +6,7 @@ export interface MetaData {
   title: string;
   pageUrl: string;
   description?: string;
-  imageUrl?: ImageMetadata;
+  imageUrl?: string;
   publishDate?: Date;
   author?: string;
   contentType?: "article" | "website";
@@ -33,18 +32,20 @@ const image = await getImage({
   <meta name="viewport" content="width=device-width" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <title>{meta.title}</title>
-  <meta name="generator" content={Astro.generator} />
   <!-- Open Graph -->
-  <meta content={meta.title} property="og:title" />
-  <meta content={meta.pageUrl} property="og:url" />
+  <meta name="generator" content={Astro.generator} />
+  <link rel="canonical" href={meta.pageUrl} />
+  <!-- Open Graph -->
+  <meta property="og:title" content={meta.title} />
+  <meta property="og:url" content={meta.pageUrl} />
   <meta property="og:type" content={meta.contentType || "website"} />
-  {meta.imageUrl && <meta content={image.src} property="og:image" />}
+  {image && <meta property="og:image" content={image.src} />}
   {
     meta.description && (
       <meta
+        property="og:description"
         content={meta.description}
         name="og:description"
-        property="og:description"
       />
     )
   }
@@ -68,17 +69,21 @@ const image = await getImage({
       </>
     )
   }
-
   <!-- Twitter -->
-  <meta content={meta.title} name="twitter:title" />
-  <meta content="@sarthikg" name="twitter:creator" />
-  <meta content="summary_large_image" name="twitter:card" />
-  {meta.imageUrl && <meta content={image.src} name="twitter:image" />}
+  <meta name="twitter:creator" content="@sarthikg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={meta.title} />
   {
     meta.description && (
-      <meta content={meta.description} name="twitter:description" />
+      <meta
+        name="twitter:description"
+        property="twitter:description"
+        content={meta.description}
+      />
     )
   }
+  {image && <meta name="twitter:image" content={image.src} />}
 
+  <!-- Enable View-Transitions -->
   <ViewTransitions />
 </head>

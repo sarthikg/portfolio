@@ -2,10 +2,9 @@
 import Layout from "@layout/Layout.astro";
 import { Image } from "astro:assets";
 
-import profilePic from "@asset/images/profile-pic.webp";
+import profilePic from "@asset/images/profile-pic.png";
 import { getPageInfo } from "@facade/page-info";
 import { extractTextFromMarkdown } from "@util/markdown-text";
-import type { ImageMetadata } from "astro";
 
 const pageInfo = await getPageInfo("index");
 ---
@@ -14,7 +13,7 @@ const pageInfo = await getPageInfo("index");
   metaData={{
     title: pageInfo.data.title,
     description: extractTextFromMarkdown(pageInfo.body),
-    imageUrl: pageInfo.data.imageUrl as ImageMetadata,
+    imageUrl: pageInfo.data.imageUrl,
     pageUrl: pageInfo.data.pageUrl,
   }}
 >
