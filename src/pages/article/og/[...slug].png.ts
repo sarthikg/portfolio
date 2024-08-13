@@ -13,7 +13,20 @@ type Props = {
   title: string;
   description: string;
   image: {
-    src: string;
+    src: {
+      src?: string;
+      width?: number;
+      height?: number;
+      format?:
+        | "png"
+        | "jpg"
+        | "jpeg"
+        | "tiff"
+        | "webp"
+        | "gif"
+        | "svg"
+        | "avif";
+    };
     alt: string;
   };
 };
@@ -24,8 +37,13 @@ export const GET: APIRoute<Props> = ({ props }) => {
   const profilePicPath = "@asset/images/profile-pic.png";
   const coverPicPath = props.image;
 
+  console.log(coverPicPath);
   const coverPic = readFileSync(
-    path.resolve(coverPicPath.src.replace(/\?.*/, "").replace("/src/", "src/")),
+    process.env.NODE_ENV === "development"
+      ? path.resolve(
+          coverPicPath.src.src.replace(/\?.*/, "").replace("/@fs", ""),
+        )
+      : path.resolve(coverPicPath.src.src.replace("/", "dist/")),
   );
 
   const profilePic = readFileSync(

@@ -7,7 +7,20 @@ interface Props {
   title: string;
   description: string;
   image: {
-    src?: string;
+    src?: {
+      src?: string;
+      width?: number;
+      height?: number;
+      format?:
+        | "png"
+        | "jpg"
+        | "jpeg"
+        | "tiff"
+        | "webp"
+        | "gif"
+        | "svg"
+        | "avif";
+    };
     alt?: string;
   };
   url: string;
@@ -20,7 +33,7 @@ const { slug, title, description, image, url } = Astro.props;
   <Image
     class="card__image"
     transition:name={`article_image_${slug}`}
-    src={image.src}
+    src={image.src.src}
     alt={image.alt}
     width={384}
     height={196}

@@ -5,7 +5,7 @@ import { getSideQuests } from "@facade/side-quest";
 import Layout from "@layout/Layout.astro";
 import { formatDateWithDay } from "@util/date-string";
 import { getReadingTime } from "@util/reading-time";
-import { Image } from "astro:assets";
+import { getImage, Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -45,8 +45,11 @@ const { Content } = await article.render();
   metaData={{
     title: `${title} // Sarthik Gupta`,
     description: description,
-    imageUrl: `${import.meta.env.SITE}/article/og/${slug}.png`,
-    pageUrl: `${import.meta.env.SITE}/article/${slug}`,
+    imageUrl: await getImage({
+      src: `/article/og/${slug}.png`,
+      width: 1200,
+    }),
+    pageUrl: `${import.meta.env.SITE}article/${slug}`,
     author: "Sarthik Gupta",
     publishDate: date,
     contentType: "article",
@@ -57,7 +60,7 @@ const { Content } = await article.render();
       <Image
         class="article__cover__image"
         transition:name={`article_image_${slug}`}
-        src={image.src}
+        src={image.src.src}
         alt={image.alt}
         width="1200"
         height="630"

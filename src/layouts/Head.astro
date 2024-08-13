@@ -5,7 +5,12 @@ export interface MetaData {
   title: string;
   pageUrl: string;
   description?: string;
-  imageUrl?: string;
+  imageUrl?: {
+    src?: string;
+    width?: number;
+    height?: number;
+    format?: "png" | "jpg" | "jpeg" | "tiff" | "webp" | "gif" | "svg" | "avif";
+  };
   publishDate?: Date;
   author?: string;
   contentType?: "article" | "website";
@@ -31,7 +36,7 @@ const { metaData: meta } = Astro.props;
   <meta property="og:title" content={meta.title} />
   <meta property="og:url" content={meta.pageUrl} />
   <meta property="og:type" content={meta.contentType || "website"} />
-  {meta.imageUrl && <meta property="og:image" content={meta.imageUrl} />}
+  {meta.imageUrl && <meta property="og:image" content={meta.imageUrl.src} />}
   {
     meta.description && (
       <meta
@@ -74,7 +79,7 @@ const { metaData: meta } = Astro.props;
       />
     )
   }
-  {meta.imageUrl && <meta name="twitter:image" content={meta.imageUrl} />}
+  {meta.imageUrl && <meta name="twitter:image" content={meta.imageUrl.src} />}
 
   <!-- Enable View-Transitions -->
   <ViewTransitions />

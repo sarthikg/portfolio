@@ -7,7 +7,20 @@ interface Props {
   title: string;
   description: string;
   image: {
-    src?: string;
+    src?: {
+      src?: string;
+      width?: number;
+      height?: number;
+      format?:
+        | "png"
+        | "jpg"
+        | "jpeg"
+        | "tiff"
+        | "webp"
+        | "gif"
+        | "svg"
+        | "avif";
+    };
     alt?: string;
   };
   date: Date;
@@ -21,7 +34,7 @@ const { title, description, image, date, url } = Astro.props;
   <Image
     class="horizontal-card__image"
     transition:animate="none"
-    src={image.src}
+    src={image.src.src}
     alt={image.alt}
     width={292}
     height={150}
