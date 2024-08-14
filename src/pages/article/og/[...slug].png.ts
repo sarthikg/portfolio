@@ -9,6 +9,7 @@ import path from "path";
 import { getAllPublishedArticles } from "@facade/article";
 import { createElement } from "react";
 import type { AstroImage } from "@schema/image";
+import { getImageBuffer } from "@util/image-buffer";
 
 type Props = {
   title: string;
@@ -19,23 +20,13 @@ type Props = {
   };
 };
 
-export const GET: APIRoute<Props> = ({ props }) => {
+export const GET: APIRoute<Props> = async ({ props }) => {
   const neuzeit700 = readFileSync("./public/fonts/neuzeit-bold.otf");
   const neuzeit400 = readFileSync("./public/fonts/neuzeit-regular.otf");
   const profilePicPath = "@asset/images/profile-pic.png";
   const coverPicPath = props.image;
 
-  console.log(process.env.NODE_ENV, coverPicPath.src.src);
-  const coverPic = readFileSync(
-    process.env.NODE_ENV === "development"
-      ? path.resolve(
-          coverPicPath.src.src.replace(/\?.*/, "").replace("/@fs", ""),
-        )
-      : coverPicPath.src.src.replace(
-          "/",
-          `${import.meta.env.SITE}/_vercel/image?url=`,
-        ) + "?width=1200&height=630",
-  );
+  const coverPic = getImageBuffer(coverPicPath.src.src);
 
   const profilePic = readFileSync(
     path.resolve(
