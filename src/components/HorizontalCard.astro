@@ -1,5 +1,6 @@
 ---
 import { formatDateWithDay } from "@util/date-string";
+import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 import Pills from "./Pills.astro";
 
@@ -7,20 +8,7 @@ interface Props {
   title: string;
   description: string;
   image: {
-    src?: {
-      src?: string;
-      width?: number;
-      height?: number;
-      format?:
-        | "png"
-        | "jpg"
-        | "jpeg"
-        | "tiff"
-        | "webp"
-        | "gif"
-        | "svg"
-        | "avif";
-    };
+    src?: ImageMetadata;
     alt?: string;
   };
   date: Date;
