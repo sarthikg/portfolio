@@ -18,6 +18,7 @@ export async function getImageBuffer(imagePath: string): Promise<Buffer> {
       imagePath.replace("/", `${import.meta.env.VERCEL_URL}/_vercel/og?url=`) +
       "?width=1200&height=630";
   }
+  console.log(imageAbsolutePath);
   const response = await fetch(imageAbsolutePath);
   return await response.buffer();
 }
