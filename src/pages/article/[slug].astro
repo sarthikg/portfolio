@@ -47,7 +47,7 @@ const { Content } = await article.render();
     title: `${title} // Sarthik Gupta`,
     description: description,
     imageUrl: image.src as ImageMetadata,
-    pageUrl: `https://sarthikg.com/article/${slug}`,
+    pageUrl: `${import.meta.env.SITE}article/${slug}`,
     author: "Sarthik Gupta",
     publishDate: date,
     contentType: "article",

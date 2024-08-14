@@ -38,7 +38,14 @@ const image = await getImage({
   <meta content={meta.title} property="og:title" />
   <meta content={meta.pageUrl} property="og:url" />
   <meta property="og:type" content={meta.contentType || "website"} />
-  {meta.imageUrl && <meta content={image.src} property="og:image" />}
+  {
+    meta.imageUrl && (
+      <meta
+        content={`${import.meta.env.SITE}${image.src}`}
+        property="og:image"
+      />
+    )
+  }
   {
     meta.description && (
       <meta
@@ -73,7 +80,14 @@ const image = await getImage({
   <meta content={meta.title} name="twitter:title" />
   <meta content="@sarthikg" name="twitter:creator" />
   <meta content="summary_large_image" name="twitter:card" />
-  {meta.imageUrl && <meta content={image.src} name="twitter:image" />}
+  {
+    meta.imageUrl && (
+      <meta
+        content={`${import.meta.env.SITE}${image.src}`}
+        name="twitter:image"
+      />
+    )
+  }
   {
     meta.description && (
       <meta content={meta.description} name="twitter:description" />
