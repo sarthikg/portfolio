@@ -4,7 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import react from "@astrojs/react";
 
 export default defineConfig({
-  site: "https://sarthikg.com/",
+  site: "https://sarthikg.com",
   output: "hybrid",
   trailingSlash: "never",
   adapter: vercel({
