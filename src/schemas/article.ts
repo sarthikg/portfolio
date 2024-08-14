@@ -15,6 +15,5 @@ export const articleSchema = defineCollection({
       tags: z.array(z.string()),
       draft: z.boolean().default(false),
       featured: z.boolean().default(false),
-      youtube: z.string().optional(),
     }),
 });
