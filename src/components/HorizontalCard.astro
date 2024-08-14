@@ -1,4 +1,5 @@
 ---
+import type { AstroImage } from "@schema/image";
 import { formatDateWithDay } from "@util/date-string";
 import { Image } from "astro:assets";
 import Pills from "./Pills.astro";
@@ -7,20 +8,7 @@ interface Props {
   title: string;
   description: string;
   image: {
-    src?: {
-      src?: string;
-      width?: number;
-      height?: number;
-      format?:
-        | "png"
-        | "jpg"
-        | "jpeg"
-        | "tiff"
-        | "webp"
-        | "gif"
-        | "svg"
-        | "avif";
-    };
+    src?: AstroImage;
     alt?: string;
   };
   date: Date;

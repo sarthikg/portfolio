@@ -60,7 +60,7 @@ const { Content } = await article.render();
       <Image
         class="article__cover__image"
         transition:name={`article_image_${slug}`}
-        src={image.src.src}
+        src={image.src as any}
         alt={image.alt}
         width="1200"
         height="630"
