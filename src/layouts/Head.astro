@@ -36,7 +36,14 @@ const { metaData: meta } = Astro.props;
   <meta property="og:title" content={meta.title} />
   <meta property="og:url" content={meta.pageUrl} />
   <meta property="og:type" content={meta.contentType || "website"} />
-  {meta.imageUrl && <meta property="og:image" content={meta.imageUrl.src} />}
+  {
+    meta.imageUrl && (
+      <meta
+        property="og:image"
+        content={`${import.meta.env.SITE}${meta.imageUrl.src}`}
+      />
+    )
+  }
   {
     meta.description && (
       <meta
@@ -79,7 +86,14 @@ const { metaData: meta } = Astro.props;
       />
     )
   }
-  {meta.imageUrl && <meta name="twitter:image" content={meta.imageUrl.src} />}
+  {
+    meta.imageUrl && (
+      <meta
+        name="twitter:image"
+        content={`${import.meta.env.SITE}${meta.imageUrl.src}`}
+      />
+    )
+  }
 
   <!-- Enable View-Transitions -->
   <ViewTransitions />
