@@ -22,5 +22,6 @@ export async function getImageBuffer(imagePath: string): Promise<Buffer> {
   }
   console.log(imageAbsolutePath);
   const response = await fetch(imageAbsolutePath);
+  console.log(response);
   return await response.buffer();
 }
