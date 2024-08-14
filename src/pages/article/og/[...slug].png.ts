@@ -8,25 +8,13 @@ import path from "path";
 
 import { getAllPublishedArticles } from "@facade/article";
 import { createElement } from "react";
+import type { AstroImage } from "@schema/image";
 
 type Props = {
   title: string;
   description: string;
   image: {
-    src: {
-      src?: string;
-      width?: number;
-      height?: number;
-      format?:
-        | "png"
-        | "jpg"
-        | "jpeg"
-        | "tiff"
-        | "webp"
-        | "gif"
-        | "svg"
-        | "avif";
-    };
+    src: AstroImage;
     alt: string;
   };
 };
@@ -37,12 +25,16 @@ export const GET: APIRoute<Props> = ({ props }) => {
   const profilePicPath = "@asset/images/profile-pic.png";
   const coverPicPath = props.image;
 
+  console.log(process.env.NODE_ENV, coverPicPath.src.src);
   const coverPic = readFileSync(
     process.env.NODE_ENV === "development"
       ? path.resolve(
           coverPicPath.src.src.replace(/\?.*/, "").replace("/@fs", ""),
         )
-      : path.resolve(coverPicPath.src.src.replace("/", "dist/server/")),
+      : coverPicPath.src.src.replace(
+          "/",
+          `${import.meta.env.SITE}/_vercel/image?url=`,
+        ) + "?width=1200&height=630",
   );
 
   const profilePic = readFileSync(
