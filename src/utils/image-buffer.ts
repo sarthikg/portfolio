@@ -9,19 +9,17 @@ export async function getImageBuffer(imagePath: string): Promise<Buffer> {
   }
 
   let imageAbsolutePath: string;
-  if (process.env.VERCEL_ENV === "production") {
-    imageAbsolutePath =
-      imagePath.replace("/", `${import.meta.env.SITE}/_vercel/image?url=`) +
-      "?width=1200&height=630";
-  } else if (process.env.VERCEL_ENV === "preview") {
+  if (process.env.VERCEL_ENV === "preview") {
     imageAbsolutePath =
       imagePath.replace(
         "/",
         `https://${import.meta.env.VERCEL_URL}/_vercel/og?url=`,
       ) + "?width=1200&height=630";
   }
+  imageAbsolutePath =
+    imagePath.replace("/", `${import.meta.env.SITE}/_vercel/image?url=`) +
+    "?width=1200&height=630";
   console.log(imageAbsolutePath);
   const response = await fetch(imageAbsolutePath);
-  console.log(response);
-  return await response.buffer();
+  return response.buffer();
 }

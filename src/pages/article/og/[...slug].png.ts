@@ -26,7 +26,7 @@ export const GET: APIRoute<Props> = async ({ props }) => {
   const profilePicPath = "@asset/images/profile-pic.png";
   const coverPicPath = props.image;
 
-  const coverPic = getImageBuffer(coverPicPath.src.src);
+  const coverPic = await getImageBuffer(coverPicPath.src.src);
 
   const profilePic = readFileSync(
     path.resolve(
