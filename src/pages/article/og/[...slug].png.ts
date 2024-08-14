@@ -1,4 +1,4 @@
-export const prerender = true;
+export const prerender = false;
 
 import type { APIRoute } from "astro";
 import { ImageResponse } from "@vercel/og";
