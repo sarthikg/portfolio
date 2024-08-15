@@ -4,8 +4,6 @@ const { videoUrl } = Astro.props;
 
 <div class="youtube__container">
   <iframe
-    width="560"
-    height="315"
     class="youtube__iframe"
     src={videoUrl}
     title="YouTube video player"
@@ -16,6 +14,7 @@ const { videoUrl } = Astro.props;
 </div>
 
 <style>
+  /* Global Styles */
   .youtube {
     &__container {
       width: 100%;
@@ -26,6 +25,17 @@ const { videoUrl } = Astro.props;
     &__iframe {
       border-radius: var(--radius-lg);
       overflow: hidden;
+      height: 315px;
+      width: 560px;
+    }
+  }
+  /* Mobile Overrides */
+  @media (max-width: 480px) {
+    .youtube {
+      &__iframe {
+        height: 220px;
+        width: 100%;
+      }
     }
   }
 </style>
