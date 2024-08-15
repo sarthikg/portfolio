@@ -6,7 +6,7 @@ import Layout from "@layout/Layout.astro";
 import { formatDateWithDay } from "@util/date-string";
 import { getReadingTime } from "@util/reading-time";
 import type { ImageMetadata } from "astro";
-import { Image } from "astro:assets";
+import { getImage, Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -46,8 +46,11 @@ const { Content } = await article.render();
   metaData={{
     title: `${title} // Sarthik Gupta`,
     description: description,
-    imageUrl: image.src as ImageMetadata,
-    pageUrl: `https://sarthikg.com/article/${slug}`,
+    imageUrl: await getImage({
+      src: `/article/og/${slug}.png`,
+      width: 1200,
+    }),
+    pageUrl: `${import.meta.env.SITE}/article/${slug}`,
     author: "Sarthik Gupta",
     publishDate: date,
     contentType: "article",
@@ -58,8 +61,10 @@ const { Content } = await article.render();
       <Image
         class="article__cover__image"
         transition:name={`article_image_${slug}`}
-        src={image.src as ImageMetadata}
+        src={image.src as unknown as ImageMetadata}
         alt={image.alt}
+        width="1200"
+        height="630"
       />
       <h1
         class="article__cover__title"
