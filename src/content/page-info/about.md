@@ -1,6 +1,6 @@
 ---
 title: "About // Sarthik Gupta"
-tagline: "About. Skills. Social."
+tagline: "About. Pictures. More."
 imageUrl: "/src/assets/images/og/snapshot.png"
 pageUrl: "https://sarthikg.com/about/"
 ---
