@@ -13,6 +13,8 @@
       "@facade/*": ["src/facades/*"],
       "@util/*": ["src/utils/*"]
     },
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }
