@@ -23,9 +23,9 @@ export async function getStaticPaths() {
     params: { slug: article.slug },
     props: { article, isArticle: true },
   }));
-  const sideQuestMap = sideQuests.map((article) => ({
-    params: { slug: article.slug },
-    props: { article, isArticle: false },
+  const sideQuestMap = sideQuests.map((quest) => ({
+    params: { slug: quest.slug },
+    props: { article: quest, isArticle: false },
   }));
 
   return [...articleMap, ...sideQuestMap];
@@ -33,7 +33,9 @@ export async function getStaticPaths() {
 
 const { article, isArticle } = Astro.props;
 const slug = article.slug;
-const { title, image, description, youtube } = article.data;
+const { title, image, description } = article.data;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const { youtube } = article.data as any;
 
 // Capture date only from article
 const date = isArticle
