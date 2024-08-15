@@ -45,7 +45,7 @@
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
     "typescript": "^5.4.5",
-    "unified": "^11.0.4",
+    "unified": "^11.0.5",
     "zod-form-data": "^2.0.2"
   },
   "devDependencies": {
@@ -58,7 +58,7 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
     "postcss": "^8.4.32",
-    "postcss-nested": "^6.0.1",
+    "postcss-nested": "^6.2.0",
     "postcss-preset-env": "^9.6.0",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
