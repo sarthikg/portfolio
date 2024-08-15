@@ -1,16 +1,12 @@
 ---
+import type { AstroImage } from "@schema/image";
 import { ViewTransitions } from "astro:transitions";
 
 export interface MetaData {
   title: string;
   pageUrl: string;
   description?: string;
-  imageUrl?: {
-    src?: string;
-    width?: number;
-    height?: number;
-    format?: "png" | "jpg" | "jpeg" | "tiff" | "webp" | "gif" | "svg" | "avif";
-  };
+  imageUrl?: AstroImage;
   publishDate?: Date;
   author?: string;
   contentType?: "article" | "website";
@@ -29,7 +25,6 @@ const { metaData: meta } = Astro.props;
   <meta name="viewport" content="width=device-width" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <title>{meta.title}</title>
-  <!-- Open Graph -->
   <meta name="generator" content={Astro.generator} />
   <link rel="canonical" href={meta.pageUrl} />
   <!-- Open Graph -->
