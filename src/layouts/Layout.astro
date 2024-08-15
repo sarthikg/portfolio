@@ -8,6 +8,7 @@ import "@style/global.css";
 import "@style/reset.css";
 import "@style/typography.css";
 import "@style/variables.css";
+import SpeedInsights from "@vercel/speed-insights/astro";
 
 interface Props {
   metaData: MetaData;
@@ -20,6 +21,7 @@ const { metaData } = Astro.props;
 <html lang="en">
   <Head {metaData} />
   <Body>
+    <SpeedInsights />
     <Header />
     <slot />
     <Footer />

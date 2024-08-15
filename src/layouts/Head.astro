@@ -1,13 +1,12 @@
 ---
-import type { ImageMetadata } from "astro";
-import { getImage } from "astro:assets";
+import type { AstroImage } from "@schema/image";
 import { ViewTransitions } from "astro:transitions";
 
 export interface MetaData {
   title: string;
   pageUrl: string;
   description?: string;
-  imageUrl?: ImageMetadata;
+  imageUrl?: AstroImage;
   publishDate?: Date;
   author?: string;
   contentType?: "article" | "website";
@@ -18,13 +17,6 @@ interface Props {
 }
 
 const { metaData: meta } = Astro.props;
-
-const image = await getImage({
-  src: meta.imageUrl,
-  format: "png",
-  width: 1200,
-  height: 630,
-});
 ---
 
 <head>
@@ -34,17 +26,25 @@ const image = await getImage({
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <title>{meta.title}</title>
   <meta name="generator" content={Astro.generator} />
+  <link rel="canonical" href={meta.pageUrl} />
   <!-- Open Graph -->
-  <meta content={meta.title} property="og:title" />
-  <meta content={meta.pageUrl} property="og:url" />
+  <meta property="og:title" content={meta.title} />
+  <meta property="og:url" content={meta.pageUrl} />
   <meta property="og:type" content={meta.contentType || "website"} />
-  {meta.imageUrl && <meta content={image.src} property="og:image" />}
+  {
+    meta.imageUrl && (
+      <meta
+        property="og:image"
+        content={`${import.meta.env.SITE}${meta.imageUrl.src}`}
+      />
+    )
+  }
   {
     meta.description && (
       <meta
+        property="og:description"
         content={meta.description}
         name="og:description"
-        property="og:description"
       />
     )
   }
@@ -68,17 +68,28 @@ const image = await getImage({
       </>
     )
   }
-
   <!-- Twitter -->
-  <meta content={meta.title} name="twitter:title" />
-  <meta content="@sarthikg" name="twitter:creator" />
-  <meta content="summary_large_image" name="twitter:card" />
-  {meta.imageUrl && <meta content={image.src} name="twitter:image" />}
+  <meta name="twitter:creator" content="@sarthikg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={meta.title} />
   {
     meta.description && (
-      <meta content={meta.description} name="twitter:description" />
+      <meta
+        name="twitter:description"
+        property="twitter:description"
+        content={meta.description}
+      />
+    )
+  }
+  {
+    meta.imageUrl && (
+      <meta
+        name="twitter:image"
+        content={`${import.meta.env.SITE}${meta.imageUrl.src}`}
+      />
     )
   }
 
+  <!-- Enable View-Transitions -->
   <ViewTransitions />
 </head>

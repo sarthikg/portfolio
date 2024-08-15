@@ -6,7 +6,7 @@ description: "My experience using Astro for building v2 of my portfolio website"
 date: 2023-12-29
 image:
   {
-    src: "/src/assets/images/article/astro.webp",
+    src: "/src/assets/images/article/astro.png",
     alt: "Cover Image of Astro Framework",
   }
 tags: ["JavaScript", "TypeScript"]

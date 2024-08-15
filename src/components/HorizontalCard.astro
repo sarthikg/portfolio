@@ -1,14 +1,14 @@
 ---
+import type { AstroImage } from "@schema/image";
 import { formatDateWithDay } from "@util/date-string";
-import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 
 interface Props {
   title: string;
   description: string;
   image: {
-    src?: unknown; // TODO: Remove optional once Astro bug is fixed
-    alt?: string; // TODO: Remove optional once Astro bug is fixed
+    src?: AstroImage;
+    alt?: string;
   };
   date: Date;
   url: string;
@@ -21,9 +21,10 @@ const { title, description, image, date, url } = Astro.props;
   <Image
     class="horizontal-card__image"
     transition:animate="none"
-    src={image.src as ImageMetadata}
+    src={image.src.src}
     alt={image.alt}
-    format="avif"
+    width={250}
+    height={128}
   />
   <h2 class="horizontal-card__title" transition:animate="none">{title}</h2>
   <p class="horizontal-card__description">{description}</p>
