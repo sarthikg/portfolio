@@ -10,6 +10,7 @@ import { getAllPublishedArticles } from "@facade/article";
 import { createElement } from "react";
 import type { AstroImage } from "@schema/image";
 import { getImageBuffer } from "@util/image-buffer";
+import { getSideQuests } from "@facade/side-quest";
 
 type Props = {
   title: string;
@@ -25,7 +26,6 @@ export const GET: APIRoute<Props> = async ({ props }) => {
   const neuzeit400 = readFileSync("./public/fonts/neuzeit-regular.otf");
   const profilePicPath = "@asset/images/profile-pic.png";
   const coverPicPath = props.image;
-
   const coverPic = await getImageBuffer(coverPicPath.src);
 
   const profilePic = readFileSync(
@@ -63,7 +63,8 @@ export const GET: APIRoute<Props> = async ({ props }) => {
 
 export async function getStaticPaths() {
   const articles = await getAllPublishedArticles();
-  return articles.map((article) => ({
+  const sideQuests = await getSideQuests();
+  return [...articles, ...sideQuests].map((article) => ({
     params: { slug: article.slug },
     props: {
       title: article.data.title,
