@@ -1,13 +1,10 @@
 ---
 import Section from "@component/Section.astro";
-import SkillCard from "@component/SkillCard.astro";
 import { getPageInfo } from "@facade/page-info";
-import { getSkills } from "@facade/skills";
 import Layout from "@layout/Layout.astro";
 import { extractTextFromMarkdown } from "@util/markdown-text";
 
 const pageInfo = await getPageInfo("about");
-const skills = await getSkills();
 
 const { Content } = await pageInfo.render();
 ---
@@ -24,20 +21,6 @@ const { Content } = await pageInfo.render();
     <h1 class="about__heading">{pageInfo.data.tagline}</h1>
     <Section title="Bio">
       <div class="about__bio"><Content /></div>
-    </Section>
-    <Section title="Tech Stack">
-      <div class="about__skills">
-        {
-          skills.map((skill) => (
-            <SkillCard
-              name={skill.name}
-              description={skill.description}
-              url={skill.url ?? skill.name?.toLowerCase()}
-              iconName={skill.iconName}
-            />
-          ))
-        }
-      </div>
     </Section>
   </main>
 </Layout>
@@ -71,10 +54,6 @@ const { Content } = await pageInfo.render();
       margin: var(--space-s) 0;
       line-height: var(--lh-2);
       font-weight: 500;
-    }
-    &__skills {
-      display: flex;
-      flex-wrap: wrap;
     }
   }
 </style>

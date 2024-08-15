@@ -4,14 +4,17 @@ import CareerTrack from "@component/CareerTrack.astro";
 import Section from "@component/Section.astro";
 import Layout from "@layout/Layout.astro";
 
+import SkillCard from "@component/SkillCard.astro";
 import { getExperiences } from "@facade/experience";
 import { getPageInfo } from "@facade/page-info";
 import { getSideQuests } from "@facade/side-quest";
+import { getSkills } from "@facade/skills";
 import { extractTextFromMarkdown } from "@util/markdown-text";
 
 const pageInfo = await getPageInfo("career");
 const experiences = await getExperiences();
 const sideQuests = await getSideQuests();
+const skills = await getSkills();
 
 const { Content } = await pageInfo.render();
 ---
@@ -44,6 +47,20 @@ const { Content } = await pageInfo.render();
               description={quest.data.description}
               image={quest.data.image}
               url={`/article/${quest.slug}`}
+            />
+          ))
+        }
+      </div>
+    </Section>
+    <Section title="Tech Stack">
+      <div class="career__skills">
+        {
+          skills.map((skill) => (
+            <SkillCard
+              name={skill.name}
+              description={skill.description}
+              url={skill.url ?? skill.name?.toLowerCase()}
+              iconName={skill.iconName}
             />
           ))
         }
@@ -85,6 +102,10 @@ const { Content } = await pageInfo.render();
       align-items: center;
       margin-left: calc(-1 * var(--space-s));
       margin-right: calc(-1 * var(--space-s));
+    }
+    &__skills {
+      display: flex;
+      flex-wrap: wrap;
     }
   }
 
