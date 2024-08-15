@@ -10,7 +10,7 @@ image:
     alt: "Image of Browser Icons",
   }
 tags: ["Low Level Design", "Creational Pattern"]
-youtube: "https://www.youtube.com/watch?v=v-GiuMmsXj4"
+youtube: "https://www.youtube.com/embed/v-GiuMmsXj4?si=uvZGgvyAmKv3hhQ2"
 featured: false
 ---
 

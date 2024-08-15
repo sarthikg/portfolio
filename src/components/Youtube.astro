@@ -1,0 +1,31 @@
+---
+const { videoUrl } = Astro.props;
+---
+
+<div class="youtube__container">
+  <iframe
+    width="560"
+    height="315"
+    class="youtube__iframe"
+    src={videoUrl}
+    title="YouTube video player"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    frameborder="0"
+    allowfullscreen></iframe>
+</div>
+
+<style>
+  .youtube {
+    &__container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__iframe {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+  }
+</style>

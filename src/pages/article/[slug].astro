@@ -1,5 +1,6 @@
 ---
 import Markdown from "@component/Markdown.astro";
+import Youtube from "@component/Youtube.astro";
 import { getAllPublishedArticles } from "@facade/article";
 import { getSideQuests } from "@facade/side-quest";
 import Layout from "@layout/Layout.astro";
@@ -32,7 +33,7 @@ export async function getStaticPaths() {
 
 const { article, isArticle } = Astro.props;
 const slug = article.slug;
-const { title, image, description } = article.data;
+const { title, image, description, youtube } = article.data;
 
 // Capture date only from article
 const date = isArticle
@@ -81,6 +82,13 @@ const { Content } = await article.render();
       <Markdown>
         <Content />
       </Markdown>
+      {
+        youtube && (
+          <div class="article__youtube">
+            <Youtube videoUrl={youtube} />
+          </div>
+        )
+      }
     </main>
   </article>
 </Layout>
@@ -139,6 +147,10 @@ const { Content } = await article.render();
       & .article__cover__image {
         filter: blur(3px);
       }
+    }
+    &__youtube {
+      width: 100%;
+      margin-top: var(--space-l);
     }
   }
 
