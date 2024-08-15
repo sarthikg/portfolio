@@ -1,7 +1,7 @@
 ---
 title: "Career // Sarthik Gupta"
-tagline: "Work. Quests. More."
-imageUrl: "/src/assets/images/og/snapshot.webp"
+tagline: "Work. Quests. Skills."
+imageUrl: "/src/assets/images/og/snapshot.png"
 pageUrl: "https://sarthikg.com/career/"
 ---
 
