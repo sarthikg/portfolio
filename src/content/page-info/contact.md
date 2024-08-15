@@ -1,7 +1,7 @@
 ---
 title: "Contact // Sarthik Gupta"
 tagline: "Connect. Enquire. Follow."
-imageUrl: "/src/assets/images/og/snapshot.webp"
+imageUrl: "/src/assets/images/og/snapshot.png"
 pageUrl: "https://sarthikg.com/career/"
 ---
 
