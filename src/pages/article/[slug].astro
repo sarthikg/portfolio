@@ -90,6 +90,7 @@ const { Content } = await article.render();
 </Layout>
 
 <script>
+  import { incrementArticleReadCount } from "@util/article-increment-read-count";
   import { storeArticleAsRead } from "@util/article-local-storage-cache";
   import { addSkeletonLoader } from "@util/image-skeleton";
   // Add skeleton loaders
@@ -99,6 +100,8 @@ const { Content } = await article.render();
   // Add article as read
   const slug = document.querySelector("[data-slug]").getAttribute("data-slug");
   storeArticleAsRead(slug);
+  // Increment article read count
+  await incrementArticleReadCount(slug);
 </script>
 
 <style>
