@@ -56,7 +56,11 @@ const { Content } = await article.render();
     contentType: "article",
   }}
 >
-  <article class="article" class:list={{ "article--side-quest": !isArticle }}>
+  <article
+    class="article"
+    class:list={{ "article--side-quest": !isArticle }}
+    data-slug={slug}
+  >
     <div class="article__cover">
       <Image
         class="article__cover__image"
@@ -85,12 +89,16 @@ const { Content } = await article.render();
   </article>
 </Layout>
 
-<!-- TODO: Move this to component files -->
 <script>
+  import { storeArticleAsRead } from "@util/article-local-storage-cache";
   import { addSkeletonLoader } from "@util/image-skeleton";
+  // Add skeleton loaders
   document.addEventListener("astro:page-load", () => {
     addSkeletonLoader(".markdown img", "markdown__image--loading");
   });
+  // Add article as read
+  const slug = document.querySelector("[data-slug]").getAttribute("data-slug");
+  storeArticleAsRead(slug);
 </script>
 
 <style>
