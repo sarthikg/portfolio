@@ -41,11 +41,17 @@ export async function getSuggestedArticles(
 }
 
 async function getMaxArticleViews(): Promise<number> {
-  return 1000;
+  const response = await fetch("/api/article");
+  const result = await response.json();
+  return result as number;
 }
 
 async function getArticleViews(articleSlug: string): Promise<number> {
-  return 0;
+  const searchParams = new URLSearchParams({ article: articleSlug });
+  const url = `/api/article?${searchParams}`;
+  const response = await fetch(url);
+  const result = await response.json();
+  return result as number;
 }
 
 function getArticleIsRead(articleSlug: string): boolean {
@@ -76,4 +82,6 @@ function getSuggestionScore(
   views: number,
   isRead: boolean,
   similarTagCount: number,
-): number {}
+): number {
+  return views + (isRead ? 0 : 1) + similarTagCount;
+}
