@@ -49,15 +49,17 @@ const { Content } = await pageInfo.render();
     <Section title="All Articles">
       <div class="articles__list">
         {
-          allArticles.map((article) => (
-            <HorizontalCard
-              title={article.data.title}
-              description={article.data.description}
-              image={article.data.image}
-              date={article.data.date}
-              url={`/article/${article.slug}`}
-            />
-          ))
+          allArticles
+            .sort((a, b) => b.data.date - a.data.date)
+            .map((article) => (
+              <HorizontalCard
+                title={article.data.title}
+                description={article.data.description}
+                image={article.data.image}
+                date={article.data.date}
+                url={`/article/${article.slug}`}
+              />
+            ))
         }
       </div>
     </Section>
