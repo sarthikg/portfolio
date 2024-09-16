@@ -50,7 +50,7 @@ const { Content } = await pageInfo.render();
       <div class="articles__list">
         {
           allArticles
-            .sort((a, b) => b.data.date - a.data.date)
+            .sort((a, b) => +b.data.date - +a.data.date)
             .map((article) => (
               <HorizontalCard
                 title={article.data.title}
