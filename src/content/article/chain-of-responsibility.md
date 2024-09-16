@@ -1,9 +1,8 @@
 ---
 slug: "chain-of-responsibility"
-
 title: "Chain of Responsibility Design Pattern"
-description: "This allows for modularised code where each handler tried to handle a request, and incase it is unable to do so, the next handler tries to do so."
-date: 2023-12-24
+description: "This pattern allows for modularised code where each handler tried to handle a request, and incase it is unable to do so, the next handler tries to do so."
+date: 2024-09-16
 image:
   {
     src: "/src/assets/images/article/chain-of-responsibility.jpg",
