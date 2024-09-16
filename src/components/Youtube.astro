@@ -1,0 +1,41 @@
+---
+const { videoUrl } = Astro.props;
+---
+
+<div class="youtube__container">
+  <iframe
+    class="youtube__iframe"
+    src={videoUrl}
+    title="YouTube video player"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    frameborder="0"
+    allowfullscreen></iframe>
+</div>
+
+<style>
+  /* Global Styles */
+  .youtube {
+    &__container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__iframe {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      height: 315px;
+      width: 560px;
+    }
+  }
+  /* Mobile Overrides */
+  @media (max-width: 480px) {
+    .youtube {
+      &__iframe {
+        height: 220px;
+        width: 100%;
+      }
+    }
+  }
+</style>
