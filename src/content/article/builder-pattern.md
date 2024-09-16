@@ -29,38 +29,51 @@ featured: false
 
 There’s a few other ways one can solve this problem:
 
-1. Instead of accepting individual values, we can accept an object of values & provide an interface for the user to adhere.
-   **Pros:**
-   1. Straightforward approach as all required params can be passed at once. Its usually a good option for simpler objects with a small number of parameters.
-   2. Less code overhead as passing parameters directly through an interface may involve less code & be more concise.
-      **Cons:**
-   3. Assigning default values to optional parameters will require its own set of circus.
-   4. Validating parameters individually would again require its own set of circus.
-   5. Step-by-step construction as provided by builder pattern makes the whole process of building the object intuitive for the clients.
-   6. Builder method provides a way of creating immutable objects, but in this case, clients can modify the object passed at initialisation which might lead to unexpected issues.
-2. Instead of creating a builder object, we can create new methods on the product class itself for setting the properties.
-   **Pros:**
-   1. Straightforward approach compared to the builder pattern, atleast for objects with relatively less number of parameters.
-   2. Less code overhead as builder class is not required.
-      **Cons:**
-   3. Separation of concerns is lost. Builder pattern offers a way to separate the logic for initialisation with the actual logic of the product.
-   4. Immutability is completely lost. Builder pattern provides a way for clients to set parameter values until the `build` method is called. Once the build method is called, they get an immutable instance of the product. Such an implementation is not possible here.
+1.  Instead of accepting individual values, we can accept an object of values & provide an interface for the user to adhere.
+
+    - **Pros:**
+
+      1. Straightforward approach as all required params can be passed at once. Its usually a good option for simpler objects with a small number of parameters.
+      2. Less code overhead as passing parameters directly through an interface may involve less code & be more concise.
+
+    - **Cons:**
+
+      1. Assigning default values to optional parameters will require its own set of circus.
+      2. Validating parameters individually would again require its own set of circus.
+      3. Step-by-step construction as provided by builder pattern makes the whole process of building the object intuitive for the clients.
+      4. Builder method provides a way of creating immutable objects, but in this case, clients can modify the object passed at initialisation which might lead to unexpected issues.
+
+2.  Instead of creating a builder object, we can create new methods on the product class itself for setting the properties.
+
+    - **Pros:**
+
+      1. Straightforward approach compared to the builder pattern, atleast for objects with relatively less number of parameters.
+      2. Less code overhead as builder class is not required.
+
+    - **Cons:**
+
+      1. Separation of concerns is lost. Builder pattern offers a way to separate the logic for initialisation with the actual logic of the product.
+      2. Immutability is completely lost. Builder pattern provides a way for clients to set parameter values until the `build` method is called. Once the build method is called, they get an immutable instance of the product. Such an implementation is not possible here.
 
 #### Implementation Details
 
 - Builder Pattern can have varied levels of implementations based on the following:
-  1.  When is the builder pattern being introduced in the feature lifecycle
-  2.  What’s the level of re-use for the product object’s creation
+
+  - When is the builder pattern being introduced in the feature lifecycle
+  - What’s the level of re-use for the product object’s creation
+
 - If the builder pattern is introduced at the design phase itself, the pattern can be introduced to its complete extent. In the form of builder pattern, the following happens:
-  1.  Client interacts with the builder class.
-  2.  Builder class has a `build()` method which the clients finally call to get an instance of the Product.
-  3.  Internally, the builder object passes itself to the product class when initialising it.
-  4.  The product class is configured such that it accepts the builder object in its constructor & picks the required parameters from it.
+
+  - Client interacts with the builder class.
+  - Builder class has a `build()` method which the clients finally call to get an instance of the Product.
+  - Internally, the builder object passes itself to the product class when initialising it.
+  - The product class is configured such that it accepts the builder object in its constructor & picks the required parameters from it.
+
 - If the builder pattern is introduced at a later stage, we might just be able to refactor the product class, or to make the following adjustments to the builder class
-  1.  In the `build()` method of the builder class, we can create a new instance by passing each parameter from the builder object into the constructor of the product class.
+  - In the `build()` method of the builder class, we can create a new instance by passing each parameter from the builder object into the constructor of the product class.
 - If the product creation is being duplicated at multiple places across the codebase:
-  1.  We can introduce an optional `Director` class. This director class will abstract away the logic for creating new instances of the product.
-  2.  Director class can have multiple methods which each return different configurations of the product. These methods might use a similar builder with different parameter values, or they might use different builders.
+  - We can introduce an optional `Director` class. This director class will abstract away the logic for creating new instances of the product.
+  - Director class can have multiple methods which each return different configurations of the product. These methods might use a similar builder with different parameter values, or they might use different builders.
 
 ### Solution (Example based)
 
