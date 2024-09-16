@@ -6,10 +6,10 @@ description: "This allows for modularised code where each handler tried to handl
 date: 2023-12-24
 image:
   {
-    src: "/src/assets/images/article/browsers.png",
-    alt: "Image of Browser Icons",
+    src: "/src/assets/images/article/chain-of-responsibility.jpg",
+    alt: "Image of Chain-of-Responsibility",
   }
-tags: ["Low Level Design"]
+tags: ["Low Level Design", "Behavioural Design Pattern"]
 featured: false
 ---
 
