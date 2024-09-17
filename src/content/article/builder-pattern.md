@@ -5,7 +5,7 @@ description: "Builder pattern provides a cleaner way to initialised complex obje
 date: 2024-09-16
 image:
   {
-    src: "/src/assets/images/article/builder-pattern.webp",
+    src: "/src/assets/images/article/builder-pattern.png",
     alt: "Image of Builder Pattern",
   }
 tags: ["Low Level Design", "Creational Design Pattern"]
@@ -98,7 +98,7 @@ const person = new Person(
   "Sarthik",
   "Gupta",
   24,
-  "152, Sector 15",
+  "Chandigarh",
   "sarthikg@icloud.com",
 );
 // At this moment, creating a person is already less intuitive
