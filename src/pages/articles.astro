@@ -10,6 +10,7 @@ import {
 } from "@facade/article";
 import { getPageInfo } from "@facade/page-info";
 import { extractTextFromMarkdown } from "@util/markdown-text";
+import { getReadingTime } from "@util/reading-time";
 
 const pageInfo = await getPageInfo("articles");
 const allArticles = await getAllPublishedArticles();
@@ -58,6 +59,7 @@ const { Content } = await pageInfo.render();
                 image={article.data.image}
                 date={article.data.date}
                 url={`/article/${article.slug}`}
+                readTime={getReadingTime(article.body)}
               />
             ))
         }

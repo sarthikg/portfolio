@@ -12,9 +12,10 @@ interface Props {
   };
   date: Date;
   url: string;
+  readTime: number;
 }
 
-const { title, description, image, date, url } = Astro.props;
+const { title, description, image, date, url, readTime } = Astro.props;
 ---
 
 <a class="horizontal-card" href={url}>
@@ -29,7 +30,8 @@ const { title, description, image, date, url } = Astro.props;
   <h2 class="horizontal-card__title" transition:animate="none">{title}</h2>
   <p class="horizontal-card__description">{description}</p>
   <p class="horizontal-card__metadata">
-    <span class="horizontal-card__metadata__read-time">5 min read</span>
+    <span class="horizontal-card__metadata__read-time">{readTime} min read</span
+    >
     <span class="horizontal-card__metadata__published"
       >{formatDateWithDay(date)}</span
     >
