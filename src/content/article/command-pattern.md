@@ -10,6 +10,7 @@ image:
   }
 tags: ["Low Level Design", "Behavioural Design Pattern"]
 featured: false
+youtube: "https://www.youtube.com/embed/9qA5kw8dcSU?si=yNtEiSITJkyAxqnS"
 ---
 
 ### Problem Statement
