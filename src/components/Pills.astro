@@ -1,0 +1,35 @@
+---
+interface Props {
+  values: string[];
+}
+
+const { values } = Astro.props;
+---
+
+<span class="pills">
+  {values.map((value) => <span class="pill">{value}</span>)}
+</span>
+
+<style>
+  .pills {
+    font-family: var(--fonts-body);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--grey-200);
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: var(--space-3xs);
+    line-height: 1;
+  }
+  .pill {
+    padding: var(--space-3xs) var(--space-2xs);
+    border: 2px solid var(--grey-900);
+    background-color: var(--black);
+    border-radius: var(--radius-md);
+    transition: background-color var(--transition-ease-slow);
+    &:hover {
+      background-color: var(--grey-800);
+      cursor: pointer;
+    }
+  }
+</style>
