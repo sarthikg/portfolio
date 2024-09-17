@@ -10,6 +10,7 @@ image:
   }
 tags: ["Low Level Design", "Creational Design Pattern"]
 featured: false
+youtube: "https://www.youtube.com/embed/EcFVTgRHJLM?list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc"
 ---
 
 ### Problem Statement
