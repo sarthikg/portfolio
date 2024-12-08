@@ -25,6 +25,15 @@ const { experiences } = Astro.props;
 </ol>
 
 <style>
+  @keyframes blinkingAnimation {
+    from {
+      background-color: var(--grey-600);
+    }
+    to {
+      background-color: var(--grey-100);
+    }
+  }
+
   .career-track {
     margin-top: var(--space-m);
     position: relative;
@@ -62,7 +71,7 @@ const { experiences } = Astro.props;
       }
       &--active {
         &::after {
-          background-color: var(--grey-300);
+          animation: blinkingAnimation 0.6s infinite ease-in-out alternate;
         }
       }
     }
