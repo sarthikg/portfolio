@@ -10,13 +10,14 @@ import { getPageInfo } from "@facade/page-info";
 import { getSideQuests } from "@facade/side-quest";
 import { getSkills } from "@facade/skills";
 import { extractTextFromMarkdown } from "@util/markdown-text";
+import { render } from "astro:content";
 
 const pageInfo = await getPageInfo("career");
 const experiences = await getExperiences();
 const sideQuests = await getSideQuests();
 const skills = await getSkills();
 
-const { Content } = await pageInfo.render();
+const { Content } = await render(pageInfo);
 ---
 
 <Layout
@@ -42,11 +43,11 @@ const { Content } = await pageInfo.render();
         {
           sideQuests.map((quest) => (
             <Card
-              slug={quest.slug}
+              slug={quest.data.slug}
               title={quest.data.title}
               description={quest.data.description}
               image={quest.data.image}
-              url={`/article/${quest.slug}`}
+              url={`/article/${quest.data.slug}`}
             />
           ))
         }

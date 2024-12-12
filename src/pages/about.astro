@@ -3,10 +3,11 @@ import Section from "@component/Section.astro";
 import { getPageInfo } from "@facade/page-info";
 import Layout from "@layout/Layout.astro";
 import { extractTextFromMarkdown } from "@util/markdown-text";
+import { render } from "astro:content";
 
 const pageInfo = await getPageInfo("about");
 
-const { Content } = await pageInfo.render();
+const { Content } = await render(pageInfo);
 ---
 
 <Layout
