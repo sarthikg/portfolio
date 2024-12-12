@@ -65,7 +65,7 @@ export async function getStaticPaths() {
   const articles = await getAllPublishedArticles();
   const sideQuests = await getSideQuests();
   return [...articles, ...sideQuests].map((article) => ({
-    params: { slug: article.slug },
+    params: { slug: article.data.slug },
     props: {
       title: article.data.title,
       description: article.data.description,

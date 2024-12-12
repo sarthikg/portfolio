@@ -8,7 +8,7 @@ import { formatDateWithDay } from "@util/date-string";
 import { getReadingTime } from "@util/reading-time";
 import type { ImageMetadata } from "astro";
 import { getImage, Image } from "astro:assets";
-import type { CollectionEntry } from "astro:content";
+import { render, type CollectionEntry } from "astro:content";
 
 interface Props {
   article: CollectionEntry<"article"> | CollectionEntry<"side-quest">;
@@ -20,11 +20,11 @@ export async function getStaticPaths() {
   const sideQuests = await getSideQuests();
 
   const articleMap = articles.map((article) => ({
-    params: { slug: article.slug },
+    params: { slug: article.data.slug },
     props: { article, isArticle: true },
   }));
   const sideQuestMap = sideQuests.map((quest) => ({
-    params: { slug: quest.slug },
+    params: { slug: quest.data.slug },
     props: { article: quest, isArticle: false },
   }));
 
@@ -32,7 +32,7 @@ export async function getStaticPaths() {
 }
 
 const { article, isArticle } = Astro.props;
-const slug = article.slug;
+const slug = article.data.slug;
 const { title, image, description } = article.data;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -43,7 +43,7 @@ const date = isArticle
   ? (article as CollectionEntry<"article">).data.date
   : null;
 
-const { Content } = await article.render();
+const { Content } = await render(article);
 ---
 
 <Layout
