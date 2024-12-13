@@ -64,5 +64,8 @@
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-astro-organize-imports": "^0.4.8",
     "vitest": "^2.1.5"
+  },
+  "overrides": {
+    "vite": "6.0.2"
   }
 }
