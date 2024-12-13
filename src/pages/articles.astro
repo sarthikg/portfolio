@@ -11,12 +11,13 @@ import {
 import { getPageInfo } from "@facade/page-info";
 import { extractTextFromMarkdown } from "@util/markdown-text";
 import { getReadingTime } from "@util/reading-time";
+import { render } from "astro:content";
 
 const pageInfo = await getPageInfo("articles");
 const allArticles = await getAllPublishedArticles();
 const allFeaturedArticles = await getAllFeaturedArticles();
 
-const { Content } = await pageInfo.render();
+const { Content } = await render(pageInfo);
 ---
 
 <Layout
@@ -37,11 +38,11 @@ const { Content } = await pageInfo.render();
         {
           allFeaturedArticles.map((article) => (
             <Card
-              slug={article.slug}
+              slug={article.data.slug}
               title={article.data.title}
               description={article.data.description}
               image={article.data.image}
-              url={`/article/${article.slug}`}
+              url={`/article/${article.data.slug}`}
             />
           ))
         }
@@ -58,7 +59,7 @@ const { Content } = await pageInfo.render();
                 description={article.data.description}
                 image={article.data.image}
                 date={article.data.date}
-                url={`/article/${article.slug}`}
+                url={`/article/${article.data.slug}`}
                 readTime={getReadingTime(article.body)}
               />
             ))

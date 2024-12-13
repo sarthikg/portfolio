@@ -1,7 +1,11 @@
+import { glob } from "astro/loaders";
 import { z, defineCollection } from "astro:content";
 
 export const experienceSchema = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/*.{md, mdx}",
+    base: "src/content/experience",
+  }),
   schema: z.object({
     titles: z.array(
       z.object({
