@@ -51,6 +51,7 @@ const { titles, location, company, companyUrl } = experience.data;
       ".career-card__description",
     );
     descriptionEls.forEach((description) => {
+      if (description.textContent === "") return;
       const startDate = new Date(description.getAttribute("data-startDate"));
       const endDate = description.getAttribute("data-endDate");
       const duration = getDuration(
