@@ -6,13 +6,14 @@ import { spotifyPlaylists } from "./_constants";
 export const prerender = false;
 
 export async function GET(): Promise<Response> {
-  spotifyPlaylists.forEach((playlist) => {
-    const urlSearchParams = new URLSearchParams({
-      playlistId: playlist.id,
-    });
+  for (let i = 0; i < spotifyPlaylists.length; i++) {
+    const playlist = spotifyPlaylists[i];
+
+    const urlSearchParams = new URLSearchParams({ playlistId: playlist.id });
     console.log("Converting playlist:", playlist.name);
     const url = `${import.meta.env.SITE}/api/music/sync?${urlSearchParams.toString()}`;
-    fetch(url, { method: "GET" });
-  });
+    const response = await fetch(url, { method: "GET" });
+    console.log("Response:", response.status);
+  }
   return new Response("Submitted!", { status: 200 });
 }
