@@ -9,6 +9,8 @@ interface ImportMetaEnv {
   readonly SMTP_PORT: string;
 
   readonly FROM_ADDRESS: string;
+
+  readonly MUSIC_TOKEN: string;
 }
 
 interface ImportMeta {
