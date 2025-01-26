@@ -11,6 +11,9 @@ export async function GET(): Promise<Response> {
       playlistId: playlist.id,
     });
     console.log("Converting playlist:", playlist.name);
+    console.log(
+      `${import.meta.env.SITE}/api/music/sync?${urlSearchParams.toString()}`,
+    );
     const response = await fetch(
       `${import.meta.env.SITE}/api/music/sync?${urlSearchParams.toString()}`,
     );
