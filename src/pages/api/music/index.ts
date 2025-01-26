@@ -1,5 +1,10 @@
 import { spotifyPlaylists } from "./_constants";
 
+/**
+ * Set prerendering to false to be rendered on the server
+ */
+export const prerender = false;
+
 export async function GET(): Promise<Response> {
   spotifyPlaylists.forEach(async (playlist) => {
     const urlSearchParams = new URLSearchParams({

@@ -1,5 +1,10 @@
 import type { APIContext, Props } from "astro";
 
+/**
+ * Set prerendering to false to be rendered on the server
+ */
+export const prerender = false;
+
 export async function GET({ request }: APIContext<Props>): Promise<Response> {
   try {
     const playlistId = new URL(request.url).searchParams.get("playlistId");
