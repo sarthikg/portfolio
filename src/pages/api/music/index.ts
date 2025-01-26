@@ -14,6 +14,7 @@ export async function GET(): Promise<Response> {
     const response = await fetch(
       `${import.meta.env.SITE}/api/music/sync?${urlSearchParams.toString()}`,
     );
+    console.log(response);
     if (response.status === 200) {
       console.log("Converted playlist:", playlist.name);
     } else {
