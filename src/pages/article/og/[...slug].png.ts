@@ -24,7 +24,7 @@ type Props = {
 export const GET: APIRoute<Props> = async ({ props }) => {
   const neuzeit700 = readFileSync("./public/fonts/neuzeit-bold.otf");
   const neuzeit400 = readFileSync("./public/fonts/neuzeit-regular.otf");
-  const profilePicPath = "@asset/images/profile-pic.png";
+  const profilePicPath = "@asset/images/pfp.jpeg";
   const coverPicPath = props.image;
   const coverPic = await getImageBuffer(coverPicPath.src);
 
