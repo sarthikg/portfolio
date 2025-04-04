@@ -34,6 +34,8 @@ export async function getStaticPaths() {
 const { article, isArticle } = Astro.props;
 const slug = article.data.slug;
 const { title, image, description } = article.data;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const { youtube } = article.data as any;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const { youtube } = article.data as any;

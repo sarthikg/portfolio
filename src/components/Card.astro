@@ -1,6 +1,7 @@
 ---
 import type { AstroImage } from "@schema/image";
 import { Image } from "astro:assets";
+import Pills from "./Pills.astro";
 
 interface Props {
   slug: string;
@@ -31,6 +32,9 @@ const { slug, title, description, image, url } = Astro.props;
   <p class="card__description">
     {description}
   </p>
+  <div class="card__pills">
+    <Pills values={["Low Level Design", "Creational Design Pattern"]} />
+  </div>
 </a>
 
 <style>
@@ -83,6 +87,9 @@ const { slug, title, description, image, url } = Astro.props;
       -webkit-box-orient: vertical;
       line-clamp: 2;
       line-height: 1.8;
+    }
+    &__pills {
+      margin-top: var(--space-2xs);
     }
   }
 
