@@ -14,7 +14,4 @@ export default defineConfig({
     imageService: true,
   }),
   integrations: [sitemap(), react()],
-  redirects: {
-    "/community": "https://chat.whatsapp.com/F3GUIHgk4LPAXUZpseAy2Z",
-  },
 });

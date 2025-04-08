@@ -4,5 +4,12 @@
       "path": "/api/music",
       "schedule": "0 6 * * *"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/community",
+      "destination": "https://chat.whatsapp.com/F3GUIHgk4LPAXUZpseAy2Z",
+      "permanent": true
+    }
   ]
 }
